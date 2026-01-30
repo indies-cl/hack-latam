@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'BIZUDPMincho';
+  src: url('/BIZUDPMincho-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DINdong';
+  src: url('/DINdong.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VictorMono';
+  src: url('/VictorMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
 @theme {
   --color-*: initial;
   --color-bg: rgb(16, 15, 15);

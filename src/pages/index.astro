@@ -5,13 +5,184 @@ import "../styles/global.css";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>hack@latam — let's code for a better world</title>
+    <meta name="description" content="48-hour hackathon for latin american builders. late april 2026. social impact only." />
   </head>
-  <body>
-    <h1>Astro</h1>
+  <body class="bg-bg text-tx text-2xl lowercase font-serif">
+    <nav id="nav" class="fixed left-8 top-16 w-56 hidden lg:block text-tx-3 text-xl space-y-2">
+      <a href="#who" class="nav-link block hover:text-og" data-target="who">who we are</a>
+      <a href="#track-record" class="nav-link block hover:text-og" data-target="track-record">track record</a>
+      <a href="#event" class="nav-link block hover:text-og" data-target="event">the event</a>
+      <a href="#different" class="nav-link block hover:text-og" data-target="different">what makes this different</a>
+      <a href="#tracks" class="nav-link block hover:text-og" data-target="tracks">tracks</a>
+      <a href="#judging" class="nav-link block hover:text-og" data-target="judging">judging</a>
+      <a href="#why-sponsor" class="nav-link block hover:text-og" data-target="why-sponsor">why sponsor</a>
+      <a href="#ideal-sponsors" class="nav-link block hover:text-og" data-target="ideal-sponsors">ideal sponsors</a>
+      <a href="#ask" class="nav-link block hover:text-og" data-target="ask">the ask</a>
+      <a href="#what-you-get" class="nav-link block hover:text-og" data-target="what-you-get">what you get</a>
+    </nav>
+
+    <main class="max-w-2xl mx-auto px-4 py-16 space-y-16 lg:ml-80">
+      
+      <header id="top" class="space-y-4">
+        <h1 class="text-3xl font-sans text-og">hack@latam</h1>
+        <p>let's code for a better world.</p>
+        <p class="text-tx-2">late april 2026 · 48 hours · 150 builders</p>
+      </header>
+
+      <section id="who" class="space-y-4">
+        <h2 class="text-3xl font-sans">who we are</h2>
+        <p><span class="text-og">indies.la</span> is a collective of 1.5k+ latin american builders at the intersection of indie hackers, yc-backed founders, and open-source.</p>
+      </section>
+
+      <section id="track-record" class="space-y-4">
+        <h2 class="text-3xl font-sans">track record</h2>
+        <ul class="space-y-2 text-tx-2">
+          <li>· 1.5k+ members across latam</li>
+          <li>· monthly events with ~75 in-person attendees</li>
+          <li>· companies in the community have shipped real products and raised capital</li>
+          <li>· strong overlap with top-tier ecosystems (y combinator, platanus, chilean startup scene)</li>
+        </ul>
+      </section>
+
+      <section id="event" class="space-y-4">
+        <h2 class="text-3xl font-sans">the event</h2>
+        <ul class="space-y-2 text-tx-2">
+          <li>· 150 hand-picked participants, ages 20–35</li>
+          <li>· software engineers, cs students, founders, high-agency techies</li>
+          <li>· application-based selection to filter for people who actually ship</li>
+        </ul>
+        <p class="text-og">goal: turn latent talent into founders building for latin america.</p>
+      </section>
+
+      <section id="different" class="space-y-4">
+        <h2 class="text-3xl font-sans">what makes this different</h2>
+        <ul class="space-y-2 text-tx-2">
+          <li>· deployed software only</li>
+          <li>· clear tracks tied to real problems</li>
+          <li>· judges with domain expertise</li>
+          <li>· follow-ups with teams that show traction</li>
+        </ul>
+        <p>most hackathons optimize for photos, not outcomes. <span class="text-og">we seek real change.</span></p>
+      </section>
+
+      <section id="tracks" class="space-y-4">
+        <h2 class="text-3xl font-sans">tracks</h2>
+        <p class="text-tx-2">four fault lines in latam. each track is about data, coordination, and real-time action.</p>
+        
+        <div class="space-y-4 border-l border-ui pl-4">
+          <div>
+            <h3 class="text-og">1. transparency & corruption</h3>
+            <p class="text-tx-2">use data to expose, track, and reduce corruption.</p>
+          </div>
+          <div>
+            <h3 class="text-og">2. community welfare</h3>
+            <p class="text-tx-2">software for organizing, helping, and acting together.</p>
+          </div>
+          <div>
+            <h3 class="text-og">3. public safety & emergency response</h3>
+            <p class="text-tx-2">real-time information and coordination for crises.</p>
+          </div>
+          <div>
+            <h3 class="text-og">4. environment & climate risk</h3>
+            <p class="text-tx-2">track, predict, and mitigate environmental damage.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="judging" class="space-y-4">
+        <h2 class="text-3xl font-sans">judging</h2>
+        <ul class="space-y-2 text-tx-2">
+          <li>· real problem, clearly targeted</li>
+          <li>· working product, not just mockups</li>
+          <li>· path to continue post-hackathon</li>
+          <li>· impact potential in latin american context</li>
+        </ul>
+        <p class="text-tx-2">each track judged by practitioners in the field.</p>
+      </section>
+
+      <section id="why-sponsor" class="space-y-4 bg-bg-2 p-4 border border-ui">
+        <h2 class="text-3xl font-sans">why sponsor</h2>
+        <p>you want access to the people who actually build the future of latam.</p>
+        <ul class="space-y-2 text-tx-2">
+          <li>· <span class="text-tx">talent access:</span> direct line to 150 vetted builders</li>
+          <li>· <span class="text-tx">product usage:</span> your tools battle-tested by real teams</li>
+          <li>· <span class="text-tx">brand positioning:</span> visible support for execution-focused talent</li>
+          <li>· <span class="text-tx">recruiting pipeline:</span> early relationship with future founders</li>
+          <li>· <span class="text-tx">case studies:</span> real projects using your stack</li>
+        </ul>
+      </section>
+
+      <section id="ideal-sponsors" class="space-y-4">
+        <h2 class="text-3xl font-sans">ideal sponsors</h2>
+        <ul class="space-y-2 text-tx-2">
+          <li>· devtools: ai, infra, hosting, apis, data, observability</li>
+          <li>· cloud and infra providers</li>
+          <li>· vcs and funds serious about latam dealflow</li>
+          <li>· companies with strong engineering cultures looking for talent</li>
+        </ul>
+        <p>if your product is better in the hands of sharp builders, this is where to put it.</p>
+      </section>
+
+      <section id="ask" class="space-y-4 bg-bg-2 p-4 border border-og">
+        <h2 class="text-3xl font-sans text-og">the ask</h2>
+        <ul class="space-y-2">
+          <li>· <span class="text-og">$5k usd total</span> prize pool target (contributions of any size welcome)</li>
+          <li>· <span class="text-og">credits</span> for infrastructure, ai tooling, databases, and related dev tools</li>
+        </ul>
+      </section>
+
+      <section id="what-you-get" class="space-y-4">
+        <h2 class="text-3xl font-sans">what you get</h2>
+        <ul class="space-y-2 text-tx-2">
+          <li>· clear branding in all event materials and online assets</li>
+          <li>· explicit "powered by" mentions on relevant tracks</li>
+          <li>· intro sessions or workshops to showcase your product</li>
+          <li>· opt-in talent directory for participants</li>
+          <li>· post-event report: projects, traction, and tool usage</li>
+        </ul>
+        <p>this is structured to be measurable, not fuzzy.</p>
+      </section>
+
+      <footer class="bg-bg-2 p-4 border border-og space-y-4">
+        <p class="text-3xl font-sans text-og">interested? let's talk.</p>
+        <ul class="space-y-2">
+          <li>· <a href="https://www.linkedin.com/in/pup/" target="_blank" class="text-og hover:underline">reno on linkedin</a></li>
+          <li>· <a href="mailto:rene@indies.cl" class="text-og hover:underline">rene@indies.cl</a></li>
+        </ul>
+      </footer>
+
+    </main>
+
+    <script>
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      function updateActiveLink() {
+        let current = '';
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 150) {
+            current = section.id;
+          }
+        });
+
+        navLinks.forEach(link => {
+          if (link.dataset.target === current) {
+            link.classList.remove('text-tx-3');
+            link.classList.add('text-og');
+          } else {
+            link.classList.remove('text-og');
+            link.classList.add('text-tx-3');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveLink);
+      updateActiveLink();
+    </script>
   </body>
 </html>
