@@ -36,4 +36,6 @@
   --font-sans: 'DINdong', sans-serif;
   --font-serif: 'BIZUDPMincho', serif;
   --font-mono: 'VictorMono', monospace;
+
+  --breakpoint-5xl: 2000px;
 }
