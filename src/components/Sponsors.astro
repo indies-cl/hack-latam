@@ -7,6 +7,11 @@ const { linkedin } = Astro.props;
 
 const communities = [
   {
+    logo: "/communities/502.png",
+    name: "502",
+    desc: "making guatemala a tech hub",
+  },
+  {
     logo: "/communities/ai-playgrounds.png",
     name: "ai playgrounds",
     desc: "AI for everyone",
@@ -21,6 +26,7 @@ const communities = [
     logo: "/communities/the-hackathon-company.png",
     name: "the hackathon company",
     desc: "orchestrate world-class hackathons",
+    logoSmall: true,
   },
 ];
 ---
@@ -32,11 +38,13 @@ const communities = [
       {
         communities.map((c) => (
           <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-2">
-            <img
-              src={c.logo}
-              alt={c.name}
-              class="w-full flex-1 object-contain"
-            />
+            <div class="w-full aspect-square flex items-center justify-center shrink-0">
+              <img
+                src={c.logo}
+                alt={c.name}
+                class={`w-full h-full object-contain ${c.logoSmall ? "max-w-[70%] max-h-[70%]" : ""}`}
+              />
+            </div>
             <p class="text-tx-2 text-base">{c.desc}</p>
           </div>
         ))
