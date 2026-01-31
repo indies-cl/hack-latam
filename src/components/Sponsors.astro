@@ -1,9 +1,27 @@
 ---
+interface Props {
+  linkedin: string;
+}
+
+const { linkedin } = Astro.props;
+
 const communities = [
-  { logo: "/communities/ai-playgrounds.png", name: "ai playgrounds", desc: "AI for everyone" },
+  {
+    logo: "/communities/ai-playgrounds.png",
+    name: "ai playgrounds",
+    desc: "AI for everyone",
+  },
   // { logo: "/communities/indies.png", name: "indies.la", desc: "home for crazy, ambitious founders" },
-  { logo: "/communities/nucleo.png", name: "nucleo", desc: "AI systems for founders" },
-  { logo: "/communities/the-hackathon-company.png", name: "the hackathon company", desc: "orchestrate world-class hackathons" },
+  {
+    logo: "/communities/nucleo.png",
+    name: "nucleo",
+    desc: "AI systems for founders",
+  },
+  {
+    logo: "/communities/the-hackathon-company.png",
+    name: "the hackathon company",
+    desc: "orchestrate world-class hackathons",
+  },
 ];
 ---
 
@@ -11,12 +29,25 @@ const communities = [
   <div class="space-y-4">
     <h3 class="text-xl text-tx-2">communities</h3>
     <div class="grid grid-cols-2 gap-2">
-      {communities.map((c) => (
-        <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-2">
-          <img src={c.logo} alt={c.name} class="w-full flex-1 object-contain" />
-          <p class="text-tx-2 text-base">{c.desc}</p>
-        </div>
-      ))}
+      {
+        communities.map((c) => (
+          <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-2">
+            <img
+              src={c.logo}
+              alt={c.name}
+              class="w-full flex-1 object-contain"
+            />
+            <p class="text-tx-2 text-base">{c.desc}</p>
+          </div>
+        ))
+      }
+      <a
+        href={linkedin}
+        target="_blank"
+        class="border border-dashed border-og bg-og/10 p-4 aspect-square flex flex-col justify-center items-center text-center gap-2 hover:border-og text-og"
+      >
+        <p class="text-2xl">lead a community?<br />be part of hack@latam!</p>
+      </a>
     </div>
   </div>
 </div>
