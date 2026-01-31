@@ -1,61 +1,16 @@
 ---
-const sponsors = [
-  { logo: "/sponsors/3x10.png", name: "3x10", desc: "$30k grant for ambitious founders" },
-];
-
-const supporters = [
-  { logo: "/sponsors/boquila.png", name: "boquila", desc: "AI for nature" },
-  { logo: "/sponsors/animo.png", name: "animo", desc: "animate videos from text" },
-];
-
 const communities = [
   { logo: "/communities/ai-playgrounds.png", name: "ai playgrounds", desc: "AI for everyone" },
+  // { logo: "/communities/indies.png", name: "indies.la", desc: "home for crazy, ambitious founders" },
+  { logo: "/communities/nucleo.png", name: "nucleo", desc: "AI systems for founders" },
+  { logo: "/communities/the-hackathon-company.png", name: "the hackathon company", desc: "orchestrate world-class hackathons" },
 ];
 ---
 
 <div class="space-y-6 font-sans">
   <div class="space-y-4">
-    <h3 class="text-xl text-tx-2">🥇 gold sponsor</h3>
-    <a 
-      href="mailto:rene@indies.cl?subject=Featured%20Sponsor%20-%20hack%40latam"
-      class="block border-2 border-og p-4 py-8 flex flex-col justify-center items-center text-center gap-4 hover:bg-og/10 transition-colors sm:col-span-3"
-    >
-      <p class="text-og text-2xl">your logo here</p>
-      <div class="text-tx-2 text-base space-y-2">
-        <p>keynote time at kickoff</p>
-        <p>logo featured everywhere</p>
-        <p>prime visibility all event</p>
-      </div>
-      <p class="text-og text-base mt-2">one spot →</p>
-    </a>
-  </div>
-  <div class="space-y-4">
-    <h3 class="text-xl text-tx-2">🥈 silver sponsors</h3>
-    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-      {sponsors.map((s) => (
-        <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-2">
-          <img src={s.logo} alt={s.name} class="w-full flex-1 object-contain" />
-          <p class="text-tx-2 text-base">{s.desc}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-
-  <div class="space-y-4">
-    <h3 class="text-xl text-tx-2">🥉 bronze sponsors</h3>
-    <div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
-      {supporters.map((s) => (
-        <div class="border border-ui p-2 aspect-square flex flex-col justify-center items-center text-center gap-1">
-          <img src={s.logo} alt={s.name} class="w-full flex-1 object-contain" />
-          <p class="text-tx-2 text-sm">{s.desc}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-  
-  <div class="space-y-4">
     <h3 class="text-xl text-tx-2">communities</h3>
-    <div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
+    <div class="grid grid-cols-2 gap-2">
       {communities.map((c) => (
         <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-2">
           <img src={c.logo} alt={c.name} class="w-full flex-1 object-contain" />

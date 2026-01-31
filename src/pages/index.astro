@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Sponsors from "../components/Sponsors.astro";
+import NavHighlight from "../components/NavHighlight.astro";
 ---
 
 <html lang="en">
@@ -12,7 +13,7 @@ import Sponsors from "../components/Sponsors.astro";
     <title>hack@latam — let's code for a better world</title>
     <meta name="description" content="48-hour hackathon for latin american builders. late april 2026. social impact only." />
   </head>
-  <body class="bg-bg text-tx text-2xl text-pretty font-serif">
+  <body class="bg-bg text-tx text-xl 5xl:text-2xl text-pretty font-serif">
     <nav id="nav" class="fixed left-8 top-16 w-56 hidden lg:block text-tx-3 text-xl space-y-2">
       <a href="#who" class="nav-link block hover:text-og" data-target="who">who we are</a>
       <a href="#track-record" class="nav-link block hover:text-og" data-target="track-record">track record</a>
@@ -24,7 +25,7 @@ import Sponsors from "../components/Sponsors.astro";
       <a href="#ideal-sponsors" class="nav-link block hover:text-og" data-target="ideal-sponsors">ideal sponsors</a>
       <a href="#ask" class="nav-link block hover:text-og" data-target="ask">the ask</a>
       <a href="#what-you-get" class="nav-link block hover:text-og" data-target="what-you-get">what you get</a>
-      <a href="#faq" class="nav-link block hover:text-og" data-target="faq">faq</a>
+      
       <a href="#contact" class="nav-link block hover:text-og" data-target="contact">contact me</a>
       <a href="#sponsors" class="nav-link block hover:text-og" data-target="sponsors">sponsors</a>
     </nav>
@@ -32,19 +33,19 @@ import Sponsors from "../components/Sponsors.astro";
     <main class="max-w-3xl mx-auto px-4 py-16 space-y-16 lg:ml-80">
       
       <header id="top" class="space-y-4">
-        <h1 class="text-3xl font-sans text-og">hack@latam</h1>
+        <h1 class="text-2xl 5xl:text-3xl font-sans text-og">hack@latam</h1>
         <p>let's code for a better world.</p>
         <p class="text-tx-2">late april 2026 · 48 hours · 150 builders</p>
         <p class="text-tx-2"><a href="mailto:rene@indies.cl" class="text-og hover:underline">rene@indies.cl</a></p>
       </header>
 
       <section id="who" class="space-y-4">
-        <h2 class="text-3xl font-sans">who we are</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans">who we are</h2>
         <p><span class="text-og">indies.la</span> is a collective of 1.5k+ latin american builders at the intersection of indie hackers, yc-backed founders, and open-source.</p>
       </section>
 
       <section id="track-record" class="space-y-4">
-        <h2 class="text-3xl font-sans">track record</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans">track record</h2>
         <ul class="space-y-2 text-tx-2">
           <li>· 1.5k+ members across latam</li>
           <li>· monthly events with ~75 in-person attendees</li>
@@ -54,7 +55,7 @@ import Sponsors from "../components/Sponsors.astro";
       </section>
 
       <section id="event" class="space-y-4">
-        <h2 class="text-3xl font-sans">the event</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans">the event</h2>
         <ul class="space-y-2 text-tx-2">
           <li>· 150 hand-picked participants, ages 20–35</li>
           <li>· software engineers, cs students, founders, high-agency techies</li>
@@ -64,7 +65,7 @@ import Sponsors from "../components/Sponsors.astro";
       </section>
 
       <section id="different" class="space-y-4">
-        <h2 class="text-3xl font-sans">what makes this different</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans">what makes this different</h2>
         <ul class="space-y-2 text-tx-2">
           <li>· deployed software only</li>
           <li>· clear tracks tied to real problems</li>
@@ -75,7 +76,7 @@ import Sponsors from "../components/Sponsors.astro";
       </section>
 
       <section id="tracks" class="space-y-4">
-        <h2 class="text-3xl font-sans">tracks</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans">tracks</h2>
         <p class="text-tx-2">four fault lines in latam. each track is about data, coordination, and real-time action.</p>
         
         <div class="space-y-4 border-l border-ui pl-4">
@@ -99,7 +100,7 @@ import Sponsors from "../components/Sponsors.astro";
       </section>
 
       <section id="judging" class="space-y-4">
-        <h2 class="text-3xl font-sans">judging</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans">judging</h2>
         <ul class="space-y-2 text-tx-2">
           <li>· real problem, clearly targeted</li>
           <li>· working product, not just mockups</li>
@@ -110,7 +111,7 @@ import Sponsors from "../components/Sponsors.astro";
       </section>
 
       <section id="why-sponsor" class="space-y-4 bg-bg-2 p-4 border border-ui">
-        <h2 class="text-3xl font-sans">why sponsor</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans">why sponsor</h2>
         <p>you want access to the people who actually build the future of latam.</p>
         <ul class="space-y-2 text-tx-2">
           <li>· <span class="text-tx">talent access:</span> direct line to 150 vetted builders</li>
@@ -122,7 +123,7 @@ import Sponsors from "../components/Sponsors.astro";
       </section>
 
       <section id="ideal-sponsors" class="space-y-4">
-        <h2 class="text-3xl font-sans">ideal sponsors</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans">ideal sponsors</h2>
         <ul class="space-y-2 text-tx-2">
           <li>· devtools: ai, infra, hosting, apis, data, observability</li>
           <li>· cloud and infra providers</li>
@@ -133,7 +134,7 @@ import Sponsors from "../components/Sponsors.astro";
       </section>
 
       <section id="ask" class="space-y-4 bg-bg-2 p-4 border border-og">
-        <h2 class="text-3xl font-sans text-og">the ask</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans text-og">the ask</h2>
         <ul class="space-y-2">
           <li>· <span class="text-og">$5k usd total</span> prize pool target (contributions of any size welcome)</li>
           <li>· <span class="text-og">credits</span> for infrastructure, ai tooling, databases, and related dev tools</li>
@@ -141,44 +142,18 @@ import Sponsors from "../components/Sponsors.astro";
       </section>
 
       <section id="what-you-get" class="space-y-4">
-        <h2 class="text-3xl font-sans">what you get</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans">what you get</h2>
         <ul class="space-y-2 text-tx-2">
-          <li>· clear branding in all event materials and online assets</li>
-          <li>· explicit "powered by" mentions on relevant tracks</li>
-          <li>· intro sessions or workshops to showcase your product</li>
-          <li>· opt-in talent directory for participants</li>
+          <li>· <span class="text-tx">branding:</span> logo on all event materials, website, and streams</li>
+          <li>· <span class="text-tx">"powered by" mentions:</span> optional track sponsorship (e.g. "best AI use powered by [you]")</li>
+          <li>· <span class="text-tx">stage time:</span> intro session or workshop to showcase your product</li>
+          <li>· <span class="text-tx">talent directory:</span> opt-in contact info from 150 vetted builders</li>
         </ul>
-        <p>this is structured to be measurable, not fuzzy.</p>
-      </section>
-
-      <section id="faq" class="space-y-4">
-        <h2 class="text-3xl font-sans">faq</h2>
-        <div class="space-y-4 text-tx-2">
-          <div>
-            <p class="text-tx">what's the difference between featured sponsor and regular sponsor?</p>
-            <p>featured sponsor gets keynote time, biggest logo visibility on the band, and exclusive honorable mention sponsorship (e.g. "best AI use powered by [your company]").</p>
-          </div>
-          <div>
-            <p class="text-tx">are "powered by" mentions mandatory?</p>
-            <p>no. explicit "powered by" mentions on relevant tracks are opt-in. if you don't want to be featured on any track, that's fine.</p>
-          </div>
-          <div>
-            <p class="text-tx">what are the tiers?</p>
-            <ul class="space-y-1">
-              <li>· gold sponsor: one spot only, keynote time, biggest logo, exclusive honorable mentions</li>
-              <li>· silver sponsor: $500+ cash and/or $1000+ credits, talent directory access</li>
-              <li>· bronze sponsor: under those thresholds, smallest logo, no talent directory</li>
-            </ul>
-          </div>
-          <div>
-            <p class="text-tx">what's the talent directory?</p>
-            <p>contact info for participants. available to gold and silver sponsors only.</p>
-          </div>
-        </div>
+        <p>measurable, not fuzzy.</p>
       </section>
 
       <section id="contact" class="bg-bg-2 p-4 border border-og space-y-4">
-        <h2 class="text-3xl font-sans text-og">limited spots.</h2>
+        <h2 class="text-2xl 5xl:text-3xl font-sans text-og">limited spots.</h2>
         <p class="text-tx-2">featured sponsor is one spot only.</p>
         <p>· <a href="mailto:rene@indies.cl" class="text-og hover:underline">rene@indies.cl</a></p>
         <p class="text-tx-2">or reach out on linkedin</p>
@@ -189,38 +164,16 @@ import Sponsors from "../components/Sponsors.astro";
         <Sponsors />
       </section>
 
+      <footer class="flex justify-center">
+        <img src="/communities/indies.png" alt="indies.la" class="w-48" />
+      </footer>
+
     </main>
 
     <aside class="fixed right-8 top-16 w-[680px] hidden 2xl:block">
       <Sponsors />
     </aside>
 
-    <script>
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
-
-      function updateActiveLink() {
-        let current = '';
-        sections.forEach(section => {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= 150) {
-            current = section.id;
-          }
-        });
-
-        navLinks.forEach(link => {
-          if (link.dataset.target === current) {
-            link.classList.remove('text-tx-3');
-            link.classList.add('text-og');
-          } else {
-            link.classList.remove('text-og');
-            link.classList.add('text-tx-3');
-          }
-        });
-      }
-
-      window.addEventListener('scroll', updateActiveLink);
-      updateActiveLink();
-    </script>
+    <NavHighlight />
   </body>
 </html>

@@ -1,0 +1,32 @@
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const is2xl = window.matchMedia('(min-width: 1536px)');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function updateActiveLink() {
+      let current = '';
+      sections.forEach(section => {
+        if (is2xl.matches && section.id === 'sponsors') return;
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 150) {
+          current = section.id;
+        }
+      });
+
+      navLinks.forEach(link => {
+        const anchor = link as HTMLAnchorElement;
+        if (anchor.dataset.target === current) {
+          anchor.classList.remove('text-tx-3');
+          anchor.classList.add('text-og');
+        } else {
+          anchor.classList.remove('text-og');
+          anchor.classList.add('text-tx-3');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+  });
+</script>
