@@ -1,0 +1,184 @@
+---
+import "../styles/global.css";
+import type { Content } from "../i18n";
+import NavHighlight from "./NavHighlight.astro";
+
+interface Props {
+  t: Content;
+}
+
+const { t } = Astro.props;
+
+const EMAIL = "rene@indies.cl";
+const LINKEDIN = "https://www.linkedin.com/in/pup/";
+---
+
+<html lang={t.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+  </head>
+  <body class="bg-bg text-tx text-xl 5xl:text-2xl text-pretty font-serif">
+    <nav
+      id="nav"
+      class="fixed left-8 top-16 w-56 hidden lg:block text-tx-3 text-xl space-y-2"
+    >
+      <a href="#who" class="nav-link block hover:text-og" data-target="who">{t.nav.who}</a>
+      <a href="#track-record" class="nav-link block hover:text-og" data-target="track-record">{t.nav.trackRecord}</a>
+      <a href="#event" class="nav-link block hover:text-og" data-target="event">{t.nav.event}</a>
+      <a href="#different" class="nav-link block hover:text-og" data-target="different">{t.nav.different}</a>
+      <a href="#tracks" class="nav-link block hover:text-og" data-target="tracks">{t.nav.tracks}</a>
+      <a href="#judging" class="nav-link block hover:text-og" data-target="judging">{t.nav.judging}</a>
+      <a href="#why-sponsor" class="nav-link block hover:text-og" data-target="why-sponsor">{t.nav.whySponsor}</a>
+      <a href="#ideal-sponsors" class="nav-link block hover:text-og" data-target="ideal-sponsors">{t.nav.idealSponsors}</a>
+      <a href="#ask" class="nav-link block hover:text-og" data-target="ask">{t.nav.ask}</a>
+      <a href="#what-you-get" class="nav-link block hover:text-og" data-target="what-you-get">{t.nav.whatYouGet}</a>
+      <a href="#contact" class="nav-link block hover:text-og" data-target="contact">{t.nav.contact}</a>
+      <a href="#sponsors" class="nav-link block hover:text-og" data-target="sponsors">{t.nav.communities}</a>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-16 space-y-16 lg:ml-80">
+      <header id="top" class="space-y-4">
+        <h1 class="text-2xl 5xl:text-3xl font-sans text-og">hack@latam</h1>
+        <p>{t.header.tagline}</p>
+        <p class="text-tx-2">{t.header.subtitle}</p>
+        <p class="text-tx-2">
+          <a href={`mailto:${EMAIL}`} class="text-og hover:underline">{EMAIL}</a>
+        </p>
+      </header>
+
+      <section id="who" class="space-y-4">
+        <h2 class="text-2xl 5xl:text-3xl font-sans">{t.who.title}</h2>
+        <p set:html={t.who.content} />
+      </section>
+
+      <section id="track-record" class="space-y-4">
+        <h2 class="text-2xl 5xl:text-3xl font-sans">{t.trackRecord.title}</h2>
+        <ul class="space-y-2 text-tx-2">
+          {t.trackRecord.items.map((item) => <li>· {item}</li>)}
+        </ul>
+      </section>
+
+      <section id="event" class="space-y-4">
+        <h2 class="text-2xl 5xl:text-3xl font-sans">{t.event.title}</h2>
+        <ul class="space-y-2 text-tx-2">
+          {t.event.items.map((item) => <li>· {item}</li>)}
+        </ul>
+        <p class="text-og">{t.event.goal}</p>
+      </section>
+
+      <section id="different" class="space-y-4">
+        <h2 class="text-2xl 5xl:text-3xl font-sans">{t.different.title}</h2>
+        <ul class="space-y-2 text-tx-2">
+          {t.different.items.map((item) => <li>· {item}</li>)}
+        </ul>
+        <p>
+          {t.different.outro} <span class="text-og">{t.different.outroHighlight}</span>
+        </p>
+      </section>
+
+      <section id="tracks" class="space-y-4">
+        <h2 class="text-2xl 5xl:text-3xl font-sans">{t.tracks.title}</h2>
+        <p class="text-tx-2">{t.tracks.intro}</p>
+        <div class="space-y-4 border-l border-ui pl-4">
+          {t.tracks.items.map((track) => (
+            <div>
+              <h3 class="text-og">{track.name}</h3>
+              <p class="text-tx-2">{track.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="judging" class="space-y-4">
+        <h2 class="text-2xl 5xl:text-3xl font-sans">{t.judging.title}</h2>
+        <ul class="space-y-2 text-tx-2">
+          {t.judging.items.map((item) => <li>· {item}</li>)}
+        </ul>
+        <p class="text-tx-2">{t.judging.outro}</p>
+      </section>
+
+      <section id="why-sponsor" class="space-y-4 bg-bg-2 p-4 border border-ui">
+        <h2 class="text-2xl 5xl:text-3xl font-sans">{t.whySponsor.title}</h2>
+        <p>{t.whySponsor.intro}</p>
+        <ul class="space-y-2 text-tx-2">
+          {t.whySponsor.items.map((item) => (
+            <li>· <span class="text-tx">{item.label}</span> {item.desc}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="ideal-sponsors" class="space-y-4">
+        <h2 class="text-2xl 5xl:text-3xl font-sans">{t.idealSponsors.title}</h2>
+        <ul class="space-y-2 text-tx-2">
+          {t.idealSponsors.items.map((item) => <li>· {item}</li>)}
+        </ul>
+        <p>{t.idealSponsors.outro}</p>
+      </section>
+
+      <section id="ask" class="space-y-4 bg-bg-2 p-4 border border-og">
+        <h2 class="text-2xl 5xl:text-3xl font-sans text-og">{t.ask.title}</h2>
+        <ul class="space-y-2">
+          {t.ask.items.map((item) => (
+            <li>· <span class="text-og">{item.highlight}</span> {item.text}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="what-you-get" class="space-y-4">
+        <h2 class="text-2xl 5xl:text-3xl font-sans">{t.whatYouGet.title}</h2>
+        <ul class="space-y-2 text-tx-2">
+          {t.whatYouGet.items.map((item) => (
+            <li>· <span class="text-tx">{item.label}</span> {item.desc}</li>
+          ))}
+        </ul>
+        <p>{t.whatYouGet.outro}</p>
+      </section>
+
+      <section id="contact" class="bg-bg-2 p-4 border border-og space-y-4">
+        <h2 class="text-2xl 5xl:text-3xl font-sans text-og">{t.contact.title}</h2>
+        <p class="text-tx-2">{t.contact.emailLabel}</p>
+        <p>· <a href={`mailto:${EMAIL}`} class="text-og hover:underline">{EMAIL}</a></p>
+        <p class="text-tx-2">{t.contact.linkedinLabel}</p>
+        <p>· <a href={LINKEDIN} target="_blank" class="text-og hover:underline">{t.contact.linkedinText}</a></p>
+      </section>
+
+      <section id="sponsors" class="space-y-6 font-sans">
+        <div class="space-y-4">
+          <h3 class="text-xl text-tx-2">{t.sponsors.communitiesTitle}</h3>
+          <div class="grid grid-cols-2 gap-2">
+            {t.sponsors.communities.map((c) => (
+              <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-2">
+                <div class="w-full aspect-square flex items-center justify-center shrink-0">
+                  <img
+                    src={c.logo}
+                    alt={c.name}
+                    class={`w-full h-full object-contain ${c.logoSmall ? "max-w-[70%] max-h-[70%]" : ""}`}
+                  />
+                </div>
+                <p class="text-tx-2 text-base">{c.desc}</p>
+              </div>
+            ))}
+            <a
+              href={LINKEDIN}
+              target="_blank"
+              class="border border-dashed border-og bg-og/10 p-4 aspect-square flex flex-col justify-center items-center text-center gap-2 hover:border-og text-og"
+            >
+              <p class="text-2xl" set:html={t.sponsors.cta} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="flex justify-center">
+        <img src="/communities/indies.png" alt="indies.la" class="w-48" />
+      </footer>
+    </main>
+
+    <NavHighlight />
+  </body>
+</html>
