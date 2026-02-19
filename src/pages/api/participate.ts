@@ -76,27 +76,41 @@ type ApiError =
 /** Env service – inject KV bindings instead of prop drilling */
 const EnvService = Context.GenericTag<Env>("ParticipateEnv");
 
+const ERROR_CODES = {
+  RATE_LIMITED: "RATE_LIMITED",
+  ALREADY_REGISTERED: "ALREADY_REGISTERED",
+  VALIDATION_FAILED: "VALIDATION_FAILED",
+  INVALID_JSON: "INVALID_JSON",
+  RUNTIME_UNAVAILABLE: "RUNTIME_UNAVAILABLE",
+} as const;
+
 function toResponse(error: ApiError): Response {
   return Match.value(error).pipe(
     Match.tag("RuntimeUnavailable", () =>
-      jsonResponse(500, "servicio no disponible, intenta más tarde"),
+      jsonResponse(500, ERROR_CODES.RUNTIME_UNAVAILABLE, "servicio no disponible, intenta más tarde"),
     ),
     Match.tag("RateLimited", () =>
-      jsonResponse(429, "demasiados intentos, intenta más tarde"),
+      jsonResponse(429, ERROR_CODES.RATE_LIMITED, "demasiados intentos, intenta más tarde"),
     ),
     Match.tag("InvalidJson", () =>
-      jsonResponse(400, "datos inválidos"),
+      jsonResponse(400, ERROR_CODES.INVALID_JSON, "datos inválidos"),
     ),
-    Match.tag("ValidationFailed", (e) => jsonResponse(400, e.message)),
+    Match.tag("ValidationFailed", (e) =>
+      jsonResponse(400, ERROR_CODES.VALIDATION_FAILED, e.message),
+    ),
     Match.tag("AlreadyRegistered", () =>
-      jsonResponse(409, "ya estás registrado"),
+      jsonResponse(409, ERROR_CODES.ALREADY_REGISTERED, "ya estás registrado"),
     ),
     Match.exhaustive,
   );
 }
 
-function jsonResponse(status: number, message: string): Response {
-  return new Response(JSON.stringify({ error: message }), {
+function jsonResponse(
+  status: number,
+  code: (typeof ERROR_CODES)[keyof typeof ERROR_CODES],
+  message: string,
+): Response {
+  return new Response(JSON.stringify({ error: message, code }), {
     status,
     headers: { "Content-Type": "application/json" },
   });
@@ -119,7 +133,7 @@ function checkRateLimit(
 > {
   return Effect.gen(function* () {
     const env = yield* EnvService;
-    const rlKey = `rl:${ip}`;
+    const rlKey = `rl:v2:${ip}`;
     return yield* Effect.tryPromise({
       try: () =>
         env.RATE_LIMIT.get(rlKey).then((rlRaw) => {
@@ -172,9 +186,9 @@ function saveParticipant(
           createdAt: new Date().toISOString(),
         };
         await env.PARTICIPANTS.put(participantKey, JSON.stringify(record));
-        const rlOptions: { expirationTtl?: number } =
-          rl === 0 ? { expirationTtl: RATE_LIMIT_WINDOW_S } : {};
-        await env.RATE_LIMIT.put(rlKey, String(rl + 1), rlOptions);
+        await env.RATE_LIMIT.put(rlKey, String(rl + 1), {
+          expirationTtl: RATE_LIMIT_WINDOW_S,
+        });
       },
       catch: (e) =>
         e instanceof AlreadyRegistered ? e : new RuntimeUnavailable(),

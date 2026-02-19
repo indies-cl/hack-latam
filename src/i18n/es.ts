@@ -295,5 +295,13 @@ export const es = {
       submit: "Enviar",
       loading: "...",
     },
+    errors: {
+      generic: "Algo salió mal. Intenta más tarde.",
+      rateLimited: "Demasiados intentos. Intenta en aproximadamente una hora.",
+      alreadyRegistered: "Ya estás en la waitlist.",
+      validationFailed: "Revisa tu nombre, email y país.",
+      invalidJson: "Datos inválidos. Intenta de nuevo.",
+      runtimeUnavailable: "Servicio no disponible. Intenta más tarde.",
+    },
   },
 } as const satisfies Content;

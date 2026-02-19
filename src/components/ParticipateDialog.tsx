@@ -108,9 +108,23 @@ export default function ParticipateDialog({ countries, content }: Props) {
                   });
                   const data = (await res.json().catch(() => ({}))) as {
                     error?: string;
+                    code?: string;
                   };
                   if (!res.ok) {
-                    setError(data.error ?? "error al registrar");
+                    const errs = content.errors as Record<string, string>;
+                    const codeKey =
+                      data.code &&
+                      data.code
+                        .split("_")
+                        .map((s, i) =>
+                          i === 0
+                            ? s.toLowerCase()
+                            : s.charAt(0).toUpperCase() + s.slice(1).toLowerCase(),
+                        )
+                        .join("");
+                    const msg =
+                      (codeKey && errs[codeKey]) ?? data.error ?? errs.generic;
+                    setError(msg);
                     return;
                   }
                   const trimmed = name.trim();
@@ -168,7 +182,7 @@ export default function ParticipateDialog({ countries, content }: Props) {
                     >
                       {content.alreadyRegisteredMessage.match(/\[(.*?)\]/)?.[1] || "haz clic aquí"}
                     </button>
-                    {content.alreadyRegisteredMessage.split("]")[1]}
+                    {content.alreadyRegisteredMessage.split("]")[1]?.split(")")[1] || ""}
                   </Description>
                   <button
                     type="button"

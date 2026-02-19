@@ -74,8 +74,9 @@ const content = lang === "en" ? en.bento : es.bento;
           href="https://indies.la"
           class="text-tx underline font-sans"
           target="_blank"
-          rel="noopener noreferrer">INDIES.la</a
-        >
+          rel="noopener noreferrer"
+          >{content.online.desc.match(/\[(.*?)\]/)?.[1]}</a
+        >{content.online.desc.split("]")[1]?.split(")")[1] || ""}
       </span>
     </div>
     <div class="col-span-1 md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -93,8 +94,9 @@ const content = lang === "en" ? en.bento : es.bento;
               href="https://www.instagram.com/unite_uc/"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-tx underline font-sans">UNITE</a
-            >
+              class="text-tx underline font-sans"
+              >{content.lan.desc.match(/\[(.*?)\]/)?.[1]}</a
+            >{content.lan.desc.split("]")[1]?.split(")")[1] || ""}
           </span>
         </div>
       </div>

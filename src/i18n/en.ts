@@ -234,7 +234,7 @@ export const en = {
     participants: "Participants",
     online: {
       title: "ONLINE",
-      desc: "Open to Latinos worldwide, from the [INDIES.la](https://indies.la) Discord",
+      desc: "Open to Latinos worldwide via the [INDIES.la Discord](https://indies.la)",
     },
     lan: {
       title: "LAN Party",
@@ -273,6 +273,14 @@ export const en = {
       cancel: "Cancel",
       submit: "Submit",
       loading: "...",
+    },
+    errors: {
+      generic: "Something went wrong. Please try again later.",
+      rateLimited: "Too many attempts. Try again in about an hour.",
+      alreadyRegistered: "You're already on the waitlist.",
+      validationFailed: "Please check your name, email, and country.",
+      invalidJson: "Invalid data. Please try again.",
+      runtimeUnavailable: "Service temporarily unavailable. Try again later.",
     },
   },
 } as const;
