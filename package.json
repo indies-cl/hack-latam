@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "wrangler dev",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/react": "^4.4.2",
     "@headlessui/react": "^2.2.9",
     "@tailwindcss/vite": "^4.1.18",
@@ -16,11 +17,14 @@
     "@types/react-dom": "^19.2.3",
     "astro": "^5.17.1",
     "country-list": "^2.4.1",
+    "effect": "^3.19.18",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260219.0",
     "@types/country-list": "^2.1.4"
   }
 }

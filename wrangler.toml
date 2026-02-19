@@ -1,0 +1,20 @@
+name = "hack-latam"
+main = "dist/_worker.js/index.js"
+compatibility_date = "2025-02-19"
+compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
+
+[assets]
+binding = "ASSETS"
+directory = "./dist"
+
+[[kv_namespaces]]
+binding = "SESSION"
+id = "63bd3fb6d56544518bd0e6ba56038b87"
+
+[[kv_namespaces]]
+binding = "PARTICIPANTS"
+id = "0a9f3e20b54e48d7bfcaf834796e2c9c"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "7319b360bc3e42a6b34bb135eeff64d7"

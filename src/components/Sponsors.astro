@@ -1,61 +1,86 @@
 ---
-interface Props {
-  linkedin: string;
-}
-
-const { linkedin } = Astro.props;
-
-const communities = [
-  {
-    logo: "/communities/502.png",
-    name: "502",
-    desc: "making guatemala a tech hub",
-  },
-  {
-    logo: "/communities/ai-playgrounds.png",
-    name: "ai playgrounds",
-    desc: "AI for everyone",
-  },
-  // { logo: "/communities/indies.png", name: "indies.la", desc: "home for crazy, ambitious founders" },
-  {
-    logo: "/communities/nucleo.png",
-    name: "nucleo",
-    desc: "AI systems for founders",
-  },
-  {
-    logo: "/communities/the-hackathon-company.png",
-    name: "the hackathon company",
-    desc: "orchestrate world-class hackathons",
-    logoSmall: true,
-  },
-];
+import { Image } from "astro:assets";
 ---
 
-<div class="space-y-6 font-sans">
-  <div class="space-y-4">
-    <h3 class="text-xl text-tx-2">communities</h3>
-    <div class="grid grid-cols-2 gap-2">
-      {
-        communities.map((c) => (
-          <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-2">
-            <div class="w-full aspect-square flex items-center justify-center shrink-0">
-              <img
-                src={c.logo}
-                alt={c.name}
-                class={`w-full h-full object-contain ${c.logoSmall ? "max-w-[70%] max-h-[70%]" : ""}`}
-              />
-            </div>
-            <p class="text-tx-2 text-base">{c.desc}</p>
-          </div>
-        ))
-      }
-      <a
-        href={linkedin}
-        target="_blank"
-        class="border border-dashed border-og bg-og/10 p-4 aspect-square flex flex-col justify-center items-center text-center gap-2 hover:border-og text-og"
-      >
-        <p class="text-2xl">lead a community?<br />be part of hack@latam!</p>
-      </a>
-    </div>
+<div class="space-y-4 mt-8">
+  <p class="text-tx-2">Patrocinadores</p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <a
+      href="https://faces.app"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors sm:col-span-2 lg:col-span-3"
+    >
+      <div class="w-32 h-32 flex items-center justify-center shrink-0">
+        <Image
+          src="https://lh3.googleusercontent.com/d/18Zd6dBp-nmsAdfHrhbBElaTyAklBt3bz=w1000?authuser=0"
+          alt="Faces"
+          width={128}
+          height={128}
+          class="max-w-full max-h-full object-contain"
+        />
+      </div>
+      <p class="text-balance text-tx-2 text-base">
+        Crea presentaciones interactivas usando inteligencia artificial: pitch
+        decks, portafolios, guías o propuestas.
+      </p>
+    </a>
+    <a
+      href="https://www.3x10.lat/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
+    >
+      <div class="w-32 h-32 flex items-center justify-center shrink-0">
+        <Image
+          src="https://lh3.googleusercontent.com/d/13yMe938N597zvZk5ybkCZNWOtTUuS_o_=w1000?authuser=0"
+          alt="3x10"
+          width={128}
+          height={128}
+          class="max-w-full max-h-full object-contain"
+        />
+      </div>
+      <p class="text-balance text-tx-2 text-base">
+        $ 3.000 dólares para fundadores técnicos
+      </p>
+    </a>
+    <a
+      href="https://animo.video/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
+    >
+      <div class="w-32 h-32 flex items-center justify-center shrink-0">
+        <Image
+          src="https://lh3.googleusercontent.com/d/1O5oqDB5-yiQiTs3nM0XNteR8fXkfKA1f=w1000?authuser=0"
+          alt="Animo"
+          width={128}
+          height={128}
+          class="max-w-full max-h-full object-contain"
+        />
+      </div>
+      <p class="text-balance text-tx-2 text-base">
+        Crea videos animados a partir de texto
+      </p>
+    </a>
+    <a
+      href="https://boquila.org/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
+    >
+      <div class="w-32 h-32 flex items-center justify-center shrink-0">
+        <Image
+          src="https://lh3.googleusercontent.com/d/1uhhOS6-dm3D0AWY_Y8Y8_HREmrgNE8c4=w1000?authuser=0"
+          alt="Boquila Foundation"
+          width={128}
+          height={128}
+          class="max-w-full max-h-full object-contain"
+        />
+      </div>
+      <p class="text-balance text-tx-2 text-base">
+        IA para la conservación de la biodiversidad y el desarrollo sostenible.
+      </p>
+    </a>
   </div>
 </div>

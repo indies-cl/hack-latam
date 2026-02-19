@@ -31,6 +31,8 @@ export default function ParticipateDialog({ countries }: Props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     try {
@@ -66,11 +68,12 @@ export default function ParticipateDialog({ countries }: Props) {
     setIsOpen(false);
     setSubmitted(false);
     setAddingSomeoneElse(false);
+    setError(null);
   };
 
   return (
-    <>
-      <div className="flex flex-col gap-4 items-center justify-center">
+    <div className="bg-bg-2">
+      <div className="flex flex-col gap-4 items-center justify-center p-8 max-w-2xl text-balance text-center mx-auto">
         <p className="text-2xl text-balance text-center font-sans">
           ¿Quieres participar en la hackathon de impacto social más grande de
           América Latina?
@@ -81,29 +84,49 @@ export default function ParticipateDialog({ countries }: Props) {
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="bg-tx text-bg py-4 px-16 border border-ui rounded-none font-serif"
+          className="bg-tx hover:bg-[#fff] text-bg py-4 px-8 border border-ui rounded-none font-serif"
         >
           Quiero participar
         </button>
       </div>
 
       <Dialog open={isOpen} onClose={close} className="relative z-50">
-        <div className="fixed inset-0 flex w-screen items-center justify-center p-4 bg-bg/80">
+        <div className="fixed inset-0 flex w-screen items-center justify-center p-8 bg-bg/80">
           <DialogPanel className="normal-case p-0 border border-ui bg-bg text-tx text-xl font-serif rounded-none w-full max-w-lg min-w-[320px]">
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
+                setError(null);
+                setLoading(true);
                 try {
+                  const res = await fetch("/api/participate", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      name: name.trim(),
+                      email: email.trim(),
+                      country: selected?.code ?? "",
+                    }),
+                  });
+                  const data = (await res.json().catch(() => ({}))) as {
+                    error?: string;
+                  };
+                  if (!res.ok) {
+                    setError(
+                      data.error ?? "error al registrar",
+                    );
+                    return;
+                  }
                   const trimmed = name.trim();
                   localStorage.setItem(
                     STORAGE_KEY,
                     JSON.stringify({ name: trimmed }),
                   );
                   setSavedName(trimmed);
-                } catch {
-                  // ignore
+                  setSubmitted(true);
+                } finally {
+                  setLoading(false);
                 }
-                setSubmitted(true);
               }}
               className="p-4 space-y-4 w-full min-w-0"
             >
@@ -177,9 +200,14 @@ export default function ParticipateDialog({ countries }: Props) {
               <Description className="font-serif font-normal text-tx-2">
                 Se realizará a finales de abril 2026. <br /> Remoto desde cualquier país del mundo.
               </Description>
+              {error && (
+                <p className="font-serif text-og" role="alert">
+                  {error}
+                </p>
+              )}
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <label className="block space-y-1">
+                  <label className="block space-y-4">
                     <span className="font-sans block">
                       Nombre o Apodo
                     </span>
@@ -192,7 +220,7 @@ export default function ParticipateDialog({ countries }: Props) {
                       className={inputClass}
                     />
                   </label>
-                  <label className="block space-y-1">
+                  <label className="block space-y-4">
                     <span className="font-sans block">Email</span>
                     <input
                       type="email"
@@ -204,7 +232,7 @@ export default function ParticipateDialog({ countries }: Props) {
                     />
                   </label>
                 </div>
-                <label className="block space-y-1">
+                <label className="block space-y-4">
                   <span className="font-sans block">País</span>
                   <input
                     type="hidden"
@@ -226,7 +254,7 @@ export default function ParticipateDialog({ countries }: Props) {
                     />
                     <ComboboxOptions
                       anchor={false}
-                      className="z-60 mt-1 w-full max-h-60 overflow-auto border border-ui-2 bg-bg-2 rounded-none empty:invisible"
+                      className="z-60 mt-4 w-full max-h-60 overflow-auto border border-ui-2 bg-bg-2 rounded-none empty:invisible"
                     >
                       {filtered.map((c) => (
                         <ComboboxOption
@@ -251,10 +279,10 @@ export default function ParticipateDialog({ countries }: Props) {
                 </button>
                 <button
                   type="submit"
-                  disabled={!canSubmit}
+                  disabled={!canSubmit || loading}
                   className="bg-tx text-bg py-4 px-8 border border-ui font-serif rounded-none disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Enviar
+                  {loading ? "..." : "Enviar"}
                 </button>
               </div>
                 </>
@@ -263,6 +291,6 @@ export default function ParticipateDialog({ countries }: Props) {
           </DialogPanel>
         </div>
       </Dialog>
-    </>
+    </div>
   );
 }

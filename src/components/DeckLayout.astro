@@ -26,7 +26,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
   <body class="bg-bg text-tx text-xl 5xl:text-2xl text-pretty font-serif">
     <nav
       id="nav"
-      class="fixed left-8 top-16 w-56 hidden lg:block text-tx-3 text-xl space-y-2"
+      class="fixed left-8 top-8 w-56 hidden lg:block text-tx-3 text-xl space-y-4"
     >
       <a href="#who" class="nav-link block hover:text-og" data-target="who"
         >{t.nav.who}</a
@@ -84,7 +84,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
       >
     </nav>
 
-    <main class="max-w-3xl mx-auto px-4 py-16 space-y-16 lg:ml-80">
+    <main class="max-w-3xl mx-auto p-8 space-y-8 lg:ml-80">
       <header id="top" class="space-y-4">
         <h1 class="text-2xl 5xl:text-3xl font-sans text-og">hack@latam</h1>
         <p>{t.header.tagline}</p>
@@ -104,7 +104,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
 
       <PhotoStack photos={t.prevEvents.photos} client:load />
 
-      <section id="track-record" class="space-y-4 mt-4">
+      <section id="track-record" class="space-y-4 mt-8">
         <h2 class="text-2xl 5xl:text-3xl font-sans">{t.trackRecord.title}</h2>
         <ul class="space-y-2 text-tx-2">
           {t.trackRecord.items.map((item) => <li>· {item}</li>)}
@@ -220,13 +220,13 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
         </p>
       </section>
 
-      <section id="communities" class="space-y-6 font-sans">
+      <section id="communities" class="space-y-4 font-sans">
         <div class="space-y-4">
           <h3 class="text-xl text-tx-2">{t.communities.communitiesTitle}</h3>
-          <div class="grid grid-cols-2 gap-2">
+          <div class="grid grid-cols-2 gap-4">
             {
               t.communities.communities.map((c) => (
-                <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-2">
+                <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-4">
                   <div class="w-full aspect-square flex items-center justify-center shrink-0">
                     <img
                       src={c.logo}
@@ -241,7 +241,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
             <a
               href="https://www.linkedin.com/posts/pup_armamos-un-comit%C3%A9-continental-que-une-todas-activity-7424059186474446848-OjMR"
               target="_blank"
-              class="border border-dashed border-og bg-og/10 p-4 aspect-square flex flex-col justify-center items-center text-center gap-2 hover:border-og text-og"
+              class="border border-dashed border-og bg-og/10 p-4 aspect-square flex flex-col justify-center items-center text-center gap-4 hover:border-og text-og"
             >
               <p class="text-2xl" set:html={t.communities.cta} />
             </a>
