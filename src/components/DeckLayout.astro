@@ -3,6 +3,7 @@ import "../styles/global.css";
 import type { Content } from "../i18n";
 import NavHighlight from "./NavHighlight.astro";
 import PhotoStack from "./PhotoStack";
+import SEO from "./SEO.astro";
 
 interface Props {
   t: Content;
@@ -20,8 +21,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{t.meta.title}</title>
-    <meta name="description" content={t.meta.description} />
+    <SEO title={t.meta.title} description={t.meta.description} />
   </head>
   <body class="bg-bg text-tx text-xl 5xl:text-2xl text-pretty font-serif">
     <nav

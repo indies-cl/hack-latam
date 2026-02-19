@@ -1,9 +1,18 @@
 ---
 import { Image } from "astro:assets";
+import { es } from "../i18n/es";
+import { en } from "../i18n/en";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "es" } = Astro.props;
+const content = lang === "en" ? en.sponsors : es.sponsors;
 ---
 
 <div class="space-y-4 mt-8">
-  <p class="text-tx-2">Patrocinadores</p>
+  <p class="text-tx-2">{content.title}</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     <a
       href="https://faces.app"
@@ -21,8 +30,7 @@ import { Image } from "astro:assets";
         />
       </div>
       <p class="text-balance text-tx-2 text-base">
-        Crea presentaciones interactivas usando inteligencia artificial: pitch
-        decks, portafolios, guías o propuestas.
+        {content.faces}
       </p>
     </a>
     <a
@@ -41,7 +49,7 @@ import { Image } from "astro:assets";
         />
       </div>
       <p class="text-balance text-tx-2 text-base">
-        $ 3.000 dólares para fundadores técnicos
+        {content.threeByTen}
       </p>
     </a>
     <a
@@ -60,7 +68,7 @@ import { Image } from "astro:assets";
         />
       </div>
       <p class="text-balance text-tx-2 text-base">
-        Crea videos animados a partir de texto
+        {content.animo}
       </p>
     </a>
     <a
@@ -79,7 +87,7 @@ import { Image } from "astro:assets";
         />
       </div>
       <p class="text-balance text-tx-2 text-base">
-        IA para la conservación de la biodiversidad y el desarrollo sostenible.
+        {content.boquila}
       </p>
     </a>
   </div>

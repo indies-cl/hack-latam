@@ -1,5 +1,13 @@
 ---
+import { es } from "../i18n/es";
+import { en } from "../i18n/en";
 
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "es" } = Astro.props;
+const content = lang === "en" ? en.bento : es.bento;
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -7,22 +15,22 @@
     class="p-4 border border-ui-2 flex flex-col gap-4 items-center text-center"
   >
     <span class="text-4xl font-sans">3</span>
-    <span class="text-tx-2">Días</span>
+    <span class="text-tx-2">{content.days}</span>
   </div>
   <div
     class="p-4 border border-ui-2 flex flex-col gap-4 items-center text-center"
   >
     <span class="text-4xl font-sans">4</span>
-    <span class="text-tx-2">Temáticas</span>
+    <span class="text-tx-2">{content.tracks}</span>
   </div>
   <div
     class="p-4 border border-ui-2 flex flex-col gap-4 items-center text-center"
   >
     <span class="text-4xl font-sans">150</span>
-    <span class="text-tx-2">Participantes</span>
+    <span class="text-tx-2">{content.participants}</span>
   </div>
   <div
-    class="col-span-1 md:col-span-3 border border-ui-2 py-4 space-y-4 grid grid-cols-1 md:grid-cols-3 gap-4"
+    class="col-span-1 md:col-span-3 border border-ui-2 p-4 space-y-4 grid grid-cols-1 md:grid-cols-3 gap-4"
   >
     <div class="flex items-center justify-center">
       <pre
@@ -42,27 +50,27 @@
         --               _~~~~~~~~~~~~~~~~~~~~        ~~        
         --               -~~~~~~~~~~~~~~~~~~~~~_      ~~        
         ~-                 ~~~~~~~~~~~~~~~~~~~~       ~~        
-         -~                 ~~~~~~~~~~~~~~~~~~       _~         
-         ~-                   /~~~~~~~~~~~~~~        ~~         
-         _~~                   ~~~~~~~~~~~~_l       ~~_         
-          ~~~                 \~~~~~~~~~~          ~~~          
-           _~~                ~~~~~~~~~~          ~~_           
-             ~~~              ~~~~~~~_          ~~~             
-              _~~~            ~~~~~_          ~~~_              
-                _~~~          ~~~~          _~~_                
-                  _~~~~/      _~~_ |    ~~~~~_                  
-                     __~~~~~~___~~__~~_~~~\                     
-                           \~__~_____                           
+        ~-                 ~~~~~~~~~~~~~~~~~~       _~         
+         -~                   /~~~~~~~~~~~~~~        ~~         
+         ~-                   ~~~~~~~~~~~~_l       ~~_         
+         _~~                 \~~~~~~~~~~          ~~~          
+          ~~~                 ~~~~~~~~~~          ~~_           
+           _~~                ~~~~~~~_          ~~~             
+             ~~~              ~~~~~_          ~~~_              
+              _~~~            ~~~~          _~~_                
+                _~~~          _~~_ |    ~~~~~_                  
+                  _~~~~/      __~~~~~~___~~__~~_~~~\                     
+                     \~__~_____                           
                                                      
     </pre>
     </div>
     <div
       class="col-span-1 md:col-span-2 flex flex-col items-start justify-center"
     >
-      <span class="text-4xl font-sans">ONLINE</span>
+      <span class="text-4xl font-sans">{content.online.title}</span>
       <br />
       <span class="text-tx-2">
-        Abierto a latinos de todo el mundo, desde el discord de <a
+        {content.online.desc.split("[")[0]}<a
           href="https://indies.la"
           class="text-tx underline font-sans"
           target="_blank"
@@ -74,14 +82,14 @@
       <div
         class="text-tx-2 font-sans text-3xl flex items-center justify-center"
       >
-        LAN Party
+        {content.lan.title}
       </div>
       <div class="flex items-center justify-center col-span-1 sm:col-span-2">
         <div class="col-span-2">
-          <span class="text-4xl font-sans">Santiago de Chile</span>
+          <span class="text-4xl font-sans">{content.lan.location}</span>
           <br />
           <span class="text-tx-2">
-            En la Pontificia Universidad Católica de Chile, organizado por <a
+            {content.lan.desc.split("[")[0]}<a
               href="https://www.instagram.com/unite_uc/"
               target="_blank"
               rel="noopener noreferrer"

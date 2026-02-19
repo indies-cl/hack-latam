@@ -15,6 +15,7 @@ const STORAGE_KEY = "participate-waitlist";
 
 interface Props {
   countries: readonly Country[];
+  content: any; // Using any for simplicity as it's a deep object from i18n
 }
 
 const inputClass =
@@ -22,7 +23,7 @@ const inputClass =
 const optionClass =
   "p-4 border-b border-ui-2 last:border-b-0 cursor-pointer data-[focus]:bg-bg-2 data-[selected]:border-ui-3";
 
-export default function ParticipateDialog({ countries }: Props) {
+export default function ParticipateDialog({ countries, content }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const [savedName, setSavedName] = useState<string | null>(null);
   const [addingSomeoneElse, setAddingSomeoneElse] = useState(false);
@@ -75,18 +76,15 @@ export default function ParticipateDialog({ countries }: Props) {
     <div className="bg-bg-2">
       <div className="flex flex-col gap-4 items-center justify-center p-8 max-w-2xl text-balance text-center mx-auto">
         <p className="text-2xl text-balance text-center font-sans">
-          ¿Quieres participar en la hackathon de impacto social más grande de
-          América Latina?
+          {content.title}
         </p>
-        <p className="text-tx-2">
-          Finales de abril 2026. Remoto desde cualquier país del mundo.
-        </p>
+        <p className="text-tx-2" dangerouslySetInnerHTML={{ __html: content.subtitle }} />
         <button
           type="button"
           onClick={() => setIsOpen(true)}
           className="bg-tx hover:bg-[#fff] text-bg py-4 px-8 border border-ui rounded-none font-serif"
         >
-          Quiero participar
+          {content.button}
         </button>
       </div>
 
@@ -112,9 +110,7 @@ export default function ParticipateDialog({ countries }: Props) {
                     error?: string;
                   };
                   if (!res.ok) {
-                    setError(
-                      data.error ?? "error al registrar",
-                    );
+                    setError(data.error ?? "error al registrar");
                     return;
                   }
                   const trimmed = name.trim();
@@ -133,42 +129,32 @@ export default function ParticipateDialog({ countries }: Props) {
               {submitted ? (
                 <div className="space-y-4">
                   <DialogTitle className="font-sans text-2xl">
-                    Gracias
+                    {content.successTitle}
                   </DialogTitle>
-                  <Description className="font-serif font-normal text-tx-2 space-y-4 block">
-                    La hackathon aún no tiene fecha definida. Te enviaremos un
-                    email cuando tengamos una fecha clara, con los premios y más
-                    información.
-                    <br />
-                    <br />
-                    Mientras tanto, puedes unirte al{" "}
-                    <a
-                      href="https://indies.la"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-tx underline font-sans"
-                    >
-                      Discord de indies.la
-                    </a>{" "}
-                    para compartir con gente construyendo cosas cool para
-                    internet.
-                  </Description>
+                  <Description
+                    className="font-serif font-normal text-tx-2 space-y-4 block"
+                    dangerouslySetInnerHTML={{
+                      __html: content.successMessage.replace(
+                        /\[(.*?)\]\((.*?)\)/g,
+                        '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-tx underline font-sans">$1</a>',
+                      ),
+                    }}
+                  />
                   <button
                     type="button"
                     onClick={close}
                     className="w-full py-4 px-8 border border-ui rounded-none"
                   >
-                    Cerrar
+                    {content.form.cancel === "Cancelar" ? "Cerrar" : "Close"}
                   </button>
                 </div>
               ) : savedName && !addingSomeoneElse ? (
                 <div className="space-y-4">
                   <DialogTitle className="font-sans text-2xl">
-                    Hola {savedName}
+                    {content.alreadyRegisteredTitle.replace("{name}", savedName)}
                   </DialogTitle>
                   <Description className="font-serif font-normal text-tx-2 space-y-4 block">
-                    Ya te agregamos a la waitlist. Si tienes a alguien más que
-                    quiera unirse,{" "}
+                    {content.alreadyRegisteredMessage.split("[")[0]}
                     <button
                       type="button"
                       onClick={() => {
@@ -180,111 +166,110 @@ export default function ParticipateDialog({ countries }: Props) {
                       }}
                       className="text-tx underline font-sans"
                     >
-                      haz clic aquí
+                      {content.alreadyRegisteredMessage.match(/\[(.*?)\]/)?.[1] || "haz clic aquí"}
                     </button>
-                    .
+                    {content.alreadyRegisteredMessage.split("]")[1]}
                   </Description>
                   <button
                     type="button"
                     onClick={close}
                     className="w-full py-4 px-8 border border-ui font-serif rounded-none"
                   >
-                    Cerrar
+                    {content.form.cancel === "Cancelar" ? "Cerrar" : "Close"}
                   </button>
                 </div>
               ) : (
                 <>
-              <DialogTitle className="font-sans text-2xl">
-                :)
-              </DialogTitle>
-              <Description className="font-serif font-normal text-tx-2">
-                Se realizará a finales de abril 2026. <br /> Remoto desde cualquier país del mundo.
-              </Description>
-              {error && (
-                <p className="font-serif text-og" role="alert">
-                  {error}
-                </p>
-              )}
-              <div className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <label className="block space-y-4">
-                    <span className="font-sans block">
-                      Nombre o Apodo
-                    </span>
-                    <input
-                      type="text"
-                      name="name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      placeholder="¿Cómo te llamamos?"
-                      className={inputClass}
-                    />
-                  </label>
-                  <label className="block space-y-4">
-                    <span className="font-sans block">Email</span>
-                    <input
-                      type="email"
-                      name="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="rene@indies.cl"
-                      className={inputClass}
-                    />
-                  </label>
-                </div>
-                <label className="block space-y-4">
-                  <span className="font-sans block">País</span>
-                  <input
-                    type="hidden"
-                    name="country"
-                    value={selected?.code ?? ""}
+                  <DialogTitle className="font-sans text-2xl">
+                    {content.dialogTitle}
+                  </DialogTitle>
+                  <Description
+                    className="font-serif font-normal text-tx-2"
+                    dangerouslySetInnerHTML={{ __html: content.dialogSubtitle }}
                   />
-                  <Combobox
-                    value={selected}
-                    onChange={setSelected}
-                    onClose={() => setQuery("")}
-                    by="code"
-                  >
-                    <ComboboxInput
-                      displayValue={(c: Country | null) => c?.name ?? ""}
-                      onChange={(e) => setQuery(e.target.value)}
-                      placeholder="¿De dónde en este mundo tan amplio?"
-                      className={inputClass}
-                      aria-label="país"
-                    />
-                    <ComboboxOptions
-                      anchor={false}
-                      className="z-60 mt-4 w-full max-h-60 overflow-auto border border-ui-2 bg-bg-2 rounded-none empty:invisible"
-                    >
-                      {filtered.map((c) => (
-                        <ComboboxOption
-                          key={c.code}
-                          value={c}
-                          className={optionClass}
+                  {error && (
+                    <p className="font-serif text-og" role="alert">
+                      {error}
+                    </p>
+                  )}
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <label className="block space-y-4">
+                        <span className="font-sans block">{content.form.name}</span>
+                        <input
+                          type="text"
+                          name="name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          placeholder={content.form.namePlaceholder}
+                          className={inputClass}
+                        />
+                      </label>
+                      <label className="block space-y-4">
+                        <span className="font-sans block">{content.form.email}</span>
+                        <input
+                          type="email"
+                          name="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder={content.form.emailPlaceholder}
+                          className={inputClass}
+                        />
+                      </label>
+                    </div>
+                    <label className="block space-y-4">
+                      <span className="font-sans block">{content.form.country}</span>
+                      <input
+                        type="hidden"
+                        name="country"
+                        value={selected?.code ?? ""}
+                      />
+                      <Combobox
+                        value={selected}
+                        onChange={setSelected}
+                        onClose={() => setQuery("")}
+                        by="code"
+                      >
+                        <ComboboxInput
+                          displayValue={(c: Country | null) => c?.name ?? ""}
+                          onChange={(e) => setQuery(e.target.value)}
+                          placeholder={content.form.countryPlaceholder}
+                          className={inputClass}
+                          aria-label="país"
+                        />
+                        <ComboboxOptions
+                          anchor={false}
+                          className="z-60 mt-4 w-full max-h-60 overflow-auto border border-ui-2 bg-bg-2 rounded-none empty:invisible"
                         >
-                          {c.name}
-                        </ComboboxOption>
-                      ))}
-                    </ComboboxOptions>
-                  </Combobox>
-                </label>
-              </div>
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                <button
-                  type="button"
-                  onClick={close}
-                  className="py-4 px-8 font-serif rounded-none"
-                >
-                  Cancelar
-                </button>
-                <button
-                  type="submit"
-                  disabled={!canSubmit || loading}
-                  className="bg-tx text-bg py-4 px-8 border border-ui font-serif rounded-none disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {loading ? "..." : "Enviar"}
-                </button>
-              </div>
+                          {filtered.map((c) => (
+                            <ComboboxOption
+                              key={c.code}
+                              value={c}
+                              className={optionClass}
+                            >
+                              {c.name}
+                            </ComboboxOption>
+                          ))}
+                        </ComboboxOptions>
+                      </Combobox>
+                    </label>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 pt-4">
+                    <button
+                      type="button"
+                      onClick={close}
+                      className="py-4 px-8 font-serif rounded-none"
+                    >
+                      {content.form.cancel}
+                    </button>
+                    <button
+                      type="submit"
+                      disabled={!canSubmit || loading}
+                      className="bg-tx text-bg py-4 px-8 border border-ui font-serif rounded-none disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {loading ? content.form.loading : content.form.submit}
+                    </button>
+                  </div>
                 </>
               )}
             </form>

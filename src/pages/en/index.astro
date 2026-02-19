@@ -1,0 +1,39 @@
+---
+import { en } from "../../i18n/en";
+import "../../styles/global.css";
+import { getData, type Country } from "country-list";
+import ParticipateDialog from "../../components/ParticipateDialog";
+import ApplyMarquee from "../../components/ApplyMarquee";
+import Hero from "../../components/Hero.astro";
+import Bento from "../../components/Bento.astro";
+import Sponsors from "../../components/Sponsors.astro";
+import Communities from "../../components/Communities.astro";
+import SEO from "../../components/SEO.astro";
+import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
+
+const { communities } = en.communities;
+const countries = getData().sort((a: Country, b: Country) =>
+  a.name.localeCompare(b.name),
+);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO title={en.meta.title} description={en.meta.description} />
+  </head>
+  <body class="bg-bg text-tx text-xl font-serif text-pretty">
+    <ApplyMarquee word="participate" client:load />
+    <div class="p-8 max-w-3xl mx-auto space-y-8">
+      <Hero lang="en" />
+      <Bento lang="en" />
+      <ParticipateDialog countries={countries} content={en.participate} client:load />
+      <Sponsors lang="en" />
+      <Communities communities={communities} title={en.communities.communitiesTitle} />
+      <LanguageSwitcher currentLang="en" />
+    </div>
+  </body>
+</html>

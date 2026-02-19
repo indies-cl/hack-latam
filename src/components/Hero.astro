@@ -1,14 +1,20 @@
 ---
+import { es } from "../i18n/es";
+import { en } from "../i18n/en";
 
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "es" } = Astro.props;
+const content = lang === "en" ? en.hero : es.hero;
 ---
 
 <div class="space-y-2">
-  <p class="text-tx-2">Hackathon para el bien social</p>
-  <h1 class="text-6xl md:text-8xl font-sans">hack@latam</h1>
+  <p class="text-tx-2">{content.tagline}</p>
+  <h1 class="text-6xl md:text-8xl font-sans">{content.title}</h1>
   <p class="text-balance">
-    América Latina se une para atacar los problemas que más afectan a la región.
+    {content.description}
   </p>
-  <p>
-    Desde corrupción a seguridad pública. <br /> Programemos un futuro mejor.
-  </p>
+  <p set:html={content.subtitle} />
 </div>

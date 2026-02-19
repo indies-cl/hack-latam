@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import "../styles/global.css";
-import { en } from "../i18n/en";
+import { es } from "../i18n/es";
 import { getData, type Country } from "country-list";
 import ParticipateDialog from "../components/ParticipateDialog";
 import ApplyMarquee from "../components/ApplyMarquee";
@@ -9,29 +9,32 @@ import Hero from "../components/Hero.astro";
 import Bento from "../components/Bento.astro";
 import Sponsors from "../components/Sponsors.astro";
 import Communities from "../components/Communities.astro";
+import SEO from "../components/SEO.astro";
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
 
-const { communities } = en.communities;
+const { communities } = es.communities;
 const countries = getData().sort((a: Country, b: Country) =>
   a.name.localeCompare(b.name),
 );
 ---
 
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>hack@latam</title>
+    <SEO title={es.meta.title} description={es.meta.description} />
   </head>
   <body class="bg-bg text-tx text-xl font-serif text-pretty">
-    <ApplyMarquee client:load />
+    <ApplyMarquee word="participa" client:load />
     <div class="p-8 max-w-3xl mx-auto space-y-8">
       <Hero />
       <Bento />
-      <ParticipateDialog countries={countries} client:load />
+      <ParticipateDialog countries={countries} content={es.participate} client:load />
       <Sponsors />
       <Communities communities={communities} />
+      <LanguageSwitcher currentLang="es" />
     </div>
   </body>
 </html>

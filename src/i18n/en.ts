@@ -222,6 +222,59 @@ export const en = {
       },
     ],
   },
+  hero: {
+    tagline: "Hackathon for social good",
+    title: "hack@latam",
+    description: "Latin America unites to tackle the problems that affect the region most.",
+    subtitle: "From corruption to public safety. <br /> Let's code a better future.",
+  },
+  bento: {
+    days: "Days",
+    tracks: "Tracks",
+    participants: "Participants",
+    online: {
+      title: "ONLINE",
+      desc: "Open to Latinos worldwide, from the [INDIES.la](https://indies.la) Discord",
+    },
+    lan: {
+      title: "LAN Party",
+      location: "Santiago, Chile",
+      desc: "At the Pontificia Universidad Católica de Chile, organized by [UNITE](https://www.instagram.com/unite_uc/)",
+    },
+  },
+  sponsors: {
+    title: "Sponsors",
+    faces: "Create interactive presentations using AI: pitch decks, portfolios, guides, or proposals.",
+    threeByTen: "$3,000 for technical founders",
+    animo: "Create animated videos from text",
+    boquila: "AI for biodiversity conservation and sustainable development.",
+  },
+  participate: {
+    title: "Want to make your country a better place?",
+    subtitle:
+      "Late April 2026. <br /> Remote from anywhere in the world. <br /> Real-world problems. From corruption to public safety.",
+    button: "I want to participate",
+    dialogTitle: ":)",
+    dialogSubtitle:
+      "It will take place in late April 2026. <br /> Remote from anywhere in the world. <br /><br /> <span class='text-og font-sans'>Note: The event is hosted and coordinated entirely in Spanish.</span>",
+    successTitle: "Thank you",
+    successMessage:
+      "The hackathon doesn't have a set date yet. We'll send you an email when we have a clear date, prizes, and more information. <br /><br /> In the meantime, you can join the [indies.la Discord](https://indies.la) to hang out with people building cool things for the internet.",
+    alreadyRegisteredTitle: "Hi {name}",
+    alreadyRegisteredMessage:
+      "We've already added you to the waitlist. If you have someone else who wants to join, [click here]().",
+    form: {
+      name: "Name or Nickname",
+      namePlaceholder: "How should we call you?",
+      email: "Email",
+      emailPlaceholder: "rene@indies.cl",
+      country: "Country",
+      countryPlaceholder: "Where in this wide world?",
+      cancel: "Cancel",
+      submit: "Submit",
+      loading: "...",
+    },
+  },
 } as const;
 
 

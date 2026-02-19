@@ -243,4 +243,57 @@ export const es = {
       },
     ],
   },
+  hero: {
+    tagline: "Hackathon para el bien social",
+    title: "hack@latam",
+    description: "América Latina se une para atacar los problemas que más afectan a la región.",
+    subtitle: "Desde corrupción a seguridad pública. <br /> Programemos un futuro mejor.",
+  },
+  bento: {
+    days: "Días",
+    tracks: "Temáticas",
+    participants: "Participantes",
+    online: {
+      title: "ONLINE",
+      desc: "Abierto a latinos de todo el mundo, desde el discord de [INDIES.la](https://indies.la)",
+    },
+    lan: {
+      title: "LAN Party",
+      location: "Santiago de Chile",
+      desc: "En la Pontificia Universidad Católica de Chile, organizado por [UNITE](https://www.instagram.com/unite_uc/)",
+    },
+  },
+  sponsors: {
+    title: "Patrocinadores",
+    faces: "Crea presentaciones interactivas usando inteligencia artificial: pitch decks, portafolios, guías o propuestas.",
+    threeByTen: "$ 3.000 dólares para fundadores técnicos",
+    animo: "Crea videos animados a partir de texto",
+    boquila: "IA para la conservación de la biodiversidad y el desarrollo sostenible.",
+  },
+  participate: {
+    title: "¿Quieres hacer de tu país un lugar mejor?",
+    subtitle:
+      "Finales de abril 2026. <br /> Remoto desde cualquier país del mundo. <br /> Problemas del mundo real. Desde la corrupción hasta la seguridad pública.",
+    button: "Quiero participar",
+    dialogTitle: ":)",
+    dialogSubtitle:
+      "Se realizará a finales de abril 2026. <br /> Remoto desde cualquier país del mundo.",
+    successTitle: "Gracias",
+    successMessage:
+      "La hackathon aún no tiene fecha definida. Te enviaremos un email cuando tengamos una fecha clara, con los premios y más información. <br /><br /> Mientras tanto, puedes unirte al [Discord de indies.la](https://indies.la) para compartir con gente construyendo cosas cool para internet.",
+    alreadyRegisteredTitle: "Hola {name}",
+    alreadyRegisteredMessage:
+      "Ya te agregamos a la waitlist. Si tienes a alguien más que quiera unirse, [haz clic aquí]().",
+    form: {
+      name: "Nombre o Apodo",
+      namePlaceholder: "¿Cómo te llamamos?",
+      email: "Email",
+      emailPlaceholder: "rene@indies.cl",
+      country: "País",
+      countryPlaceholder: "¿De dónde en este mundo tan amplio?",
+      cancel: "Cancelar",
+      submit: "Enviar",
+      loading: "...",
+    },
+  },
 } as const satisfies Content;

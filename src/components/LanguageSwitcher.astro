@@ -1,0 +1,21 @@
+---
+interface Props {
+  currentLang: "en" | "es";
+}
+
+const { currentLang } = Astro.props;
+---
+
+<div class="flex justify-center pb-16 pt-8">
+  {
+    currentLang === "es" ? (
+      <a href="/en" class="text-tx-2 text-sm underline hover:text-tx transition-colors">
+        view in english
+      </a>
+    ) : (
+      <a href="/" class="text-tx-2 text-sm underline hover:text-tx transition-colors">
+        ver en español
+      </a>
+    )
+  }
+</div>
