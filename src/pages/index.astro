@@ -1,6 +1,250 @@
 ---
-import DeckLayout from "../components/DeckLayout.astro";
-import { en } from "../i18n";
+import { Image } from "astro:assets";
+import "../styles/global.css";
+import { en } from "../i18n/en";
+import { getData, type Country } from "country-list";
+import ParticipateDialog from "../components/ParticipateDialog";
+import Header from "../components/Header";
+const { communities } = en.communities;
+const countries = getData().sort((a: Country, b: Country) =>
+  a.name.localeCompare(b.name),
+);
 ---
 
-<DeckLayout t={en} />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>hack@latam</title>
+  </head>
+  <body class="bg-bg text-tx text-xl font-serif p-4 md:p-8 space-y-4 text-pretty">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pb-8">
+      <main class="space-y-16">
+        <div class="space-y-2">
+          <p class="text-tx-2">Hackathon para el bien social</p>
+          <h1 class="text-6xl md:text-8xl font-sans">hack@latam</h1>
+          <p class="text-balance">
+            América Latina se une para atacar los problemas que más afectan a la
+            región.
+          </p>
+          <p>
+            Desde corrupción a seguridad pública. <br /> Programemos un futuro mejor.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-16">
+          <div
+            class="p-4 border border-ui-2 flex flex-col gap-1 items-center text-center"
+          >
+            <span class="text-4xl font-sans">3</span>
+            <span class="text-tx-2">Días</span>
+          </div>
+          <div
+            class="p-4 border border-ui-2 flex flex-col gap-1 items-center text-center"
+          >
+            <span class="text-4xl font-sans">4</span>
+            <span class="text-tx-2">Temáticas</span>
+          </div>
+          <div
+            class="p-4 border border-ui-2 flex flex-col gap-1 items-center text-center"
+          >
+            <span class="text-4xl font-sans">150</span>
+            <span class="text-tx-2">Participantes</span>
+          </div>
+          <div
+            class="col-span-1 sm:col-span-3 border border-ui-2 p-4 space-y-4 grid grid-cols-1 md:grid-cols-3 gap-4"
+          >
+            <div class="flex items-center justify-center">
+              <pre
+                class="font-mono text-[5px] leading-none text-tx-2 select-none">
+               ,,ggddY"""Ybbgg,,
+          ,agd888b,_ "Y8, ___`""Ybga,
+       ,gdP""88888888baa,.""8b    "888g,
+     ,dP"     ]888888888P'  "Y     `888Yb,
+   ,dP"      ,88888888P"  db,       "8P""Yb,
+  ,8"       ,888888888b, d8888a           "8,
+ ,8'        d88888888888,88P"' a,          `8,
+,8'         88888888888888PP"  ""           `8,
+d'          I88888888888P"                   `b
+8           `8"88P""Y8P'                      8
+8            Y 8[  _ "                        8
+8              "Y8d8b  "Y a                   8
+8                 `""8d,   __                 8
+Y,                    `"8bd888b,             ,P
+`8,                     ,d8888888baaa       ,8'
+ `8,                    888888888888'      ,8'
+  `8a                   "8888888888I      a8'
+   `Yba                  `Y8888888P'    adP'
+     "Yba                 `888888P'   adY"
+       `"Yba,             d8888P" ,adP"'  
+          `"Y8baa,      ,d888P,ad8P"'           
+               ``""YYba8888P""''          
+              </pre>
+            </div>
+            <div class="col-span-1 md:col-span-2 flex flex-col items-start justify-center">
+              <span class="text-4xl font-sans">ONLINE</span>
+              <br />
+              <span class="text-tx-2"
+                >Abierto a toda América Latina y su diáspora, desde el Discord
+                de <a
+                  href="https://indies.la"
+                  class="text-tx underline font-sans"
+                  target="_blank"
+                  rel="noopener noreferrer">INDIES.la</a
+                ></span
+              >
+            </div>
+            <div class="col-span-1 md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div
+                class="text-tx-2 font-sans text-3xl flex items-center justify-center"
+              >
+                LAN Party
+              </div>
+              <div class="flex items-center justify-center col-span-1 sm:col-span-2">
+                <div class="col-span-2">
+                  <span class="text-4xl font-sans">Santiago de Chile</span>
+                  <br />
+                  <span class="text-tx-2"
+                    >En la Pontificia Universidad Católica de Chile, organizado
+                    por <a
+                      href="https://www.instagram.com/unite_uc/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-tx underline font-sans">UNITE</a
+                    ></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ParticipateDialog countries={countries} client:load />
+        <div class="space-y-4 mt-16">
+          <h3 class="text-tx-2 text-balance">
+            Impulsado por el Comité Latinoamericano de Emprendimiento y
+            Tecnología
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pb-8">
+            {
+              communities.map((c) => (
+                <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-2">
+                  <div class="w-full aspect-square flex items-center justify-center shrink-0">
+                    <Image
+                      src={c.logo}
+                      alt={c.name}
+                      width={200}
+                      height={200}
+                      class={`w-full h-full object-contain ${"logoSmall" in c && c.logoSmall ? "max-w-[70%] max-h-[70%]" : ""} ${"logoCentered" in c && c.logoCentered ? "w-auto h-auto max-w-full max-h-full" : ""}`}
+                    />
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </main>
+      <aside>
+        <div>
+          <p class="text-tx-2">Hecho posible gracias a</p>
+          <div class="space-y-4 mt-4">
+            <div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a
+                  href="https://faces.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors col-span-2"
+                >
+                  <div
+                    class="w-32 h-32 flex items-center justify-center shrink-0"
+                  >
+                    <Image
+                      src="https://lh3.googleusercontent.com/d/1NUWuoGJJB2zUkPvad5DPNXbmkxsONUd-=w1000?authuser=0"
+                      alt="Faces"
+                      width={128}
+                      height={128}
+                      class="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                  <p class="text-balance text-tx-2 text-base">
+                    Crea presentaciones interactivas usando inteligencia
+                    artificial: pitch decks, portafolios, guías o propuestas.
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <a
+                  href="https://www.3x10.lat/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
+                >
+                  <div
+                    class="w-32 h-32 flex items-center justify-center shrink-0"
+                  >
+                    <Image
+                      src="https://lh3.googleusercontent.com/d/13yMe938N597zvZk5ybkCZNWOtTUuS_o_=w1000?authuser=0"
+                      alt="3x10"
+                      width={128}
+                      height={128}
+                      class="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                  <p class="text-balance text-tx-2 text-base">
+                    $ 3.000 dólares para fundadores técnicos
+                  </p>
+                </a>
+                <a
+                  href="https://animo.video/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
+                >
+                  <div
+                    class="w-32 h-32 flex items-center justify-center shrink-0"
+                  >
+                    <Image
+                      src="https://lh3.googleusercontent.com/d/1O5oqDB5-yiQiTs3nM0XNteR8fXkfKA1f=w1000?authuser=0"
+                      alt="Animo"
+                      width={128}
+                      height={128}
+                      class="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                  <p class="text-balance text-tx-2 text-base">
+                    Crea videos animados a partir de texto
+                  </p>
+                </a>
+                <a
+                  href="https://boquila.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
+                >
+                  <div
+                    class="w-32 h-32 flex items-center justify-center shrink-0"
+                  >
+                    <Image
+                      src="https://lh3.googleusercontent.com/d/1uhhOS6-dm3D0AWY_Y8Y8_HREmrgNE8c4=w1000?authuser=0"
+                      alt="Boquila Foundation"
+                      width={128}
+                      height={128}
+                      class="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                  <p class="text-balance text-tx-2 text-base">
+                    IA para la conservación de la biodiversidad y el desarrollo
+                    sostenible.
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

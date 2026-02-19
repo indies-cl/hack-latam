@@ -78,9 +78,9 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
         data-target="contact">{t.nav.contact}</a
       >
       <a
-        href="#sponsors"
+        href="#communities"
         class="nav-link block hover:text-og"
-        data-target="sponsors">{t.nav.communities}</a
+        data-target="communities">{t.nav.communities}</a
       >
     </nav>
 
@@ -220,18 +220,18 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
         </p>
       </section>
 
-      <section id="sponsors" class="space-y-6 font-sans">
+      <section id="communities" class="space-y-6 font-sans">
         <div class="space-y-4">
-          <h3 class="text-xl text-tx-2">{t.sponsors.communitiesTitle}</h3>
+          <h3 class="text-xl text-tx-2">{t.communities.communitiesTitle}</h3>
           <div class="grid grid-cols-2 gap-2">
             {
-              t.sponsors.communities.map((c) => (
+              t.communities.communities.map((c) => (
                 <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-2">
                   <div class="w-full aspect-square flex items-center justify-center shrink-0">
                     <img
                       src={c.logo}
                       alt={c.name}
-                      class={`w-full h-full object-contain ${c.logoSmall ? "max-w-[70%] max-h-[70%]" : ""} ${c.logoCentered ? "w-auto h-auto max-w-full max-h-full" : ""}`}
+                      class={`w-full h-full object-contain ${"logoSmall" in c && c.logoSmall ? "max-w-[70%] max-h-[70%]" : ""} ${"logoCentered" in c && c.logoCentered ? "w-auto h-auto max-w-full max-h-full" : ""}`}
                     />
                   </div>
                   <p class="text-tx-2 text-base text-balance">{c.desc}</p>
@@ -243,7 +243,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
               target="_blank"
               class="border border-dashed border-og bg-og/10 p-4 aspect-square flex flex-col justify-center items-center text-center gap-2 hover:border-og text-og"
             >
-              <p class="text-2xl" set:html={t.sponsors.cta} />
+              <p class="text-2xl" set:html={t.communities.cta} />
             </a>
           </div>
         </div>

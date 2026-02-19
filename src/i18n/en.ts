@@ -171,10 +171,20 @@ export const en = {
     linkedinLabel: "or reach out on linkedin",
     linkedinText: "reno on linkedin",
   },
-  sponsors: {
+  communities: {
     communitiesTitle: "communities",
     cta: "lead a community?<br />be part of hack@latam!",
     communities: [
+      {
+        logo: "https://lh3.googleusercontent.com/d/11fL0Atb0DWuykQ6Vjjltr5FiCg9gQeD_=w1000?authuser=0",
+        name: "indies.la",
+        desc: "obsessive people building cool products for the internet",
+      },
+      {
+        logo: "https://lh3.googleusercontent.com/d/10dIH7qQoFmMrj_CYL0zOkWmxQvJGPtPS=w1000?authuser=0",
+        name: "Dev Remoto Simple",
+        desc: "land your dream job from home",
+      },
       {
         logo: "/communities/502.png",
         name: "502",
@@ -200,9 +210,19 @@ export const en = {
         logo: "/communities/crafterstation.svg",
         name: "crafterstation",
         desc: "open-source first, builders community",
+      },       {
+        logo: "https://lh3.googleusercontent.com/d/1KdC6lj7GyEdTN7-dj0hcthaZFndhrfgL=w1000?authuser=0",
+        name: "UNITE",
+        desc: "UC Entrepreneurship Club",
+      },
+      {
+        logo: "https://lh3.googleusercontent.com/d/1HO9smfvDoG-LpMuAqZVmN2uyHp6Ve0Yc=w1000?authuser=0",
+        name: "c3",
+        desc: "competitive programming club in el salvador",
       },
     ],
   },
 } as const;
 
-export type Content = typeof en;
+
+export type Content = Omit<typeof en, "lang"> & { readonly lang: "en" | "es" };

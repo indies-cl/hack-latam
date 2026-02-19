@@ -7,7 +7,7 @@
     function updateActiveLink() {
       let current = '';
       sections.forEach(section => {
-        if (is2xl.matches && section.id === 'sponsors') return;
+        if (is2xl.matches && section.id === 'communities') return;
         const rect = section.getBoundingClientRect();
         if (rect.top <= 150) {
           current = section.id;

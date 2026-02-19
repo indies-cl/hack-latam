@@ -21,17 +21,10 @@ you cut will be cut again.
 
 ## DESIGN SYSTEM
 
-indies.la is for people tired of corporate BS. we keep it simple: lowercase everything, casual as hell. for spanish text, avoid inverted punctuation marks (¡ ¿)
-
-### SPACING
-
-- USE `-4` for spacing (p-4, gap-4, etc.).
-- USE `text-xl` or `text-2xl` for text sizes, no other values allowed.
-
 ### FONTS
 
-- USE font-serif (BIZ UDPMincho) as default with `text-xl`. Both properities inheritet from `text-xl`. body text is lowercase (`lowercase` class) unlike headings.
-- USE font-sans (DINdong) for titles and headings with `text-2xl`
+- USE font-serif (ManifontGrotesk) as default with `text-xl`. Both properities inheritet from `text-xl`. body text is lowercase (`lowercase` class) unlike headings.
+- USE font-sans (FlorDeRuina) for titles and headings with `text-2xl`
 - USE font-mono (Victor Mono) for anything engineering or AI related, snippets and terminals.
 
 CONSIDER: these fonts have no weights other than 400. therefore `font-bold` is usable; differenctiate text via colors.

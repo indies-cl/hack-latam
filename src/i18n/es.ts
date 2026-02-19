@@ -191,10 +191,30 @@ export const es = {
     linkedinLabel: "o contáctame en linkedin",
     linkedinText: "reno en linkedin",
   },
-  sponsors: {
+  communities: {
     communitiesTitle: "comunidades",
     cta: "lideras una comunidad?<br />sé parte de hack@latam!",
     communities: [
+      {
+        logo: "https://lh3.googleusercontent.com/d/11fL0Atb0DWuykQ6Vjjltr5FiCg9gQeD_=w1000?authuser=0",
+        name: "indies.la",
+        desc: "gente obsesionada construyendo productos cool para internet",
+      },
+      {
+        logo: "https://lh3.googleusercontent.com/d/1KdC6lj7GyEdTN7-dj0hcthaZFndhrfgL=w1000?authuser=0",
+        name: "UNITE",
+        desc: "uc Entrepreneurship Club",
+      },
+      {
+        logo: "https://lh3.googleusercontent.com/d/1HO9smfvDoG-LpMuAqZVmN2uyHp6Ve0Yc=w1000?authuser=0",
+        name: "c3",
+        desc: "club de programación competitiva en el salvador",
+      },
+      {
+        logo: "https://lh3.googleusercontent.com/d/10dIH7qQoFmMrj_CYL0zOkWmxQvJGPtPS=w1000?authuser=0",
+        name: "Dev Remoto Simple",
+        desc: "consigue el trabajo de tus sueños desde casa",
+      },
       {
         logo: "/communities/502.png",
         name: "502",
