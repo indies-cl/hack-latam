@@ -220,6 +220,11 @@ export const en = {
         name: "c3",
         desc: "competitive programming club in el salvador",
       },
+      {
+        logo: "https://lh3.googleusercontent.com/d/1hw_m_EX1-NQc7n9LJA9JVM9mk6aawyph=w1000?authuser=0",
+        name: "Sundai Latam Hacker Club",
+        desc: "hacker community in latam",
+      },
     ],
   },
   hero: {
@@ -245,9 +250,11 @@ export const en = {
   sponsors: {
     title: "Sponsors",
     faces: "Create interactive presentations using AI: pitch decks, portfolios, guides, or proposals.",
+    minimax: "Multimodal foundation models. Text, audio, image, video, music. Optimized for coding and agentic workflows.",
     threeByTen: "$3,000 for technical founders",
     animo: "Create animated videos from text",
     boquila: "AI for biodiversity conservation and sustainable development.",
+    woz: "The fastest way to build, launch, and monetize mobile apps.",
   },
   participate: {
     title: "Want to make your country a better place?",

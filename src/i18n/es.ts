@@ -241,6 +241,11 @@ export const es = {
         name: "crafterstation",
         desc: "comunidad de builders open-source first",
       },
+      {
+        logo: "https://lh3.googleusercontent.com/d/1hw_m_EX1-NQc7n9LJA9JVM9mk6aawyph=w1000?authuser=0",
+        name: "Sundai Latam Hacker Club",
+        desc: "comunidad de hackers en latam",
+      },
     ],
   },
   hero: {
@@ -266,9 +271,11 @@ export const es = {
   sponsors: {
     title: "Patrocinadores",
     faces: "Crea presentaciones interactivas usando inteligencia artificial: pitch decks, portafolios, guías o propuestas.",
+    minimax: "Modelos de inteligencia artificial multimodales. Texto, audio, imagen, video, música. Optimizados para código y flujos agenticos.",
     threeByTen: "$ 3.000 dólares para fundadores técnicos",
     animo: "Crea videos animados a partir de texto",
     boquila: "IA para la conservación de la biodiversidad y el desarrollo sostenible.",
+    woz: "La forma más rápida de crear, lanzar y monetizar apps móviles.",
   },
   participate: {
     title: "¿Quieres hacer de tu país un lugar mejor?",
