@@ -276,6 +276,7 @@ export const es = {
     animo: "Crea videos animados a partir de texto",
     boquila: "IA para la conservación de la biodiversidad y el desarrollo sostenible.",
     woz: "La forma más rápida de crear, lanzar y monetizar apps móviles.",
+    logos: "Monitorea, predice y optimiza procesos industriales críticos.",
   },
   participate: {
     title: "¿Quieres hacer de tu país un lugar mejor?",

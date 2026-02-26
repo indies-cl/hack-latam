@@ -255,6 +255,7 @@ export const en = {
     animo: "Create animated videos from text",
     boquila: "AI for biodiversity conservation and sustainable development.",
     woz: "The fastest way to build, launch, and monetize mobile apps.",
+    logos: "Monitor, predict and optimize critical industrial processes.",
   },
   participate: {
     title: "Want to make your country a better place?",
