@@ -27,7 +27,7 @@ const countries = getData().sort((a: Country, b: Country) =>
   </head>
   <body class="bg-bg text-tx text-xl font-serif text-pretty">
     <ApplyMarquee word="participate" client:load />
-    <div class="p-8 max-w-3xl mx-auto space-y-8">
+    <div class="p-8 max-w-5xl mx-auto space-y-8">
       <Hero lang="en" />
       <Bento lang="en" />
       <ParticipateDialog countries={countries} content={en.participate} client:load />

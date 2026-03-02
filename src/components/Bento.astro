@@ -1,6 +1,7 @@
 ---
 import { es } from "../i18n/es";
 import { en } from "../i18n/en";
+import { lanAsciiArt, lanAsciiScale, onlineAscii } from "../data/lanAscii";
 
 interface Props {
   lang?: "en" | "es";
@@ -12,57 +13,35 @@ const content = lang === "en" ? en.bento : es.bento;
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
   <div
-    class="p-4 border border-ui-2 flex flex-col gap-4 items-center text-center"
+    class="p-4 border border-ui-2 flex flex-col gap-1 items-center text-center"
   >
-    <span class="text-4xl font-sans">3</span>
-    <span class="text-tx-2">{content.days}</span>
+    <span class="text-4xl font-sans">54</span>
+    <span class="text-tx-2">{content.hours}</span>
   </div>
   <div
-    class="p-4 border border-ui-2 flex flex-col gap-4 items-center text-center"
+    class="p-4 border border-ui-2 flex flex-col gap-1 items-center text-center"
   >
     <span class="text-4xl font-sans">4</span>
     <span class="text-tx-2">{content.tracks}</span>
   </div>
   <div
-    class="p-4 border border-ui-2 flex flex-col gap-4 items-center text-center"
+    class="p-4 border border-ui-2 flex flex-col gap-1 items-center text-center"
   >
     <span class="text-4xl font-sans">150</span>
     <span class="text-tx-2">{content.participants}</span>
   </div>
   <div
-    class="col-span-1 md:col-span-3 border border-ui-2 p-4 space-y-4 grid grid-cols-1 md:grid-cols-3 gap-4"
+    class="col-span-1 md:col-span-3 border border-ui-2 p-2 grid grid-cols-1 md:grid-cols-3 gap-2"
   >
-    <div class="flex items-center justify-center">
-      <pre
-        class="font-mono text-[5px] leading-none text-tx font-medium select-none">
-                        |~------------~/                        
-                    -------_---     ~------~                    
-                 ----~-_      ~ -         ~-~-~                 
-               ~---        +~----~-          ~--~               
-              -~---       ---                  _-~              
-            ~-~-----_---~~~~-__                  ~-~            
-           ~~~  -------___  -~--                  ~--           
-          ~-_       ------~ ~ -~-- ~               ~-~          
-         ~-_           ~--_~/~~~~~~~                ~~~         
-         -~             /--~-~~--~~~~                ~~         
-        ~-                 ~~~~~~~~~~~~~              --        
-        ~-                ~~~~~~~~~~~~~~_             ~~        
-        --               _~~~~~~~~~~~~~~~~~~~~        ~~        
-        --               -~~~~~~~~~~~~~~~~~~~~~_      ~~        
-        ~-                 ~~~~~~~~~~~~~~~~~~~~       ~~        
-        ~-                 ~~~~~~~~~~~~~~~~~~       _~         
-         -~                   /~~~~~~~~~~~~~~        ~~         
-         ~-                   ~~~~~~~~~~~~_l       ~~_         
-         _~~                 \~~~~~~~~~~          ~~~          
-          ~~~                 ~~~~~~~~~~          ~~_           
-           _~~                ~~~~~~~_          ~~~             
-             ~~~              ~~~~~_          ~~~_              
-              _~~~            ~~~~          _~~_                
-                _~~~          _~~_ |    ~~~~~_                  
-                  _~~~~/      __~~~~~~___~~__~~_~~~\                     
-                     \~__~_____                           
-                                                     
-    </pre>
+    <div class="relative w-40 h-40 shrink-0 overflow-hidden flex items-center justify-center justify-self-center">
+      <div
+        class="absolute left-1/2 top-1/2"
+        style="transform: translate(-50%, -50%) scale(0.5); transform-origin: center center;"
+      >
+        <pre class="font-mono text-[4px] md:text-[5px] leading-none text-tx select-none">
+          {onlineAscii}
+        </pre>
+      </div>
     </div>
     <div
       class="col-span-1 md:col-span-2 flex flex-col items-stretch md:items-start justify-center text-center md:text-left"
@@ -79,27 +58,36 @@ const content = lang === "en" ? en.bento : es.bento;
         >{content.online.desc.split("]")[1]?.split(")")[1] || ""}
       </p>
     </div>
-    <div class="col-span-1 md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <div
-        class="text-tx-2 font-sans text-3xl flex items-center justify-center"
-      >
-        {content.lan.title}
-      </div>
-      <div class="flex items-stretch sm:items-center justify-center text-center sm:text-left col-span-1 sm:col-span-2">
-        <div class="col-span-2 w-full sm:w-auto">
-          <span class="text-4xl font-sans">{content.lan.location}</span>
-          <br />
-          <span class="text-tx-2">
-            {content.lan.desc.split("[")[0]}<a
-              href="https://www.instagram.com/unite_uc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-tx underline font-sans"
-              >{content.lan.desc.match(/\[(.*?)\]/)?.[1]}</a
-            >{content.lan.desc.split("]")[1]?.split(")")[1] || ""}
-          </span>
-        </div>
-      </div>
-    </div>
+  </div>
+  <div class="col-span-1 md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-4">
+    {
+      content.lan.parties.map((party, i) => {
+        const descHtml = party.desc.replace(
+          /\[([^\]]+)\]\(([^)]+)\)/g,
+          '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-tx underline font-sans">$1</a>',
+        );
+        return (
+          <div class="border border-ui-2 p-2 flex flex-col gap-2">
+            <div class="w-full aspect-square flex items-center justify-center overflow-hidden shrink-0">
+              <div
+                class="inline-block max-w-full max-h-full"
+                style={`transform: scale(${lanAsciiScale[i]}); transform-origin: center;`}
+              >
+                <pre class="font-mono text-[4px] md:text-[5px] leading-none text-tx select-none">
+                  {lanAsciiArt[i]}
+                </pre>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 text-center">
+              <span class="text-xl md:text-2xl font-sans">{party.location}</span>
+              <p
+                class="text-tx-2 text-base text-balance max-w-prose mx-auto"
+                set:html={descHtml}
+              />
+            </div>
+          </div>
+        );
+      })
+    }
   </div>
 </div>

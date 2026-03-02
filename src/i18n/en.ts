@@ -3,11 +3,11 @@ export const en = {
   meta: {
     title: "hack@latam",
     description:
-      "48-hour hackathon for latin american builders. late april 2026. social impact only.",
+      "48-hour hackathon for latin american builders. May 15–17, 2026. social impact only.",
   },
   header: {
     tagline: "let's code for a better world.",
-    subtitle: "late april 2026 · 48 hours · 150 builders",
+    subtitle: "May 15–17, 2026 · 48 hours · 150 builders",
   },
   nav: {
     who: "who we are",
@@ -211,7 +211,7 @@ export const en = {
         name: "crafterstation",
         desc: "open-source first, builders community",
       },       {
-        logo: "https://lh3.googleusercontent.com/d/1KdC6lj7GyEdTN7-dj0hcthaZFndhrfgL=w1000?authuser=0",
+        logo: "https://lh3.googleusercontent.com/d/1XHdULvTa68OVJqPtCIDOBWWP9I55GvQv=w1000?authuser=0",
         name: "UNITE",
         desc: "UC Entrepreneurship Club",
       },
@@ -225,26 +225,44 @@ export const en = {
         name: "Sundai Latam Hacker Club",
         desc: "hacker community in latam",
       },
+      {
+        logo: "https://lh3.googleusercontent.com/d/1luBelyZIea3LSnDq4Rov_p3VxgurHW_H=w1000?authuser=0",
+        name: "We Solve",
+        desc: "community",
+      },
     ],
   },
   hero: {
     tagline: "Hackathon for social good",
     title: "hack@latam",
+    date: "May 15, 16, and 17 · it starts at 6pm Chile / 4pm Peru",
     description: "Latin America unites to tackle the problems that affect the region most.",
     subtitle: "From corruption to public safety. <br /> Let's code a better future.",
   },
   bento: {
-    days: "Days",
+    hours: "Hours",
     tracks: "Tracks",
     participants: "Participants",
     online: {
-      title: "ONLINE",
-      desc: "Open to Latinos worldwide via the [INDIES.la Discord](https://indies.la)",
+      title: "WORLDWIDE",
+      desc: "The entire event is coordinated online via the [INDIES.la Discord](https://indies.la), open to the whole world.",
     },
     lan: {
       title: "LAN Party",
-      location: "Santiago, Chile",
-      desc: "At the Pontificia Universidad Católica de Chile, organized by [UNITE](https://www.instagram.com/unite_uc/)",
+      parties: [
+        {
+          location: "Santiago, Chile",
+          desc: "At the Pontificia Universidad Católica de Chile, organized by [UNITE](https://www.instagram.com/unite_uc/)",
+        },
+        {
+          location: "Lima, Peru",
+          desc: "At Universidad de Ingeniería y Tecnología, organized by [AI Playground](https://www.instagram.com/aiplaygroundstech/)",
+        },
+        {
+          location: "Ciudad de Guatemala",
+          desc: "Location TBD, organized by [the502project](https://www.the502project.com/) and [We Solve](https://www.instagram.com/wesolve.io/)",
+        },
+      ],
     },
   },
   sponsors: {
@@ -256,18 +274,19 @@ export const en = {
     boquila: "AI for biodiversity conservation and sustainable development.",
     woz: "The fastest way to build, launch, and monetize mobile apps.",
     logos: "Monitor, predict and optimize critical industrial processes.",
+    utecVentures: "Empowering early-stage startups in Latin America",
   },
   participate: {
     title: "Want to make your country a better place?",
     subtitle:
-      "Late April 2026. <br /> Remote from anywhere in the world. <br /> Real-world problems. From corruption to public safety.",
+      "May 15–17, 2026. <br /> Remote from anywhere in the world. <br /> Real-world problems. From corruption to public safety.",
     button: "I want to participate",
     dialogTitle: ":)",
     dialogSubtitle:
-      "It will take place in late April 2026. <br /> Remote from anywhere in the world. <br /><br /> <span class='text-og font-sans'>Note: The event is hosted and coordinated entirely in Spanish.</span>",
+      "It will take place May 15–17, 2026. <br /> Remote from anywhere in the world. <br /><br /> <span class='text-og font-sans'>Note: The event is hosted and coordinated entirely in Spanish.</span>",
     successTitle: "Thank you",
     successMessage:
-      "The hackathon doesn't have a set date yet. We'll send you an email when we have a clear date, prizes, and more information. <br /><br /> In the meantime, you can join the [indies.la Discord](https://indies.la) to hang out with people building cool things for the internet.",
+      "We'll send you an email with prizes and more information. <br /><br /> In the meantime, you can join the [indies.la Discord](https://indies.la) to hang out with people building cool things for the internet.",
     alreadyRegisteredTitle: "Hi {name}",
     alreadyRegisteredMessage:
       "We've already added you to the waitlist. If you have someone else who wants to join, [click here]().",
