@@ -1,10 +1,9 @@
 ---
 import { en } from "../../i18n/en";
 import "../../styles/global.css";
-import { getData, type Country } from "country-list";
-import ParticipateDialog from "../../components/ParticipateDialog";
 import ApplyMarquee from "../../components/ApplyMarquee";
 import Hero from "../../components/Hero.astro";
+import ParticipateCTA from "../../components/ParticipateCTA.astro";
 import Bento from "../../components/Bento.astro";
 import Sponsors from "../../components/Sponsors.astro";
 import Communities from "../../components/Communities.astro";
@@ -12,9 +11,6 @@ import SEO from "../../components/SEO.astro";
 import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 
 const { communities } = en.communities;
-const countries = getData().sort((a: Country, b: Country) =>
-  a.name.localeCompare(b.name),
-);
 ---
 
 <html lang="en">
@@ -29,10 +25,15 @@ const countries = getData().sort((a: Country, b: Country) =>
     <ApplyMarquee word="participate" client:load />
     <div class="p-8 max-w-5xl mx-auto space-y-8">
       <Hero lang="en" />
-      <Bento lang="en" />
-      <ParticipateDialog countries={countries} content={en.participate} client:load />
+      <div>
+        <Bento lang="en" />
+        <ParticipateCTA lang="en" />
+      </div>
       <Sponsors lang="en" />
-      <Communities communities={communities} title={en.communities.communitiesTitle} />
+      <Communities
+        communities={communities}
+        title={en.communities.communitiesTitle}
+      />
       <LanguageSwitcher currentLang="en" />
     </div>
   </body>

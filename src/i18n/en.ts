@@ -232,6 +232,13 @@ export const en = {
       },
     ],
   },
+  participate: {
+    title: "Want to make your country a better place?",
+    subtitle:
+      "Teams of 1 to 4 people. Organized and coordinated entirely in Spanish.",
+    button: "i want to participate",
+    contactQuestion: "any questions? contact us",
+  },
   hero: {
     tagline: "Hackathon for social good",
     title: "hack@latam",
@@ -275,40 +282,6 @@ export const en = {
     woz: "The fastest way to build, launch, and monetize mobile apps.",
     logos: "Monitor, predict and optimize critical industrial processes.",
     utecVentures: "Empowering early-stage startups in Latin America",
-  },
-  participate: {
-    title: "Want to make your country a better place?",
-    subtitle:
-      "May 15–17, 2026. <br /> Remote from anywhere in the world. <br /> Real-world problems. From corruption to public safety.",
-    button: "I want to participate",
-    dialogTitle: ":)",
-    dialogSubtitle:
-      "It will take place May 15–17, 2026. <br /> Remote from anywhere in the world. <br /><br /> <span class='text-og font-sans'>Note: The event is hosted and coordinated entirely in Spanish.</span>",
-    successTitle: "Thank you",
-    successMessage:
-      "We'll send you an email with prizes and more information. <br /><br /> In the meantime, you can join the [indies.la Discord](https://indies.la) to hang out with people building cool things for the internet.",
-    alreadyRegisteredTitle: "Hi {name}",
-    alreadyRegisteredMessage:
-      "We've already added you to the waitlist. If you have someone else who wants to join, [click here]().",
-    form: {
-      name: "Name or Nickname",
-      namePlaceholder: "How should we call you?",
-      email: "Email",
-      emailPlaceholder: "rene@indies.cl",
-      country: "Country",
-      countryPlaceholder: "Where in this wide world?",
-      cancel: "Cancel",
-      submit: "Submit",
-      loading: "...",
-    },
-    errors: {
-      generic: "Something went wrong. Please try again later.",
-      rateLimited: "Too many attempts. Try again in about an hour.",
-      alreadyRegistered: "You're already on the waitlist.",
-      validationFailed: "Please check your name, email, and country.",
-      invalidJson: "Invalid data. Please try again.",
-      runtimeUnavailable: "Service temporarily unavailable. Try again later.",
-    },
   },
 } as const;
 

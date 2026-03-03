@@ -1,0 +1,40 @@
+---
+import { es } from "../i18n/es";
+import { en } from "../i18n/en";
+
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "es" } = Astro.props;
+const content = lang === "en" ? en.participate : es.participate;
+const TALLY_URL = "https://tally.so/r/dWYX7o";
+const LINKEDIN_URL = "https://www.linkedin.com/in/pup/";
+---
+
+<section
+  class="border border-ui-2 p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+>
+  <div class="space-y-1">
+    <h2 class="text-2xl font-sans">{content.title}</h2>
+    <p class="text-tx-2" set:html={content.subtitle} />
+    <p class="text-tx-2 text-sm mt-2">
+      <a
+        href={LINKEDIN_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:text-tx"
+      >
+        {content.contactQuestion}
+      </a>
+    </p>
+  </div>
+  <a
+    href={TALLY_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="shrink-0 bg-tx text-bg py-4 px-8 border border-ui rounded-none font-serif hover:border-ui-2 transition-colors text-center"
+  >
+    {content.button}
+  </a>
+</section>

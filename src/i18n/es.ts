@@ -253,6 +253,12 @@ export const es = {
       },
     ],
   },
+  participate: {
+    title: "¿Quieres hacer de tu país un lugar mejor?",
+    subtitle: "Equipos de 1 a 4 personas.",
+    button: "quiero participar",
+    contactQuestion: "¿alguna pregunta? contáctanos",
+  },
   hero: {
     tagline: "Hackathon para el bien social",
     title: "hack@latam",
@@ -296,39 +302,5 @@ export const es = {
     woz: "La forma más rápida de crear, lanzar y monetizar apps móviles.",
     logos: "Monitorea, predice y optimiza procesos industriales críticos.",
     utecVentures: "Empoderando startups en etapa temprana en Latinoamérica",
-  },
-  participate: {
-    title: "¿Quieres hacer de tu país un lugar mejor?",
-    subtitle:
-      "15, 16 y 17 de Mayo 2026. <br /> Remoto desde cualquier país del mundo. <br /> Problemas del mundo real. Desde la corrupción hasta la seguridad pública.",
-    button: "Quiero participar",
-    dialogTitle: ":)",
-    dialogSubtitle:
-      "Se realizará el 15, 16 y 17 de Mayo 2026. <br /> Remoto desde cualquier país del mundo.",
-    successTitle: "Gracias",
-    successMessage:
-      "Te enviaremos un email con los premios y más información. <br /><br /> Mientras tanto, puedes unirte al [Discord de indies.la](https://indies.la) para compartir con gente construyendo cosas cool para internet.",
-    alreadyRegisteredTitle: "Hola {name}",
-    alreadyRegisteredMessage:
-      "Ya te agregamos a la waitlist. Si tienes a alguien más que quiera unirse, [haz clic aquí]().",
-    form: {
-      name: "Nombre o Apodo",
-      namePlaceholder: "¿Cómo te llamamos?",
-      email: "Email",
-      emailPlaceholder: "rene@indies.cl",
-      country: "País",
-      countryPlaceholder: "¿De dónde en este mundo tan amplio?",
-      cancel: "Cancelar",
-      submit: "Enviar",
-      loading: "...",
-    },
-    errors: {
-      generic: "Algo salió mal. Intenta más tarde.",
-      rateLimited: "Demasiados intentos. Intenta en aproximadamente una hora.",
-      alreadyRegistered: "Ya estás en la waitlist.",
-      validationFailed: "Revisa tu nombre, email y país.",
-      invalidJson: "Datos inválidos. Intenta de nuevo.",
-      runtimeUnavailable: "Servicio no disponible. Intenta más tarde.",
-    },
   },
 } as const satisfies Content;

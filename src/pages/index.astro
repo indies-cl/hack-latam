@@ -2,10 +2,9 @@
 import { Image } from "astro:assets";
 import "../styles/global.css";
 import { es } from "../i18n/es";
-import { getData, type Country } from "country-list";
-import ParticipateDialog from "../components/ParticipateDialog";
 import ApplyMarquee from "../components/ApplyMarquee";
 import Hero from "../components/Hero.astro";
+import ParticipateCTA from "../components/ParticipateCTA.astro";
 import Bento from "../components/Bento.astro";
 import Sponsors from "../components/Sponsors.astro";
 import Communities from "../components/Communities.astro";
@@ -13,9 +12,6 @@ import SEO from "../components/SEO.astro";
 import LanguageSwitcher from "../components/LanguageSwitcher.astro";
 
 const { communities } = es.communities;
-const countries = getData().sort((a: Country, b: Country) =>
-  a.name.localeCompare(b.name),
-);
 ---
 
 <html lang="es">
@@ -30,12 +26,10 @@ const countries = getData().sort((a: Country, b: Country) =>
     <ApplyMarquee word="participa" client:load />
     <div class="p-4 sm:p-8 max-w-5xl mx-auto space-y-8">
       <Hero />
-      <Bento />
-      <ParticipateDialog
-        countries={countries}
-        content={es.participate}
-        client:load
-      />
+      <div class="space-y-4">
+        <Bento />
+        <ParticipateCTA />
+      </div>
       <Sponsors />
       <Communities communities={communities} />
       <LanguageSwitcher currentLang="es" />
