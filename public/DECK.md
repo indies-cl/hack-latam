@@ -22,7 +22,7 @@ indies.la is where ambitious latam builders already hang out.
 
 # the event
 
-hack@latam. May 15–17, 2026, 48 hours, fully focused on social impact.
+hack@latam. May 15–17, 2026, 54 hours, fully focused on social impact.
 
 - 150 hand-picked participants
 - ages 20–35
@@ -67,7 +67,7 @@ angle: track, predict, and mitigate environmental damage.
 
 # format & judging
 
-- 48-hour build sprint
+- 54-hour build sprint
 - teams form around tracks and local pain points
 - deployed MVP required for judging (live demo, not slides)
 

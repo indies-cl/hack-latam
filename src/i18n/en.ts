@@ -3,11 +3,11 @@ export const en = {
   meta: {
     title: "hack@latam",
     description:
-      "48-hour hackathon for latin american builders. May 15–17, 2026. social impact only.",
+      "54-hour hackathon for latin american builders. May 15–17, 2026. social impact only.",
   },
   header: {
     tagline: "let's code for a better world.",
-    subtitle: "May 15–17, 2026 · 48 hours · 150 builders",
+    subtitle: "May 15–17, 2026 · 54 hours · 150 builders",
   },
   nav: {
     who: "who we are",
