@@ -7,7 +7,7 @@ export const en = {
   },
   header: {
     tagline: "let's code for a better world.",
-    subtitle: "May 15–17, 2026 · 54 hours · 150 builders",
+    subtitle: "May 15–17, 2026 | 54 hours | 150 builders",
   },
   nav: {
     who: "who we are",
@@ -236,13 +236,13 @@ export const en = {
     title: "Want to make your country a better place?",
     subtitle:
       "Teams of 1 to 4 people. Organized and coordinated entirely in Spanish.",
+    startDate: "15 May, 6PM (UTC-4)",
     button: "i want to participate",
-    contactQuestion: "any questions? contact us",
   },
   hero: {
     tagline: "Hackathon for social good",
     title: "hack@latam",
-    date: "May 15, 16, and 17 · it starts at 6pm Chile / 4pm Peru",
+    date: "May 15, 16, and 17",
     description: "Latin America unites to tackle the problems that affect the region most.",
     subtitle: "From corruption to public safety. <br /> Let's code a better future.",
   },
@@ -253,20 +253,24 @@ export const en = {
     online: {
       title: "WORLDWIDE",
       desc: "The entire event is coordinated online via the [INDIES.la Discord](https://indies.la), open to the whole world.",
+      startDate: "15 May, 6PM (UTC-4)",
     },
     lan: {
       title: "LAN Party",
       parties: [
         {
           location: "Santiago, Chile",
+          time: "6PM 🇨🇱",
           desc: "At the Pontificia Universidad Católica de Chile, organized by [UNITE](https://www.instagram.com/unite_uc/)",
         },
         {
           location: "Lima, Peru",
+          time: "5PM 🇵🇪",
           desc: "At Universidad de Ingeniería y Tecnología, organized by [AI Playground](https://www.instagram.com/aiplaygroundstech/)",
         },
         {
           location: "Ciudad de Guatemala",
+          time: "4PM 🇬🇹",
           desc: "Location TBD, organized by [the502project](https://www.the502project.com/) and [We Solve](https://www.instagram.com/wesolve.io/)",
         },
       ],

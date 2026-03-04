@@ -9,7 +9,7 @@ export const es = {
   },
   header: {
     tagline: "programemos un mundo mejor.",
-    subtitle: "15, 16 y 17 de Mayo 2026 · 54 horas · 150 builders",
+    subtitle: "15, 16 y 17 de Mayo 2026 | 54 horas | 150 builders",
   },
   nav: {
     who: "quiénes somos",
@@ -256,13 +256,13 @@ export const es = {
   participate: {
     title: "¿Quieres hacer de tu país un lugar mejor?",
     subtitle: "Equipos de 1 a 4 personas.",
+    startDate: "15 mayo, 6PM (UTC-4)",
     button: "quiero participar",
-    contactQuestion: "¿alguna pregunta? contáctanos",
   },
   hero: {
     tagline: "Hackathon para el bien social",
     title: "hack@latam",
-    date: "15, 16 y 17 de Mayo · inicia a las 6pm Chile / 4pm Perú",
+    date: "15, 16 y 17 de Mayo",
     description: "América Latina se une para atacar los problemas que más afectan a la región.",
     subtitle: "Desde corrupción a seguridad pública. <br /> Programemos un futuro mejor.",
   },
@@ -273,20 +273,24 @@ export const es = {
     online: {
       title: "WORLDWIDE",
       desc: "Todo el evento se coordina online desde el [Discord de INDIES.la](https://indies.la), abierto para todo el mundo.",
+      startDate: "15 mayo, 6PM (UTC-4)",
     },
     lan: {
       title: "LAN Party",
       parties: [
         {
           location: "Santiago de Chile",
+          time: "6PM 🇨🇱",
           desc: "En la Pontificia Universidad Católica de Chile, organizado por [UNITE](https://www.instagram.com/unite_uc/)",
         },
         {
           location: "Lima, Perú",
+          time: "5PM 🇵🇪",
           desc: "En la Universidad de Ingeniería y Tecnología, organizado por [AI Playground](https://www.instagram.com/aiplaygroundstech/)",
         },
         {
           location: "Ciudad de Guatemala",
+          time: "4PM 🇬🇹",
           desc: "Ubicación por definir, organizado por [the502project](https://www.the502project.com/) y [We Solve](https://www.instagram.com/wesolve.io/)",
         },
       ],

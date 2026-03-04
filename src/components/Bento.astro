@@ -48,6 +48,7 @@ const content = lang === "en" ? en.bento : es.bento;
     >
       <p class="text-4xl font-sans text-center">{content.online.title}</p>
       <br />
+      <p class="font-mono text-og text-sm">{content.online.startDate}</p>
       <p class="text-tx-2">
         {content.online.desc.split("[")[0]}<a
           href="https://indies.la"
@@ -68,10 +69,10 @@ const content = lang === "en" ? en.bento : es.bento;
         );
         return (
           <div class="border border-ui-2 p-2 flex flex-col gap-2">
-            <div class="w-full aspect-square flex items-center justify-center overflow-hidden shrink-0">
+            <div class="relative w-40 h-40 shrink-0 self-center overflow-hidden md:w-full md:h-auto md:aspect-square md:self-stretch">
               <div
-                class="inline-block max-w-full max-h-full"
-                style={`transform: scale(${lanAsciiScale[i]}); transform-origin: center;`}
+                class="absolute left-1/2 top-1/2"
+                style={`transform: translate(-50%, -50%) scale(${lanAsciiScale[i]}); transform-origin: center center;`}
               >
                 <pre class="font-mono text-[4px] md:text-[5px] leading-none text-tx select-none">
                   {lanAsciiArt[i]}
@@ -80,6 +81,7 @@ const content = lang === "en" ? en.bento : es.bento;
             </div>
             <div class="flex flex-col gap-2 text-center">
               <span class="text-xl md:text-2xl font-sans">{party.location}</span>
+              <span class="font-mono text-og">{party.time}</span>
               <p
                 class="text-tx-2 text-base text-balance max-w-prose mx-auto"
                 set:html={descHtml}
