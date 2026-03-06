@@ -95,96 +95,93 @@ const imgBase = "object-contain";
 const imgSmall = "max-w-[70%] max-h-[70%]";
 ---
 
-<div class="space-y-8 mt-8">
+<div class="space-y-4 mt-8">
   <p class="text-tx-2">{content.title}</p>
 
   <section class="space-y-2">
-    <p class="text-tx-2 text-sm">{content.gold}</p>
     <div class="grid grid-cols-2 gap-4">
-      {goldConfig.map((s) => (
-        <a
-          href={s.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          class={cardClass}
-        >
-          <div class="w-40 h-40 flex items-center justify-center shrink-0">
-            <Image
-              src={s.img}
-              alt={s.alt}
-              width={160}
-              height={160}
-              class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
-            />
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="text-tx-2 text-sm font-mono">{s.alt}</p>
-            <p class="text-balance text-tx-2 text-base">
-              {content[s.id]}
-            </p>
-          </div>
-        </a>
-      ))}
+      {
+        goldConfig.map((s) => (
+          <a
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={cardClass}
+          >
+            <div class="w-40 h-40 flex items-center justify-center shrink-0">
+              <Image
+                src={s.img}
+                alt={s.alt}
+                width={160}
+                height={160}
+                class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
+              />
+            </div>
+            <div class="flex flex-col gap-1">
+              <p class="text-tx-2 text-sm font-mono">{s.alt}</p>
+              <p class="text-balance text-tx-2 text-base">{content[s.id]}</p>
+            </div>
+          </a>
+        ))
+      }
     </div>
   </section>
 
   <section class="space-y-2">
-    <p class="text-tx-2 text-sm">{content.silver}</p>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      {silverConfig.map((s) => (
-        <a
-          href={s.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          class={cardClass}
-        >
-          <div class="w-32 h-32 flex items-center justify-center shrink-0">
-            <Image
-              src={s.img}
-              alt={s.alt}
-              width={128}
-              height={128}
-              class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
-            />
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="text-tx-2 text-sm font-mono">{s.alt}</p>
-            <p class="text-balance text-tx-2 text-sm">
-              {content[s.id]}
-            </p>
-          </div>
-        </a>
-      ))}
+      {
+        silverConfig.map((s) => (
+          <a
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={cardClass}
+          >
+            <div class="w-32 h-32 flex items-center justify-center shrink-0">
+              <Image
+                src={s.img}
+                alt={s.alt}
+                width={128}
+                height={128}
+                class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
+              />
+            </div>
+            <div class="flex flex-col gap-1">
+              <p class="text-tx-2 text-sm font-mono">{s.alt}</p>
+              <p class="text-balance text-tx-2 text-sm">{content[s.id]}</p>
+            </div>
+          </a>
+        ))
+      }
     </div>
   </section>
 
   <section class="space-y-2">
-    <p class="text-tx-2 text-sm">{content.bronze}</p>
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-      {bronzeConfig.map((s) => (
-        <a
-          href={s.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          class={cardClass}
-        >
-          <div class="w-24 h-24 flex items-center justify-center shrink-0">
-            <Image
-              src={s.img}
-              alt={s.alt}
-              width={96}
-              height={96}
-              class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
-            />
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="text-tx-2 text-sm font-mono">{s.alt}</p>
-            <p class="text-balance text-tx-2 text-sm">
-              {content[s.id]}
-            </p>
-          </div>
-        </a>
-      ))}
+      {
+        bronzeConfig.map((s) => (
+          <a
+            href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={cardClass}
+          >
+            <div class="w-24 h-24 flex items-center justify-center shrink-0">
+              <Image
+                src={s.img}
+                alt={s.alt}
+                width={96}
+                height={96}
+                class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
+              />
+            </div>
+            <div class="flex flex-col gap-1">
+              <p class="text-tx-2 text-sm font-mono">{s.alt}</p>
+              <p class="text-balance text-tx-2 text-sm">{content[s.id]}</p>
+            </div>
+          </a>
+        ))
+      }
     </div>
   </section>
 </div>

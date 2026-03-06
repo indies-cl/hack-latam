@@ -278,9 +278,6 @@ export const en = {
   },
   sponsors: {
     title: "Sponsors",
-    gold: "gold",
-    silver: "silver",
-    bronze: "bronze",
     faces: "Create interactive presentations using AI: pitch decks, portfolios, guides, or proposals.",
     minimax: "Multimodal foundation models. Text, audio, image, video, music. Optimized for coding and agentic workflows.",
     threeByTen: "$3,000 for technical founders",
