@@ -298,6 +298,9 @@ export const es = {
   },
   sponsors: {
     title: "Patrocinadores",
+    gold: "oro",
+    silver: "plata",
+    bronze: "bronce",
     faces: "Crea presentaciones interactivas usando inteligencia artificial: pitch decks, portafolios, guías o propuestas.",
     minimax: "Modelos de inteligencia artificial multimodales. Texto, audio, imagen, video, música. Optimizados para código y flujos agenticos.",
     threeByTen: "$ 3.000 dólares para fundadores técnicos",
@@ -306,5 +309,7 @@ export const es = {
     woz: "La forma más rápida de crear, lanzar y monetizar apps móviles.",
     logos: "Monitorea, predice y optimiza procesos industriales críticos.",
     utecVentures: "Empoderando startups en etapa temprana en Latinoamérica",
+    monologue: "App de voz a texto para macOS e iOS. Escribe 3x más rápido.",
+    bugster: "Agentes de IA prueban tu app en navegadores reales. Empodera tu QA con pruebas de IA.",
   },
 } as const satisfies Content;

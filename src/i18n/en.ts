@@ -278,6 +278,9 @@ export const en = {
   },
   sponsors: {
     title: "Sponsors",
+    gold: "gold",
+    silver: "silver",
+    bronze: "bronze",
     faces: "Create interactive presentations using AI: pitch decks, portfolios, guides, or proposals.",
     minimax: "Multimodal foundation models. Text, audio, image, video, music. Optimized for coding and agentic workflows.",
     threeByTen: "$3,000 for technical founders",
@@ -286,6 +289,8 @@ export const en = {
     woz: "The fastest way to build, launch, and monetize mobile apps.",
     logos: "Monitor, predict and optimize critical industrial processes.",
     utecVentures: "Empowering early-stage startups in Latin America",
+    monologue: "Smart voice-to-text app for macOS and iOS where you can write 3x faster.",
+    bugster: "AI Agents test your app on real browsers. Empower your QA with AI testing.",
   },
 } as const;
 

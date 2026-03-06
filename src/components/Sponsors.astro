@@ -9,162 +9,182 @@ interface Props {
 
 const { lang = "es" } = Astro.props;
 const content = lang === "en" ? en.sponsors : es.sponsors;
+
+const goldConfig = [
+  {
+    id: "faces",
+    href: "https://faces.app",
+    img: "https://lh3.googleusercontent.com/d/18Zd6dBp-nmsAdfHrhbBElaTyAklBt3bz=w1000?authuser=0",
+    alt: "Faces",
+    small: false,
+  },
+  {
+    id: "minimax",
+    href: "https://www.minimax.io/",
+    img: "https://lh3.googleusercontent.com/d/1iF7YNWO6Y8kMzuq7MghQQ5kfqNMcWbo1=w1000?authuser=0",
+    alt: "MiniMax",
+    small: false,
+  },
+] as const;
+
+const silverConfig = [
+  {
+    id: "monologue",
+    href: "https://www.monologue.to/",
+    img: "https://lh3.googleusercontent.com/d/1fP3ez1If42fF3-IH1CuBKE2SRssaNUil=w1000?authuser=0",
+    alt: "Monologue",
+    small: true,
+  },
+  {
+    id: "bugster",
+    href: "https://www.bugster.dev/",
+    img: "https://lh3.googleusercontent.com/d/1NFs2o6oFSIwqOi48YIzJGtxTIVUWmgy4=w1000?authuser=0",
+    alt: "Bugster",
+    small: false,
+  },
+  {
+    id: "woz",
+    href: "https://www.withwoz.com/",
+    img: "https://lh3.googleusercontent.com/d/192Q8dhAtRAeHTUpewD1bsujsiVE3yVEw=w1000?authuser=0",
+    alt: "Woz",
+    small: false,
+  },
+] as const;
+
+const bronzeConfig = [
+  {
+    id: "boquila",
+    href: "https://boquila.org/",
+    img: "https://lh3.googleusercontent.com/d/1uhhOS6-dm3D0AWY_Y8Y8_HREmrgNE8c4=w1000?authuser=0",
+    alt: "Boquila Foundation",
+    small: false,
+  },
+  {
+    id: "utecVentures",
+    href: "https://utecventures.com/",
+    img: "https://lh3.googleusercontent.com/d/1nLom5cm89aVHchANaNa9_eouu2XCmhO8=w1000?authuser=0",
+    alt: "UTEC Ventures",
+    small: false,
+  },
+  {
+    id: "threeByTen",
+    href: "https://www.3x10.lat/",
+    img: "https://lh3.googleusercontent.com/d/13yMe938N597zvZk5ybkCZNWOtTUuS_o_=w1000?authuser=0",
+    alt: "3x10",
+    small: false,
+  },
+  {
+    id: "animo",
+    href: "https://animo.video/",
+    img: "https://lh3.googleusercontent.com/d/1O5oqDB5-yiQiTs3nM0XNteR8fXkfKA1f=w1000?authuser=0",
+    alt: "Animo",
+    small: false,
+  },
+  {
+    id: "logos",
+    href: "https://www.bylogos.io/",
+    img: "https://lh3.googleusercontent.com/d/1BWjIaVpvwrKgUzKITrkVTrsgnelaWe4i=w1000?authuser=0",
+    alt: "Logos",
+    small: false,
+  },
+] as const;
+
+const cardClass =
+  "border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors";
+const imgBase = "object-contain";
+const imgSmall = "max-w-[70%] max-h-[70%]";
 ---
 
-<div class="space-y-4 mt-8">
+<div class="space-y-8 mt-8">
   <p class="text-tx-2">{content.title}</p>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-    <a
-      href="https://faces.app"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors sm:col-span-2 lg:col-span-2"
-    >
-      <div class="w-32 h-32 flex items-center justify-center shrink-0">
-        <Image
-          src="https://lh3.googleusercontent.com/d/18Zd6dBp-nmsAdfHrhbBElaTyAklBt3bz=w1000?authuser=0"
-          alt="Faces"
-          width={128}
-          height={128}
-          class="max-w-full max-h-full object-contain"
-        />
-      </div>
-      <p class="text-balance text-tx-2 text-base">
-        {content.faces}
-      </p>
-    </a>
-    <a
-      href="https://www.minimax.io/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors sm:col-span-2 lg:col-span-2"
-    >
-      <div class="w-32 h-32 flex items-center justify-center shrink-0">
-        <Image
-          src="https://lh3.googleusercontent.com/d/1iF7YNWO6Y8kMzuq7MghQQ5kfqNMcWbo1=w1000?authuser=0"
-          alt="MiniMax"
-          width={128}
-          height={128}
-          class="max-w-full max-h-full object-contain"
-        />
-      </div>
-      <p class="text-balance text-tx-2 text-base">
-        {content.minimax}
-      </p>
-    </a>
-    <a
-      href="https://www.withwoz.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
-    >
-      <div class="w-32 h-32 flex items-center justify-center shrink-0">
-        <Image
-          src="https://lh3.googleusercontent.com/d/192Q8dhAtRAeHTUpewD1bsujsiVE3yVEw=w1000?authuser=0"
-          alt="Woz"
-          width={128}
-          height={128}
-          class="max-w-full max-h-full object-contain"
-        />
-      </div>
-      <p class="text-balance text-tx-2 text-sm">
-        {content.woz}
-      </p>
-    </a>
-    <a
-      href="https://www.3x10.lat/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
-    >
-      <div class="w-32 h-32 flex items-center justify-center shrink-0">
-        <Image
-          src="https://lh3.googleusercontent.com/d/13yMe938N597zvZk5ybkCZNWOtTUuS_o_=w1000?authuser=0"
-          alt="3x10"
-          width={128}
-          height={128}
-          class="max-w-full max-h-full object-contain"
-        />
-      </div>
-      <p class="text-balance text-tx-2 text-sm">
-        {content.threeByTen}
-      </p>
-    </a>
-    <a
-      href="https://animo.video/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
-    >
-      <div class="w-32 h-32 flex items-center justify-center shrink-0">
-        <Image
-          src="https://lh3.googleusercontent.com/d/1O5oqDB5-yiQiTs3nM0XNteR8fXkfKA1f=w1000?authuser=0"
-          alt="Animo"
-          width={128}
-          height={128}
-          class="max-w-full max-h-full object-contain"
-        />
-      </div>
-      <p class="text-balance text-tx-2 text-sm">
-        {content.animo}
-      </p>
-    </a>
-    <a
-      href="https://boquila.org/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
-    >
-      <div class="w-32 h-32 flex items-center justify-center shrink-0">
-        <Image
-          src="https://lh3.googleusercontent.com/d/1uhhOS6-dm3D0AWY_Y8Y8_HREmrgNE8c4=w1000?authuser=0"
-          alt="Boquila Foundation"
-          width={128}
-          height={128}
-          class="max-w-full max-h-full object-contain"
-        />
-      </div>
-      <p class="text-balance text-tx-2 text-sm">
-        {content.boquila}
-      </p>
-    </a>
-    <a
-      href="https://www.bylogos.io/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
-    >
-      <div class="w-32 h-32 flex items-center justify-center shrink-0">
-        <Image
-          src="https://lh3.googleusercontent.com/d/1BWjIaVpvwrKgUzKITrkVTrsgnelaWe4i=w1000?authuser=0"
-          alt="Logos"
-          width={128}
-          height={128}
-          class="max-w-full max-h-full object-contain"
-        />
-      </div>
-      <p class="text-balance text-tx-2 text-sm">
-        {content.logos}
-      </p>
-    </a>
-    <a
-      href="https://utecventures.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors"
-    >
-      <div class="w-32 h-32 flex items-center justify-center shrink-0">
-        <Image
-          src="https://lh3.googleusercontent.com/d/1nLom5cm89aVHchANaNa9_eouu2XCmhO8=w1000?authuser=0"
-          alt="UTEC Ventures"
-          width={128}
-          height={128}
-          class="max-w-full max-h-full object-contain"
-        />
-      </div>
-      <p class="text-balance text-tx-2 text-sm">
-        {content.utecVentures}
-      </p>
-    </a>
-  </div>
+
+  <section class="space-y-2">
+    <p class="text-tx-2 text-sm">{content.gold}</p>
+    <div class="grid grid-cols-2 gap-4">
+      {goldConfig.map((s) => (
+        <a
+          href={s.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={cardClass}
+        >
+          <div class="w-40 h-40 flex items-center justify-center shrink-0">
+            <Image
+              src={s.img}
+              alt={s.alt}
+              width={160}
+              height={160}
+              class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <p class="text-tx-2 text-sm font-mono">{s.alt}</p>
+            <p class="text-balance text-tx-2 text-base">
+              {content[s.id]}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="space-y-2">
+    <p class="text-tx-2 text-sm">{content.silver}</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      {silverConfig.map((s) => (
+        <a
+          href={s.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={cardClass}
+        >
+          <div class="w-32 h-32 flex items-center justify-center shrink-0">
+            <Image
+              src={s.img}
+              alt={s.alt}
+              width={128}
+              height={128}
+              class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <p class="text-tx-2 text-sm font-mono">{s.alt}</p>
+            <p class="text-balance text-tx-2 text-sm">
+              {content[s.id]}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="space-y-2">
+    <p class="text-tx-2 text-sm">{content.bronze}</p>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      {bronzeConfig.map((s) => (
+        <a
+          href={s.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={cardClass}
+        >
+          <div class="w-24 h-24 flex items-center justify-center shrink-0">
+            <Image
+              src={s.img}
+              alt={s.alt}
+              width={96}
+              height={96}
+              class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <p class="text-tx-2 text-sm font-mono">{s.alt}</p>
+            <p class="text-balance text-tx-2 text-sm">
+              {content[s.id]}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
 </div>
