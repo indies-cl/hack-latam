@@ -54,13 +54,13 @@ export default function PhotoStack({ photos }: Props) {
       <div className="flex gap-4 justify-center mt-4">
         <button
           onClick={prev}
-          className="border border-ui p-4 hover:border-og hover:text-og"
+          className="border border-ui p-4 hover:border-tx hover:text-tx"
         >
           ←
         </button>
         <button
           onClick={next}
-          className="border border-ui p-4 hover:border-og hover:text-og"
+          className="border border-ui p-4 hover:border-tx hover:text-tx"
         >
           →
         </button>

@@ -5,6 +5,7 @@ import { es } from "../i18n/es";
 import ApplyMarquee from "../components/ApplyMarquee";
 import Hero from "../components/Hero.astro";
 import ParticipateCTA from "../components/ParticipateCTA.astro";
+import Countdown from "../components/Countdown";
 import Bento from "../components/Bento.astro";
 import Sponsors from "../components/Sponsors.astro";
 import Communities from "../components/Communities.astro";
@@ -26,6 +27,11 @@ const { communities } = es.communities;
     <ApplyMarquee word="participa" client:load />
     <div class="p-4 sm:p-8 max-w-5xl mx-auto space-y-8">
       <Hero />
+      <section class="border border-ui bg-bg-2 p-6 md:p-10 flex flex-col gap-2 items-center justify-center text-center">
+        <p class="text-tx-2">postulaciones cierran</p>
+        <Countdown client:only="react" />
+        <a href="https://tally.so/r/dWYX7o" target="_blank" rel="noopener noreferrer" class="text-og text-sm font-mono hover:underline">postula aquí →</a>
+      </section>
       <div class="space-y-4">
         <Bento />
         <ParticipateCTA />

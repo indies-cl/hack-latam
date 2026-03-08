@@ -6,7 +6,7 @@ export const en = {
       "54-hour hackathon for latin american builders. May 15–17, 2026. social impact only.",
   },
   header: {
-    tagline: "let's code for a better world.",
+    tagline: "54 hours. three problems latam can't keep ignoring.",
     subtitle: "May 15–17, 2026 | 54 hours | 150 builders",
   },
   nav: {
@@ -26,7 +26,7 @@ export const en = {
   who: {
     title: "who we are",
     content:
-      '<span class="text-og">indies.la</span> is a collective of 1.5k+ latin american builders at the intersection of indie hackers, yc-backed founders, and open-source.',
+      '<span class="text-tx">indies.la</span> is a collective of 1.5k+ latin american builders at the intersection of indie hackers, yc-backed founders, and open-source.',
   },
   prevEvents: {
     title: "some events we've hosted:",
@@ -52,7 +52,7 @@ export const en = {
       "software engineers, cs students, founders, high-agency techies",
       "application-based selection to filter for people who actually ship",
     ],
-    goal: "goal: turn latent talent into founders building for latin america.",
+    goal: "the pipeline: raw talent → shipped product → founder.",
   },
   different: {
     title: "what makes this different",
@@ -62,29 +62,25 @@ export const en = {
       "judges with domain expertise",
       "follow-ups with teams that show traction",
     ],
-    outro: "most hackathons optimize for photos, not outcomes.",
-    outroHighlight: "we seek real change.",
+    outro: "we stay in touch with teams that keep building after the 54 hours.",
+    outroHighlight: "the demo is day one.",
   },
   tracks: {
     title: "tracks",
     intro:
-      "four fault lines in latam. each track is about data, coordination, and real-time action.",
+      "three fault lines in latam. each track is about data, coordination, and real-time action.",
     items: [
       {
         name: "1. transparency & corruption",
-        desc: "use data to expose, track, and reduce corruption.",
+        desc: "scrape public spending, cross-reference contracts, build dashboards citizens can actually use.",
       },
       {
-        name: "2. community welfare",
-        desc: "software for organizing, helping, and acting together.",
+        name: "2. community welfare & public safety",
+        desc: "the open track. mutual aid, emergency coordination, civic tools — anything that helps a community you care about.",
       },
       {
-        name: "3. public safety & emergency response",
-        desc: "real-time information and coordination for crises.",
-      },
-      {
-        name: "4. environment & climate risk",
-        desc: "track, predict, and mitigate environmental damage.",
+        name: "3. environment & climate risk",
+        desc: "satellite data, air quality sensors, wildfire prediction — monitor what governments won't.",
       },
     ],
   },
@@ -92,7 +88,7 @@ export const en = {
     title: "judging",
     items: [
       "real problem, clearly targeted",
-      "working product, not just mockups",
+      "working product, deployed and clickable",
       "path to continue post-hackathon",
       "impact potential in latin american context",
     ],
@@ -101,7 +97,7 @@ export const en = {
   whySponsor: {
     title: "why sponsor",
     intro:
-      "you want access to the people who actually build the future of latam.",
+      "150 engineers building on your stack for 54 hours straight.",
     items: [
       { label: "talent access:", desc: "direct line to 150 vetted builders" },
       {
@@ -110,11 +106,11 @@ export const en = {
       },
       {
         label: "brand positioning:",
-        desc: "visible support for execution-focused talent",
+        desc: "your name next to the teams that ship",
       },
       {
         label: "recruiting pipeline:",
-        desc: "early relationship with future founders",
+        desc: "meet them before they're unfindable",
       },
       { label: "case studies:", desc: "real projects using your stack" },
     ],
@@ -163,7 +159,7 @@ export const en = {
         desc: "opt-in contact info from 150 vetted builders",
       },
     ],
-    outro: "measurable, not fuzzy.",
+    outro: "we send you the numbers after.",
   },
   contact: {
     title: "limited sponsor slots.",
@@ -244,7 +240,7 @@ export const en = {
     title: "hack@latam",
     date: "May 15, 16, and 17",
     description: "Latin America unites to tackle the problems that affect the region most.",
-    subtitle: "From corruption to public safety. <br /> Let's code a better future.",
+    subtitle: "From corruption to public safety. <br /> 54 hours of deployed code.",
   },
   bento: {
     hours: "Hours",

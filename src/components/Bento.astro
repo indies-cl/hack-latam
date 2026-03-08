@@ -21,7 +21,7 @@ const content = lang === "en" ? en.bento : es.bento;
   <div
     class="p-4 border border-ui-2 flex flex-col gap-1 items-center text-center"
   >
-    <span class="text-4xl font-sans">4</span>
+    <span class="text-4xl font-sans">3</span>
     <span class="text-tx-2">{content.tracks}</span>
   </div>
   <div
@@ -48,7 +48,7 @@ const content = lang === "en" ? en.bento : es.bento;
     >
       <p class="text-4xl font-sans text-center">{content.online.title}</p>
       <br />
-      <p class="font-mono text-og text-sm">{content.online.startDate}</p>
+      <p class="font-mono text-tx text-sm">{content.online.startDate}</p>
       <p class="text-tx-2">
         {content.online.desc.split("[")[0]}<a
           href="https://indies.la"
@@ -81,7 +81,7 @@ const content = lang === "en" ? en.bento : es.bento;
             </div>
             <div class="flex flex-col gap-2 text-center">
               <span class="text-xl md:text-2xl font-sans">{party.location}</span>
-              <span class="font-mono text-og">{party.time}</span>
+              <span class="font-mono text-tx">{party.time}</span>
               <p
                 class="text-tx-2 text-base text-balance max-w-prose mx-auto"
                 set:html={descHtml}

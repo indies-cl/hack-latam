@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import "../styles/global.css";
 import type { Content } from "../i18n";
 import NavHighlight from "./NavHighlight.astro";
@@ -28,69 +29,69 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
       id="nav"
       class="fixed left-8 top-8 w-56 hidden lg:block text-tx-3 text-xl space-y-4"
     >
-      <a href="#who" class="nav-link block hover:text-og" data-target="who"
+      <a href="#who" class="nav-link block hover:text-tx" data-target="who"
         >{t.nav.who}</a
       >
       <a
         href="#track-record"
-        class="nav-link block hover:text-og"
+        class="nav-link block hover:text-tx"
         data-target="track-record">{t.nav.trackRecord}</a
       >
-      <a href="#event" class="nav-link block hover:text-og" data-target="event"
+      <a href="#event" class="nav-link block hover:text-tx" data-target="event"
         >{t.nav.event}</a
       >
       <a
         href="#different"
-        class="nav-link block hover:text-og"
+        class="nav-link block hover:text-tx"
         data-target="different">{t.nav.different}</a
       >
       <a
         href="#tracks"
-        class="nav-link block hover:text-og"
+        class="nav-link block hover:text-tx"
         data-target="tracks">{t.nav.tracks}</a
       >
       <a
         href="#judging"
-        class="nav-link block hover:text-og"
+        class="nav-link block hover:text-tx"
         data-target="judging">{t.nav.judging}</a
       >
       <a
         href="#why-sponsor"
-        class="nav-link block hover:text-og"
+        class="nav-link block hover:text-tx"
         data-target="why-sponsor">{t.nav.whySponsor}</a
       >
       <a
         href="#ideal-sponsors"
-        class="nav-link block hover:text-og"
+        class="nav-link block hover:text-tx"
         data-target="ideal-sponsors">{t.nav.idealSponsors}</a
       >
-      <a href="#ask" class="nav-link block hover:text-og" data-target="ask"
+      <a href="#ask" class="nav-link block hover:text-tx" data-target="ask"
         >{t.nav.ask}</a
       >
       <a
         href="#what-you-get"
-        class="nav-link block hover:text-og"
+        class="nav-link block hover:text-tx"
         data-target="what-you-get">{t.nav.whatYouGet}</a
       >
       <a
         href="#contact"
-        class="nav-link block hover:text-og"
+        class="nav-link block hover:text-tx"
         data-target="contact">{t.nav.contact}</a
       >
       <a
         href="#communities"
-        class="nav-link block hover:text-og"
+        class="nav-link block hover:text-tx"
         data-target="communities">{t.nav.communities}</a
       >
     </nav>
 
     <main class="max-w-3xl mx-auto p-8 space-y-8 lg:ml-80">
       <header id="top" class="space-y-4">
-        <h1 class="text-2xl 5xl:text-3xl font-sans text-og">hack@latam</h1>
+        <h1 class="text-2xl 5xl:text-3xl font-sans text-tx">hack@latam</h1>
         <p>{t.header.tagline}</p>
         <p class="text-tx-2">{t.header.subtitle}</p>
         <p class="text-tx-2">
-          <a href={`mailto:${EMAIL}`} class="text-og hover:underline">{EMAIL}</a
+          <a href={`mailto:${EMAIL}`} class="text-tx hover:underline">{EMAIL}</a
           >
         </p>
       </header>
@@ -116,7 +117,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
         <ul class="space-y-2 text-tx-2">
           {t.event.items.map((item) => <li>· {item}</li>)}
         </ul>
-        <p class="text-og">{t.event.goal}</p>
+        <p class="text-tx">{t.event.goal}</p>
       </section>
 
       <section id="different" class="space-y-4">
@@ -126,7 +127,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
         </ul>
         <p>
           {t.different.outro}
-          <span class="text-og">{t.different.outroHighlight}</span>
+          <span class="text-tx">{t.different.outroHighlight}</span>
         </p>
       </section>
 
@@ -137,7 +138,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
           {
             t.tracks.items.map((track) => (
               <div>
-                <h3 class="text-og">{track.name}</h3>
+                <h3 class="text-tx">{track.name}</h3>
                 <p class="text-tx-2">{track.desc}</p>
               </div>
             ))
@@ -175,13 +176,13 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
         <p>{t.idealSponsors.outro}</p>
       </section>
 
-      <section id="ask" class="space-y-4 bg-bg-2 p-4 border border-og">
-        <h2 class="text-2xl 5xl:text-3xl font-sans text-og">{t.ask.title}</h2>
+      <section id="ask" class="space-y-4 bg-bg-2 p-4 border border-tx">
+        <h2 class="text-2xl 5xl:text-3xl font-sans text-tx">{t.ask.title}</h2>
         <ul class="space-y-2">
           {
             t.ask.items.map((item) => (
               <li>
-                · <span class="text-og">{item.highlight}</span> {item.text}
+                · <span class="text-tx">{item.highlight}</span> {item.text}
               </li>
             ))
           }
@@ -202,19 +203,19 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
         <p>{t.whatYouGet.outro}</p>
       </section>
 
-      <section id="contact" class="bg-bg-2 p-4 border border-og space-y-4">
-        <h2 class="text-2xl 5xl:text-3xl font-sans text-og">
+      <section id="contact" class="bg-bg-2 p-4 border border-tx space-y-4">
+        <h2 class="text-2xl 5xl:text-3xl font-sans text-tx">
           {t.contact.title}
         </h2>
         <p class="text-tx-2">{t.contact.emailLabel}</p>
         <p>
-          · <a href={`mailto:${EMAIL}`} class="text-og hover:underline"
+          · <a href={`mailto:${EMAIL}`} class="text-tx hover:underline"
             >{EMAIL}</a
           >
         </p>
         <p class="text-tx-2">{t.contact.linkedinLabel}</p>
         <p>
-          · <a href={LINKEDIN} target="_blank" class="text-og hover:underline"
+          · <a href={LINKEDIN} target="_blank" class="text-tx hover:underline"
             >{t.contact.linkedinText}</a
           >
         </p>
@@ -228,9 +229,11 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
               t.communities.communities.map((c) => (
                 <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-4">
                   <div class="w-full aspect-square flex items-center justify-center shrink-0">
-                    <img
+                    <Image
                       src={c.logo}
                       alt={c.name}
+                      width={200}
+                      height={200}
                       class={`w-full h-full object-contain ${"logoSmall" in c && c.logoSmall ? "max-w-[70%] max-h-[70%]" : ""} ${"logoCentered" in c && c.logoCentered ? "w-auto h-auto max-w-full max-h-full" : ""}`}
                     />
                   </div>
@@ -241,7 +244,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
             <a
               href="https://www.linkedin.com/posts/pup_armamos-un-comit%C3%A9-continental-que-une-todas-activity-7424059186474446848-OjMR"
               target="_blank"
-              class="border border-dashed border-og bg-og/10 p-4 aspect-square flex flex-col justify-center items-center text-center gap-4 hover:border-og text-og"
+              class="border border-dashed border-tx bg-tx/10 p-4 aspect-square flex flex-col justify-center items-center text-center gap-4 hover:border-tx text-tx"
             >
               <p class="text-2xl" set:html={t.communities.cta} />
             </a>
@@ -250,7 +253,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
       </section>
 
       <footer class="flex justify-center">
-        <img src="/communities/indies.png" alt="indies.la" class="w-48" />
+        <Image src="/communities/indies.png" alt="indies.la" width={192} height={192} class="w-48" />
       </footer>
     </main>
 

@@ -8,7 +8,7 @@ export const es = {
       "hackathon de 54 horas para builders latinoamericanos. 15, 16 y 17 de Mayo 2026. solo impacto social.",
   },
   header: {
-    tagline: "programemos un mundo mejor.",
+    tagline: "54 horas. tres problemas que latam no puede seguir ignorando.",
     subtitle: "15, 16 y 17 de Mayo 2026 | 54 horas | 150 builders",
   },
   nav: {
@@ -28,7 +28,7 @@ export const es = {
   who: {
     title: "quiénes somos",
     content:
-      '<span class="text-og">indies.la</span> es un colectivo de 1.5k+ builders latinoamericanos donde convergen indie hackers, founders respaldados por yc y open-source.',
+      '<span class="text-tx">indies.la</span> es un colectivo de 1.5k+ builders latinoamericanos donde convergen indie hackers, founders respaldados por yc y open-source.',
   },
   prevEvents: {
     title: "algunos eventos que hemos organizado:",
@@ -68,7 +68,7 @@ export const es = {
       "ingenieros de software, estudiantes de cs, founders, techies de alta agencia",
       "selección por postulación para filtrar gente que realmente shipea",
     ],
-    goal: "objetivo: convertir talento latente en founders que construyan para latinoamérica.",
+    goal: "el pipeline: talento en bruto → producto deployeado → founder.",
   },
   different: {
     title: "qué nos hace distintos",
@@ -79,29 +79,25 @@ export const es = {
       "seguimiento con equipos que muestren tracción",
     ],
     outro:
-      "la mayoría de los hackathons optimizan para fotos, no para resultados.",
-    outroHighlight: "nosotros buscamos cambio real.",
+      "seguimos en contacto con los equipos que siguen construyendo después de las 54 horas.",
+    outroHighlight: "la demo es el día uno.",
   },
   tracks: {
     title: "tracks",
     intro:
-      "cuatro fracturas en latam. cada track trata sobre datos, coordinación y acción en tiempo real.",
+      "tres fracturas en latam. cada track trata sobre datos, coordinación y acción en tiempo real.",
     items: [
       {
         name: "1. transparencia y corrupción",
-        desc: "usar datos para exponer, rastrear y reducir la corrupción.",
+        desc: "scraping de gasto público, cruce de contratos, dashboards que los ciudadanos puedan usar.",
       },
       {
-        name: "2. bienestar comunitario",
-        desc: "software para organizar, ayudar y actuar juntos.",
+        name: "2. bienestar comunitario y seguridad pública",
+        desc: "el track abierto. ayuda mutua, coordinación de emergencias, herramientas cívicas — lo que sea que ayude a una comunidad que te importa.",
       },
       {
-        name: "3. seguridad pública y emergencias",
-        desc: "información en tiempo real y coordinación para crisis.",
-      },
-      {
-        name: "4. medio ambiente y riesgo climático",
-        desc: "rastrear, predecir y mitigar el daño ambiental.",
+        name: "3. medio ambiente y riesgo climático",
+        desc: "datos satelitales, sensores de calidad de aire, predicción de incendios — monitorear lo que los gobiernos no.",
       },
     ],
   },
@@ -109,7 +105,7 @@ export const es = {
     title: "evaluación",
     items: [
       "problema real, claramente enfocado",
-      "producto funcionando, no solo mockups",
+      "producto funcionando, deployeado y clickeable",
       "camino para continuar post-hackathon",
       "potencial de impacto en contexto latinoamericano",
     ],
@@ -118,7 +114,7 @@ export const es = {
   whySponsor: {
     title: "por qué sponsorear",
     intro:
-      "quieres acceso a la gente que realmente construye el futuro de latam.",
+      "150 ingenieros construyendo sobre tu stack por 54 horas seguidas.",
     items: [
       {
         label: "acceso a talento:",
@@ -130,11 +126,11 @@ export const es = {
       },
       {
         label: "posicionamiento de marca:",
-        desc: "apoyo visible a talento enfocado en ejecución",
+        desc: "tu nombre junto a los equipos que shipean",
       },
       {
         label: "pipeline de recruiting:",
-        desc: "relación temprana con futuros founders",
+        desc: "conócelos antes de que sean inencontrables",
       },
       { label: "casos de estudio:", desc: "proyectos reales usando tu stack" },
     ],
@@ -183,7 +179,7 @@ export const es = {
         desc: "info de contacto opt-in de 150 builders verificados",
       },
     ],
-    outro: "medible, no difuso.",
+    outro: "te mandamos los números después.",
   },
   contact: {
     title: "cupos limitados para sponsors.",
@@ -264,7 +260,7 @@ export const es = {
     title: "hack@latam",
     date: "15, 16 y 17 de Mayo",
     description: "América Latina se une para atacar los problemas que más afectan a la región.",
-    subtitle: "Desde corrupción a seguridad pública. <br /> Programemos un futuro mejor.",
+    subtitle: "Desde corrupción a seguridad pública. <br /> 54 horas de código deployeado.",
   },
   bento: {
     hours: "Horas",

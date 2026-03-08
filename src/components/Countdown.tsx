@@ -1,14 +1,16 @@
-"use client";
-
 import { useEffect, useState } from "react";
 
-const TARGET = new Date("2026-05-15T22:00:00Z"); // 6PM UTC-4
+const TARGET = new Date("2026-04-15T22:00:00Z"); // April 15, 6PM UTC-4
 
 function pad(n: number): string {
   return n.toString().padStart(2, "0");
 }
 
-export default function Countdown() {
+interface Props {
+  lang?: "en" | "es";
+}
+
+export default function Countdown({ lang = "es" }: Props) {
   const [diff, setDiff] = useState<{
     days: number;
     hours: number;
@@ -37,23 +39,28 @@ export default function Countdown() {
 
   if (diff === null) return null;
 
+  const labels =
+    lang === "en"
+      ? { d: "Days", h: "Hours", m: "Minutes", s: "Seconds" }
+      : { d: "Días", h: "Horas", m: "Minutos", s: "Segundos" };
+
   return (
-    <div className="font-mono text-og flex gap-2 md:gap-4 tabular-nums">
+    <div className="font-mono text-tx flex gap-2 md:gap-4 tabular-nums">
       <span className="flex flex-col items-center">
         <span className="text-2xl md:text-4xl">{pad(diff.days)}</span>
-        <span className="text-tx-2 text-xs uppercase">d</span>
+        <span className="text-tx-2 text-xs">{labels.d}</span>
       </span>
       <span className="flex flex-col items-center">
         <span className="text-2xl md:text-4xl">{pad(diff.hours)}</span>
-        <span className="text-tx-2 text-xs uppercase">h</span>
+        <span className="text-tx-2 text-xs">{labels.h}</span>
       </span>
       <span className="flex flex-col items-center">
         <span className="text-2xl md:text-4xl">{pad(diff.minutes)}</span>
-        <span className="text-tx-2 text-xs uppercase">m</span>
+        <span className="text-tx-2 text-xs">{labels.m}</span>
       </span>
       <span className="flex flex-col items-center">
         <span className="text-2xl md:text-4xl">{pad(diff.seconds)}</span>
-        <span className="text-tx-2 text-xs uppercase">s</span>
+        <span className="text-tx-2 text-xs">{labels.s}</span>
       </span>
     </div>
   );

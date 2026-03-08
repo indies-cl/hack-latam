@@ -1,8 +1,6 @@
 ---
 import { es } from "../i18n/es";
 import { en } from "../i18n/en";
-import Countdown from "./Countdown";
-
 interface Props {
   lang?: "en" | "es";
 }
@@ -13,24 +11,18 @@ const TALLY_URL = "https://tally.so/r/dWYX7o";
 ---
 
 <section
-  class="border border-ui bg-bg-2 p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
+  class="border border-ui bg-bg-2 p-6 md:p-10 flex flex-col gap-4 md:gap-6 items-center justify-center text-center"
 >
-  <div class="flex flex-col gap-4 md:gap-6 justify-center items-center text-center">
-    <div class="flex flex-col gap-1">
-      <h2 class="text-2xl font-sans text-balance">{content.title}</h2>
-      <p class="text-tx-2 text-balance" set:html={content.subtitle} />
-    </div>
-    <a
-      href={TALLY_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="shrink-0 bg-tx text-bg py-4 px-8 border border-ui rounded-none font-serif hover:border-ui-2 transition-colors text-center w-fit"
-    >
-      {content.button}
-    </a>
+  <div class="flex flex-col gap-1">
+    <h2 class="text-2xl font-sans text-balance">{content.title}</h2>
+    <p class="text-tx-2 text-balance" set:html={content.subtitle} />
   </div>
-  <div class="flex flex-col gap-2 items-center justify-center">
-    <Countdown client:load />
-    <p class="font-mono text-og text-sm">{content.startDate}</p>
-  </div>
+  <a
+    href={TALLY_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="shrink-0 bg-tx text-bg py-4 px-8 border border-ui rounded-none font-serif hover:border-ui-2 transition-colors text-center w-fit"
+  >
+    {content.button}
+  </a>
 </section>
