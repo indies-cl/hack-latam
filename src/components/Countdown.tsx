@@ -45,22 +45,22 @@ export default function Countdown({ lang = "es" }: Props) {
       : { d: "Días", h: "Horas", m: "Minutos", s: "Segundos" };
 
   return (
-    <div className="font-mono text-tx flex gap-2 md:gap-4 tabular-nums">
+    <div className="text-tx flex gap-2 md:gap-4 tabular-nums">
       <span className="flex flex-col items-center">
-        <span className="text-2xl md:text-4xl">{pad(diff.days)}</span>
-        <span className="text-tx-2 text-xs">{labels.d}</span>
+        <span className="font-sans text-3xl md:text-5xl">{pad(diff.days)}</span>
+        <span className="font-mono text-tx-2 text-xs">{labels.d}</span>
       </span>
       <span className="flex flex-col items-center">
-        <span className="text-2xl md:text-4xl">{pad(diff.hours)}</span>
-        <span className="text-tx-2 text-xs">{labels.h}</span>
+        <span className="font-sans text-3xl md:text-5xl">{pad(diff.hours)}</span>
+        <span className="font-mono text-tx-2 text-xs">{labels.h}</span>
       </span>
       <span className="flex flex-col items-center">
-        <span className="text-2xl md:text-4xl">{pad(diff.minutes)}</span>
-        <span className="text-tx-2 text-xs">{labels.m}</span>
+        <span className="font-sans text-3xl md:text-5xl">{pad(diff.minutes)}</span>
+        <span className="font-mono text-tx-2 text-xs">{labels.m}</span>
       </span>
       <span className="flex flex-col items-center">
-        <span className="text-2xl md:text-4xl">{pad(diff.seconds)}</span>
-        <span className="text-tx-2 text-xs">{labels.s}</span>
+        <span className="font-sans text-3xl md:text-5xl">{pad(diff.seconds)}</span>
+        <span className="font-mono text-tx-2 text-xs">{labels.s}</span>
       </span>
     </div>
   );

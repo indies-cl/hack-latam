@@ -234,6 +234,15 @@ export const en = {
     startDate: "15 May, 6PM (UTC-4)",
     button: "i want to participate",
   },
+  discord: {
+    title: "Join the Discord",
+    reasons: [
+      "find teammates for the hackathon",
+      "up-to-date information",
+      "ask any question you have",
+    ],
+    button: "join discord",
+  },
   hero: {
     tagline: "Hackathon for social good",
     title: "hack@latam",

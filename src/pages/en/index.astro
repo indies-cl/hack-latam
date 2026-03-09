@@ -4,6 +4,7 @@ import "../../styles/global.css";
 import ApplyMarquee from "../../components/ApplyMarquee";
 import Hero from "../../components/Hero.astro";
 import ParticipateCTA from "../../components/ParticipateCTA.astro";
+import DiscordCTA from "../../components/DiscordCTA.astro";
 import Countdown from "../../components/Countdown";
 import Bento from "../../components/Bento.astro";
 import Sponsors from "../../components/Sponsors.astro";
@@ -31,9 +32,12 @@ const { communities } = en.communities;
         <Countdown lang="en" client:only="react" />
         <a href="https://tally.so/r/dWYX7o" target="_blank" rel="noopener noreferrer" class="text-og text-sm font-mono hover:underline">apply here →</a>
       </section>
-      <div>
+      <div class="space-y-4">
         <Bento lang="en" />
-        <ParticipateCTA lang="en" />
+        <div class="grid md:grid-cols-2 gap-4">
+          <DiscordCTA lang="en" />
+          <ParticipateCTA lang="en" />
+        </div>
       </div>
       <Sponsors lang="en" />
       <Communities

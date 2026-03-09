@@ -1,0 +1,28 @@
+---
+import { es } from "../i18n/es";
+import { en } from "../i18n/en";
+interface Props {
+  lang?: "en" | "es";
+}
+
+const { lang = "es" } = Astro.props;
+const content = lang === "en" ? en.discord : es.discord;
+const DISCORD_URL = "https://indies.la";
+---
+
+<section
+  class="border border-ui bg-bg-2 p-6 md:p-10 flex flex-col gap-4 md:gap-6 items-center justify-center text-center"
+>
+  <div class="flex flex-col gap-2">
+    <h2 class="text-2xl font-sans text-balance">{content.title}</h2>
+    <p class="text-tx-2 text-sm text-balance">{content.reasons.join(" · ")}</p>
+  </div>
+  <a
+    href={DISCORD_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="shrink-0 border border-ui py-4 px-8 rounded-none font-serif hover:border-ui-2 transition-colors text-center w-fit"
+  >
+    {content.button}
+  </a>
+</section>

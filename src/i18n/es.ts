@@ -254,6 +254,15 @@ export const es = {
     startDate: "15 mayo, 6PM (UTC-4)",
     button: "quiero participar",
   },
+  discord: {
+    title: "Únete al Discord",
+    reasons: [
+      "encuentra compañeros de equipo",
+      "información al día",
+      "pregunta lo que quieras",
+    ],
+    button: "ir al discord",
+  },
   hero: {
     tagline: "Hackathon para el bien social",
     title: "hack@latam",

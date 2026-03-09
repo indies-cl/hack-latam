@@ -5,6 +5,7 @@ import { es } from "../i18n/es";
 import ApplyMarquee from "../components/ApplyMarquee";
 import Hero from "../components/Hero.astro";
 import ParticipateCTA from "../components/ParticipateCTA.astro";
+import DiscordCTA from "../components/DiscordCTA.astro";
 import Countdown from "../components/Countdown";
 import Bento from "../components/Bento.astro";
 import Sponsors from "../components/Sponsors.astro";
@@ -34,7 +35,10 @@ const { communities } = es.communities;
       </section>
       <div class="space-y-4">
         <Bento />
-        <ParticipateCTA />
+        <div class="grid md:grid-cols-2 gap-4">
+          <DiscordCTA />
+          <ParticipateCTA />
+        </div>
       </div>
       <Sponsors />
       <Communities communities={communities} />
