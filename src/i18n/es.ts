@@ -304,5 +304,6 @@ export const es = {
     utecVentures: "Empoderando startups en etapa temprana en Latinoamérica",
     monologue: "App de voz a texto para macOS e iOS. Escribe 3x más rápido.",
     bugster: "Agentes de IA prueban tu app en navegadores reales. Empodera tu QA con pruebas de IA.",
+    v0: "Prompt a app full-stack desplegada.",
   },
 } as const satisfies Content;
