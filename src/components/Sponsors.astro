@@ -60,6 +60,13 @@ const silverConfig = [
 
 const bronzeConfig = [
   {
+    id: "zavu",
+    href: "https://www.zavu.dev/en",
+    img: "https://lh3.googleusercontent.com/d/18KjM2imxaXzoeeQDmCBDPWBzrHNy4fpR=w1000?authuser=0",
+    alt: "Zavu",
+    small: false,
+  },
+  {
     id: "boquila",
     href: "https://boquila.org/",
     img: "https://lh3.googleusercontent.com/d/1uhhOS6-dm3D0AWY_Y8Y8_HREmrgNE8c4=w1000?authuser=0",
@@ -71,6 +78,13 @@ const bronzeConfig = [
     href: "https://utecventures.com/",
     img: "https://lh3.googleusercontent.com/d/1nLom5cm89aVHchANaNa9_eouu2XCmhO8=w1000?authuser=0",
     alt: "UTEC Ventures",
+    small: false,
+  },
+  {
+    id: "logos",
+    href: "https://www.bylogos.io/",
+    img: "https://lh3.googleusercontent.com/d/1BWjIaVpvwrKgUzKITrkVTrsgnelaWe4i=w1000?authuser=0",
+    alt: "Logos",
     small: false,
   },
   {
@@ -87,13 +101,6 @@ const bronzeConfig = [
     alt: "Animo",
     small: false,
   },
-  {
-    id: "logos",
-    href: "https://www.bylogos.io/",
-    img: "https://lh3.googleusercontent.com/d/1BWjIaVpvwrKgUzKITrkVTrsgnelaWe4i=w1000?authuser=0",
-    alt: "Logos",
-    small: false,
-  },
 ] as const;
 
 const cardClass =
@@ -102,7 +109,6 @@ const imgBase = "object-contain";
 const imgSmall = "max-w-[70%] max-h-[70%]";
 ---
 
-<div class="space-y-4 mt-8">
   <p class="text-tx-2">{content.title}</p>
 
   <section class="space-y-2">

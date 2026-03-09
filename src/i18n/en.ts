@@ -293,6 +293,7 @@ export const en = {
     monologue: "Smart voice-to-text app for macOS and iOS where you can write 3x faster.",
     bugster: "AI Agents test your app on real browsers. Empower your QA with AI testing.",
     v0: "Prompt to deployed full-stack app.",
+    zavu: "One API. Every messaging channel. SMS, WhatsApp, Telegram, Email, Voice.",
   },
 } as const;
 
