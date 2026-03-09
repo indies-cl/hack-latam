@@ -122,8 +122,13 @@ if your product is better in the hands of sharp builders, this is where to put i
 
 we are raising:
 
-- $5k usd cash for the prize pool
+- $5k usd already raised from faces and minimax — grow the prize pool with us
 - credits for infrastructure, ai tooling, databases, and related dev tools
+
+credit options:
+
+- credits for all 150 participants (maximize adoption and product usage)
+- credits for the 3 winning teams (4 people each — reward excellence)
 
 tool credits:
 

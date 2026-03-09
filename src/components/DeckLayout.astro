@@ -178,11 +178,12 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
 
       <section id="ask" class="space-y-4 bg-bg-2 p-4 border border-tx">
         <h2 class="text-2xl 5xl:text-3xl font-sans text-tx">{t.ask.title}</h2>
+        <p>{t.ask.subtitle}</p>
         <ul class="space-y-2">
           {
             t.ask.items.map((item) => (
               <li>
-                · <span class="text-tx">{item.highlight}</span> {item.text}
+                · {item.text}
               </li>
             ))
           }

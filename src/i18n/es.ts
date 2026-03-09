@@ -93,11 +93,11 @@ export const es = {
       },
       {
         name: "2. bienestar comunitario y seguridad pública",
-        desc: "el track abierto. ayuda mutua, coordinación de emergencias, herramientas cívicas — lo que sea que ayude a una comunidad que te importa.",
+        desc: "el track abierto. ayuda mutua, coordinación de emergencias, herramientas cívicas, lo que sea que ayude a una comunidad que te importa.",
       },
       {
         name: "3. medio ambiente y riesgo climático",
-        desc: "datos satelitales, sensores de calidad de aire, predicción de incendios — monitorear lo que los gobiernos no.",
+        desc: "datos satelitales, sensores de calidad de aire, predicción de incendios, monitorear lo que los gobiernos no.",
       },
     ],
   },
@@ -148,14 +148,13 @@ export const es = {
   },
   ask: {
     title: "lo que pedimos",
+    subtitle: "cualquiera de estos, o todos. minimax y faces ya hacen ambos.",
     items: [
       {
-        highlight: "$5k usd en total",
-        text: "meta de prize pool (aportes de cualquier tamaño son bienvenidos)",
+        text: "cash para crecer el prize pool. $5k usd ya levantados.",
       },
       {
-        highlight: "créditos",
-        text: "para infraestructura, herramientas de ai, bases de datos y dev tools relacionadas",
+        text: "créditos para los 150 participantes, o para los 3 equipos ganadores (4 personas cada uno)",
       },
     ],
   },

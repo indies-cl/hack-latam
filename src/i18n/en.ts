@@ -76,11 +76,11 @@ export const en = {
       },
       {
         name: "2. community welfare & public safety",
-        desc: "the open track. mutual aid, emergency coordination, civic tools — anything that helps a community you care about.",
+        desc: "the open track. mutual aid, emergency coordination, civic tools, anything that helps a community you care about.",
       },
       {
         name: "3. environment & climate risk",
-        desc: "satellite data, air quality sensors, wildfire prediction — monitor what governments won't.",
+        desc: "satellite data, air quality sensors, wildfire prediction, monitor what governments won't.",
       },
     ],
   },
@@ -128,14 +128,13 @@ export const en = {
   },
   ask: {
     title: "the ask",
+    subtitle: "any of these, or all of them. minimax and faces are already doing both.",
     items: [
       {
-        highlight: "$5k usd total",
-        text: "prize pool target (contributions of any size welcome)",
+        text: "cash to grow the prize pool. $5k usd already raised.",
       },
       {
-        highlight: "credits",
-        text: "for infrastructure, ai tooling, databases, and related dev tools",
+        text: "credits for all 150 participants, or for the 3 winning teams (4 people each)",
       },
     ],
   },
