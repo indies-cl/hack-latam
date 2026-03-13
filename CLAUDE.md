@@ -33,6 +33,15 @@ you cut will be cut again.
 
 CONSIDER: these fonts have no weights other than 400. therefore `font-bold` is usable; differenctiate text via colors.
 
+### SHAPE
+
+- **NO rounded corners.** Never use `rounded-*` classes. All elements use sharp corners (`rounded-none` or default).
+
+### COMPONENTS
+
+- USE `@base-ui/react` for interactive UI (accordions, dialogs, collapsibles, etc). Never use raw `<details>` or hand-roll interactive patterns.
+- Follow existing component patterns in `src/components/` (e.g., `FAQAccordion.tsx`).
+
 ### COLORS
 
 **Custom tokens** (semantic, prefer these for layout):

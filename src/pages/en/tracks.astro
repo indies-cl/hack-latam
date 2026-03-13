@@ -1,13 +1,12 @@
 ---
 import "../../styles/global.css";
 import ApplyMarquee from "../../components/ApplyMarquee";
+import TracksAccordion from "../../components/TracksAccordion";
 import SEO from "../../components/SEO.astro";
 import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
 import { en } from "../../i18n/en";
 
 const { tracksPage } = en;
-const trackColors = ["text-pink-dim", "text-jade-dim", "text-indigo-dim"] as const;
-const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"] as const;
 ---
 
 <html lang="en">
@@ -29,49 +28,18 @@ const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"]
           <a href="/en" class="text-tx-2 text-sm font-mono hover:text-tx block text-left">
             {tracksPage.backToHome}
           </a>
-          <h1 class="font-serif text-6xl">{tracksPage.title}</h1>
+          <h1 class="font-sans text-6xl">{tracksPage.title}</h1>
           <p class="text-tx-2 text-balance">{tracksPage.limitedSpots}</p>
           <p class="text-tx font-mono text-sm">{tracksPage.openSource}</p>
         </header>
 
-        <div class="space-y-16">
-          {
-            tracksPage.items.map((track, i) => {
-              const color = trackColors[i];
-              return (
-                <article id={trackSlugs[i]} class="space-y-6 lowercase scroll-mt-8">
-                  <div class="space-y-2">
-                    <h2 class={`font-serif text-2xl ${color}`}>{track.name}</h2>
-                    <p class={`font-serif text-xl ${color}`}>{track.tagline}</p>
-                  </div>
-
-                  <section class="space-y-2">
-                    <h3 class={`font-serif text-xl ${color}`}>{tracksPage.whatIsIt}</h3>
-                    <p class="text-tx-2">{track.whatIsIt}</p>
-                  </section>
-
-                  <section class="space-y-2">
-                    <h3 class={`font-serif text-xl ${color}`}>{tracksPage.whatFits}</h3>
-                    <ul class="text-tx-2 list-none [&_li]:leading-tight [&_li]:pl-4 [&_li]:relative [&_li]:before:content-['-'] [&_li]:before:absolute [&_li]:before:left-0">
-                      {track.whatFits.map((item) => (
-                        <li>{item}</li>
-                      ))}
-                    </ul>
-                  </section>
-
-                  <section class="space-y-2">
-                    <h3 class={`font-serif text-xl ${color}`}>{tracksPage.whatDoesntFit}</h3>
-                    <ul class="text-tx-2 list-none [&_li]:leading-tight [&_li]:pl-4 [&_li]:relative [&_li]:before:content-['-'] [&_li]:before:absolute [&_li]:before:left-0">
-                      {track.whatDoesntFit.map((item) => (
-                        <li>{item}</li>
-                      ))}
-                    </ul>
-                  </section>
-                </article>
-              );
-            })
-          }
-        </div>
+        <TracksAccordion
+          items={tracksPage.items}
+          whatIsItLabel={tracksPage.whatIsIt}
+          whatFitsLabel={tracksPage.whatFits}
+          whatDoesntFitLabel={tracksPage.whatDoesntFit}
+          client:load
+        />
 
         <LanguageSwitcher currentLang="en" currentPath="/en/tracks" />
       </div>
