@@ -5,9 +5,11 @@ import { en } from "../i18n/en";
 
 interface Props {
   lang?: "en" | "es";
+  titleClass?: string;
+  showTitle?: boolean;
 }
 
-const { lang = "es" } = Astro.props;
+const { lang = "es", titleClass = "text-tx-2", showTitle = true } = Astro.props;
 const content = lang === "en" ? en.sponsors : es.sponsors;
 
 const goldConfig = [
@@ -109,10 +111,11 @@ const imgBase = "object-contain";
 const imgSmall = "max-w-[70%] max-h-[70%]";
 ---
 
-  <p class="text-tx-2">{content.title}</p>
+  {showTitle && <p class={titleClass}>{content.title}</p>}
 
-  <section class="space-y-2">
-    <div class="grid grid-cols-2 gap-4">
+  <div class="space-y-4">
+    <section>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {
         goldConfig.map((s) => (
           <a
@@ -137,11 +140,10 @@ const imgSmall = "max-w-[70%] max-h-[70%]";
           </a>
         ))
       }
-    </div>
-  </section>
-
-  <section class="space-y-2">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      </div>
+    </section>
+    <section>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
       {
         silverConfig.map((s) => (
           <a
@@ -166,11 +168,10 @@ const imgSmall = "max-w-[70%] max-h-[70%]";
           </a>
         ))
       }
-    </div>
-  </section>
-
-  <section class="space-y-2">
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      </div>
+    </section>
+    <section>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
       {
         bronzeConfig.map((s) => (
           <a
@@ -195,6 +196,6 @@ const imgSmall = "max-w-[70%] max-h-[70%]";
           </a>
         ))
       }
-    </div>
-  </section>
-</div>
+      </div>
+    </section>
+  </div>

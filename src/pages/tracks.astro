@@ -1,0 +1,79 @@
+---
+import "../styles/global.css";
+import ApplyMarquee from "../components/ApplyMarquee";
+import SEO from "../components/SEO.astro";
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
+import { es } from "../i18n/es";
+
+const { tracksPage } = es;
+const trackColors = ["text-pink-dim", "text-jade-dim", "text-indigo-dim"] as const;
+const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"] as const;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title={`${es.meta.title} | tracks`}
+      description="tracks del hackathon: transparency & corruption, environment & climate risk, def/acc. cupos limitados."
+    />
+  </head>
+  <body class="bg-bg text-tx text-xl font-serif text-pretty scroll-smooth">
+    <ApplyMarquee word={es.landing.marquee} client:load />
+    <main class="px-4 py-4 sm:p-8">
+      <div class="max-w-3xl mx-auto space-y-12">
+        <header class="space-y-4 text-center">
+          <a href="/" class="text-tx-2 text-sm font-mono hover:text-tx block text-left">
+            {tracksPage.backToHome}
+          </a>
+          <h1 class="font-serif text-6xl">{tracksPage.title}</h1>
+          <p class="text-tx-2 text-balance">{tracksPage.limitedSpots}</p>
+        </header>
+
+        <div class="space-y-16">
+          {
+            tracksPage.items.map((track, i) => {
+              const color = trackColors[i];
+              return (
+                <article id={trackSlugs[i]} class="space-y-6 lowercase scroll-mt-8">
+                  <div class="space-y-2">
+                    <h2 class={`font-serif text-2xl ${color}`}>{track.name}</h2>
+                    <p class={`font-serif text-xl ${color}`}>{track.tagline}</p>
+                  </div>
+
+                  <section class="space-y-2">
+                    <h3 class={`font-serif text-xl ${color}`}>{tracksPage.whatIsIt}</h3>
+                    <p class="text-tx-2">{track.whatIsIt}</p>
+                  </section>
+
+                  <section class="space-y-2">
+                    <h3 class={`font-serif text-xl ${color}`}>{tracksPage.whatFits}</h3>
+                    <ul class="text-tx-2 list-none [&_li]:leading-tight [&_li]:pl-4 [&_li]:relative [&_li]:before:content-['-'] [&_li]:before:absolute [&_li]:before:left-0">
+                      {track.whatFits.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+
+                  <section class="space-y-2">
+                    <h3 class={`font-serif text-xl ${color}`}>{tracksPage.whatDoesntFit}</h3>
+                    <ul class="text-tx-2 list-none [&_li]:leading-tight [&_li]:pl-4 [&_li]:relative [&_li]:before:content-['-'] [&_li]:before:absolute [&_li]:before:left-0">
+                      {track.whatDoesntFit.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </section>
+                </article>
+              );
+            })
+          }
+        </div>
+
+        <LanguageSwitcher currentLang="es" currentPath="/tracks" />
+      </div>
+    </main>
+  </body>
+</html>

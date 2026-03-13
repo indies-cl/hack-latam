@@ -1,19 +1,26 @@
 ---
 interface Props {
   currentLang: "en" | "es";
+  currentPath?: string;
 }
 
-const { currentLang } = Astro.props;
+const { currentLang, currentPath = "/" } = Astro.props;
+const alternatePath =
+  currentLang === "es"
+    ? currentPath === "/"
+      ? "/en"
+      : `/en${currentPath}`
+    : currentPath.replace(/^\/en/, "") || "/";
 ---
 
 <div class="flex justify-center pb-16 pt-8">
   {
     currentLang === "es" ? (
-      <a href="/en" class="text-tx-2 text-sm underline hover:text-tx transition-colors">
+      <a href={alternatePath} class="text-tx-2 text-sm underline hover:text-tx transition-colors">
         view in english
       </a>
     ) : (
-      <a href="/" class="text-tx-2 text-sm underline hover:text-tx transition-colors">
+      <a href={alternatePath} class="text-tx-2 text-sm underline hover:text-tx transition-colors">
         ver en español
       </a>
     )

@@ -199,7 +199,6 @@ export const en = {
         logo: "/communities/the-hackathon-company.png",
         name: "the hackathon company",
         desc: "orchestrate world-class hackathons",
-        logoSmall: true,
       },
       {
         logo: "/communities/crafterstation.svg",
@@ -279,6 +278,205 @@ export const en = {
         },
       ],
     },
+  },
+  landing: {
+    marquee: "apply",
+    hero: {
+      tagline: "tech for good",
+      title: "hack@latam",
+      date: "May 15-17, 2026",
+      button: "apply with your team",
+    },
+    tldr: {
+      title: "tl;dr",
+      discordLink: { text: "discord", href: "https://indies.la" },
+      items: [
+        "social impact hackathon, open for everyone.",
+        "from may 15 to 17 latin america unites to tackle the problems that affect the region most.",
+        "kick off at may 15 at 6 pm (utc-4). 150 participants, teams of 1-4 people.",
+        "remote, anyone can participate, coordinated via ",
+        " in spanish.",
+        "want free pizza and ... other perks ;)? attend the kick off in peru, chile or guatemala.",
+      ],
+    },
+    countdown: {
+      label: "applications close in",
+      link: "apply here →",
+    },
+    tracks: {
+      title: "tracks",
+      desc: "help your community, latin america or the world. done means deployed.",
+      readMore: "read more",
+      items: [
+        {
+          name: "transparency & corruption",
+          short: "use data to expose, track, and reduce corruption",
+          long: "scrape public spending, cross-reference contracts, build dashboards citizens can actually use",
+        },
+        {
+          name: "environment & climate risk",
+          short: "track, predict, and mitigate environmental damage",
+          long: "satellite data, air quality sensors, wildfire prediction, monitor what governments won't",
+        },
+        {
+          name: "def/acc",
+          short: "build and accelerate technologies that strengthen society's defenses",
+          long: "from cyber threats to misinformation to critical infrastructure risk, create tools that prevent harm, detect threats early, and make systems more resilient, safer, and harder to break",
+        },
+      ],
+    },
+    where: {
+      title: "where",
+      desc: "remote, from anywhere. optionally join the kick off in peru, chile or guatemala. attend in person for exclusive perks and free food :)",
+      cards: [
+        {
+          title: "worldwide",
+          time: "may 15, 6pm (utc-4)",
+          desc: "the entire event runs online via ",
+          link: { text: "discord", href: "https://indies.la" },
+          afterLink: ", open to everyone.",
+        },
+        {
+          title: "lima, peru",
+          time: "5pm 🇵🇪",
+          desc: "at universidad de ingeniería y tecnología, organized by ",
+          link: { text: "ai playground", href: "https://www.instagram.com/aiplaygroundstech/" },
+          afterLink: "",
+        },
+        {
+          title: "santiago de chile",
+          time: "6pm 🇨🇱",
+          desc: "at pontificia universidad católica, organized by ",
+          link: { text: "unite", href: "https://www.instagram.com/unite_uc/" },
+          afterLink: "",
+        },
+        {
+          title: "ciudad de guatemala",
+          time: "4pm 🇬🇹",
+          desc: "location tbd, organized by ",
+          link: { text: "the502project", href: "https://www.the502project.com/" },
+          afterLink: " and ",
+          link2: { text: "we solve", href: "https://www.instagram.com/wesolve.io/" },
+        },
+      ],
+    },
+    perks: {
+      title: "perks",
+      subtitle: "every team member gets",
+      items: [
+        { text: "1 month of ", link: "minimax", href: "https://www.minimax.io/", after: " coding plan plus" },
+        { text: "$10 credit for ", link: "zavu", href: "https://www.zavu.dev/en", after: "" },
+        { text: "3 months of ", link: "monologue", href: "https://www.monologue.to/", after: " pro" },
+        { text: "more perks to be revealed", link: null, href: "", after: "" },
+      ],
+    },
+    faq: {
+      title: "faq",
+      items: [
+        {
+          q: "i want to form a team but i don't know anyone. can i still join?",
+          a: "yes. join our ",
+          link: { text: "discord", href: "https://indies.la" },
+          after: " and head to #hackathon. you'll find people looking for teammates. be proactive: create a thread on their message, introduce yourself, and say what kind of team you want to form.",
+        },
+        {
+          q: "can i form a team with someone in another country? e.g. i'm in mexico, my teammate is in paraguay.",
+          a: "yes. anyone from anywhere can participate. fully remote.",
+        },
+        {
+          q: "some of my team will participate online, others want to attend the kick off in person. is that ok?",
+          a: "yes. fill in the form to save your spot at the kick off.",
+        },
+        {
+          q: "i'm under 18. can i participate?",
+          a: "yes. if you win, we may have trouble delivering prizes in some countries. we'll wire to a family member or someone close to you.",
+        },
+        {
+          q: "am i too old? can i participate?",
+          a: "yes. we don't discriminate by age, gender, or religion. anyone can join.",
+        },
+        {
+          q: "i speak english. can i still join?",
+          a: "yes. coordination is in spanish, but ~90% of staff speak english. dm someone if you're lost.",
+        },
+        {
+          q: "can i sponsor the event?",
+          a: "yes. cash and/or credits. see the ",
+          link: { text: "deck", href: "/deck" },
+          after: " for details.",
+        },
+      ],
+    },
+    communities: {
+      title: "communities",
+      desc: "a hackathon by communities across the region who want to see it flourish.",
+    },
+  },
+  tracksPage: {
+    title: "tracks",
+    whatIsIt: "what is it",
+    whatFits: "what fits",
+    whatDoesntFit: "what doesn't fit",
+    backToHome: "home",
+    limitedSpots:
+      "each track has limited spots. spots are released the day of the hackathon. you can learn about the tracks but not reserve a spot.",
+    items: [
+      {
+        name: "transparency & corruption",
+        tagline: "use data to expose, track, and reduce corruption",
+        whatIsIt:
+          "this track is about making power legible. build tools that reveal how public money moves, who benefits, where abuse happens, and how institutions can be held accountable",
+        whatFits: [
+          "projects that make public spending, procurement, lobbying, asset declarations, or political finance easier to inspect",
+          "tools that cross-reference contracts, vendors, budgets, and public records to surface red flags",
+          "dashboards, alerts, or investigation tools for citizens, journalists, auditors, or watchdogs",
+          "systems that make opaque public processes searchable, traceable, and understandable",
+        ],
+        whatDoesntFit: [
+          "generic govtech tools with no anti-corruption angle",
+          "dashboards with no real data collection, verification, or investigative value",
+          "awareness campaigns without a concrete product or mechanism",
+          "projects that visualize data but do not help detect, explain, or reduce abuse",
+        ],
+      },
+      {
+        name: "environment & climate risk",
+        tagline: "track, predict, and mitigate environmental damage",
+        whatIsIt:
+          "this track is about seeing environmental harm earlier and responding faster. build tools that monitor risk, forecast damage, and help communities, responders, or institutions act before things get worse",
+        whatFits: [
+          "projects that monitor environmental harm using satellite data, sensors, drones, or public datasets",
+          "tools for wildfire detection, flood prediction, air quality monitoring, water risk, or illegal extraction",
+          "systems that help communities, responders, or regulators act earlier on climate and environmental threats",
+          "products that expose environmental damage governments or companies fail to track well",
+        ],
+        whatDoesntFit: [
+          "generic climate apps with no clear monitoring, prediction, or mitigation use case",
+          "carbon footprint calculators with no novel data, intervention, or operational value",
+          "sustainability branding tools with no real-world risk reduction",
+          "projects that describe environmental problems without helping detect, forecast, or respond to them",
+        ],
+      },
+      {
+        name: "def/acc",
+        tagline: "build and accelerate technologies that strengthen society's defenses",
+        whatIsIt:
+          "def/acc is about accelerating technologies that help society defend itself, especially against large-scale threats like cyberattacks, bio risk, disinformation, and failures in critical systems. build things that prevent harm, detect threats early, and make people, institutions, and infrastructure more resilient under pressure",
+        whatFits: [
+          "cybersecurity, AI security, critical infrastructure protection, vulnerability detection, and patching at scale",
+          "biosecurity, outbreak detection, lab safety, and early-warning systems",
+          "anti-disinformation, provenance, bot detection, and tools that reduce mass persuasion risk",
+          "products that amplify human agency under AI, helping people supervise systems, stay in the loop, and avoid displacement",
+          "in general, projects that improve society's defensive capacity rather than just making systems more powerful",
+        ],
+        whatDoesntFit: [
+          "generic AI apps with no defensive use case",
+          "purely offensive capabilities",
+          '"safety" projects with no concrete threat model or protection mechanism',
+          "vague social good ideas that do not make people, institutions, or infrastructure more resilient",
+        ],
+      },
+    ],
   },
   sponsors: {
     title: "Sponsors",

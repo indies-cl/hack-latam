@@ -228,14 +228,14 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
           <div class="grid grid-cols-2 gap-4">
             {
               t.communities.communities.map((c) => (
-                <div class="border border-ui p-4 aspect-square flex flex-col justify-center items-center text-center gap-4">
-                  <div class="w-full aspect-square flex items-center justify-center shrink-0">
+                <div class="border border-ui p-4 h-[200px] flex flex-col justify-center items-center text-center gap-4">
+                  <div class="h-[200px] w-full flex items-center justify-center shrink-0">
                     <Image
                       src={c.logo}
                       alt={c.name}
                       width={200}
                       height={200}
-                      class={`w-full h-full object-contain ${"logoSmall" in c && c.logoSmall ? "max-w-[70%] max-h-[70%]" : ""} ${"logoCentered" in c && c.logoCentered ? "w-auto h-auto max-w-full max-h-full" : ""}`}
+                      class="h-[200px] w-auto max-w-full object-contain"
                     />
                   </div>
                   <p class="text-tx-2 text-base text-balance">{c.desc}</p>
@@ -245,7 +245,7 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
             <a
               href="https://www.linkedin.com/posts/pup_armamos-un-comit%C3%A9-continental-que-une-todas-activity-7424059186474446848-OjMR"
               target="_blank"
-              class="border border-dashed border-tx bg-tx/10 p-4 aspect-square flex flex-col justify-center items-center text-center gap-4 hover:border-tx text-tx"
+              class="border border-dashed border-tx bg-tx/10 p-4 h-[200px] flex flex-col justify-center items-center text-center gap-4 hover:border-tx text-tx"
             >
               <p class="text-2xl" set:html={t.communities.cta} />
             </a>

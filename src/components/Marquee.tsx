@@ -21,7 +21,7 @@ export function Marquee({
   return (
     <div
       {...props}
-      className={`group flex overflow-hidden p-2 [--gap:2rem] [--duration:40s] ${
+      className={`group flex overflow-hidden p-2 [--gap:2rem] ${
         vertical ? "flex-col" : "flex-row"
       } ${className ?? ""}`}
     >

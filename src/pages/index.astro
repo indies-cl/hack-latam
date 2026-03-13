@@ -1,19 +1,26 @@
 ---
-import { Image } from "astro:assets";
 import "../styles/global.css";
-import { es } from "../i18n/es";
 import ApplyMarquee from "../components/ApplyMarquee";
-import Hero from "../components/Hero.astro";
-import ParticipateCTA from "../components/ParticipateCTA.astro";
-import DiscordCTA from "../components/DiscordCTA.astro";
-import Countdown from "../components/Countdown";
-import Bento from "../components/Bento.astro";
 import Sponsors from "../components/Sponsors.astro";
-import Communities from "../components/Communities.astro";
+import CommunitiesMarquee from "../components/CommunitiesMarquee";
+import Countdown from "../components/Countdown";
 import SEO from "../components/SEO.astro";
 import LanguageSwitcher from "../components/LanguageSwitcher.astro";
+import { es } from "../i18n/es";
+import { onlineAscii, lanAsciiArt, lanAsciiScale } from "../data/lanAscii";
 
-const { communities } = es.communities;
+const { landing, communities } = es;
+const { marquee, hero, tldr, countdown, tracks, where, perks, faq } = landing;
+
+const whereCardMeta = [
+  { border: "border-tx", titleColor: "text-tx", ascii: onlineAscii, scale: 0.5 },
+  { border: "border-orange-dim", titleColor: "text-orange-dim", ascii: lanAsciiArt[1], scale: lanAsciiScale[1] },
+  { border: "border-red-dim", titleColor: "text-red-dim", ascii: lanAsciiArt[0], scale: lanAsciiScale[0] },
+  { border: "border-sky-dim", titleColor: "text-sky-dim", ascii: lanAsciiArt[2], scale: lanAsciiScale[2] },
+] as const;
+
+const trackColors = ["text-pink-dim", "text-jade-dim", "text-indigo-dim"] as const;
+const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"] as const;
 ---
 
 <html lang="es">
@@ -24,25 +31,209 @@ const { communities } = es.communities;
     <meta name="generator" content={Astro.generator} />
     <SEO title={es.meta.title} description={es.meta.description} />
   </head>
-  <body class="bg-bg text-tx text-xl font-serif text-pretty">
-    <ApplyMarquee word="participa" client:load />
-    <div class="p-4 sm:p-8 max-w-5xl mx-auto space-y-8">
-      <Hero />
-      <section class="border border-ui bg-bg-2 p-6 md:p-10 flex flex-col gap-2 items-center justify-center text-center">
-        <p class="text-tx-2">postulaciones cierran</p>
-        <Countdown client:only="react" />
-        <a href="https://tally.so/r/dWYX7o" target="_blank" rel="noopener noreferrer" class="text-og text-sm font-mono hover:underline">postula aquí →</a>
-      </section>
-      <div class="space-y-4">
-        <Bento />
-        <div class="grid md:grid-cols-2 gap-4">
-          <DiscordCTA />
-          <ParticipateCTA />
+  <body class="bg-bg text-tx text-xl font-serif text-pretty scroll-smooth">
+    <ApplyMarquee word={marquee} client:load />
+    <main class="px-4 py-4 sm:p-8">
+      <div class="max-w-7xl mx-auto space-y-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-tx-2">{hero.tagline}</h1>
+          <h2 class="font-sans text-6xl">{hero.title}</h2>
+          <p>{hero.date}</p>
+          <a
+            href="https://tally.so/r/dWYX7o"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block mt-4 shrink-0 bg-tx text-bg py-3 px-6 border border-ui font-serif hover:border-ui-2 transition-colors"
+          >{hero.button}</a
+          >
+        </div>
+        <div class="space-y-8">
+          <div class="max-w-3xl mx-auto space-y-2">
+            <p>{tldr.title}</p>
+            <p class="text-tx-2 flex flex-col gap-2">
+              <span>{tldr.items[0]}</span>
+              <span>{tldr.items[1]}</span>
+              <span>{tldr.items[2]}</span>
+              <span>
+                {tldr.items[3]}
+                <a
+                  href={tldr.discordLink.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline text-tx hover:text-tx-2"
+                >{tldr.discordLink.text}</a
+                >
+                {tldr.items[4]}
+              </span>
+              <span>{tldr.items[5]}</span>
+            </p>
+          </div>
+
+          <section
+            class="border border-ui bg-bg-2 p-6 md:p-10 flex flex-col gap-2 items-center justify-center text-center max-w-3xl mx-auto"
+          >
+            <p class="text-tx-2">{countdown.label}</p>
+            <Countdown lang="es" client:only="react" />
+            <a
+              href="https://tally.so/r/dWYX7o"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-tx text-sm font-mono hover:underline"
+            >{countdown.link}</a
+            >
+          </section>
+
+          <div class="max-w-3xl mx-auto space-y-2">
+            <p class="text-tx">{perks.title}</p>
+            <p class="text-tx-2">{perks.subtitle}</p>
+            <ul
+              class="text-tx-2 list-none [&_li]:leading-tight [&_li]:my-0 [&_li]:pl-4 [&_li]:relative [&_li]:before:content-['-'] [&_li]:before:absolute [&_li]:before:left-0"
+            >
+              {
+                perks.items.map((item) => (
+                  <li>
+                    {item.text}
+                    {item.link ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="underline text-tx hover:text-tx-2"
+                      >{item.link}</a
+                      >
+                    ) : null}
+                    {item.after}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <div class="max-w-3xl mx-auto space-y-2">
+            <p>{tracks.title}</p>
+            <p class="text-tx-2">{tracks.desc}</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-7xl mx-auto">
+            {
+              tracks.items.map((track, i) => (
+                <div
+                  class={`border-2 ${trackColors[i].replace("text-", "border-")} p-4 text-base lowercase space-y-4 flex flex-col`}
+                >
+                  <h3 class={`font-sans text-2xl uppercase ${trackColors[i]}`}>
+                    {track.name}
+                  </h3>
+                  <p>{track.short}</p>
+                  <p>{track.long}</p>
+                  <a
+                    href={`/tracks#${trackSlugs[i]}`}
+                    class={`underline font-serif mt-auto self-end ${trackColors[i]}`}
+                  >
+                    {tracks.readMore}
+                  </a>
+                </div>
+              ))
+            }
+          </div>
+
+          <div class="max-w-3xl mx-auto space-y-2">
+            <p>{where.title}</p>
+            <p class="text-tx-2">{where.desc}</p>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto"
+          >
+            {
+              where.cards.map((card, i) => {
+                const meta = whereCardMeta[i];
+                return (
+                  <div
+                    class={`border-2 ${meta.border} p-4 text-base lowercase space-y-4 flex flex-col`}
+                  >
+                    <div class="relative w-full aspect-square overflow-hidden flex items-center justify-center shrink-0">
+                      <div
+                        class={`absolute left-1/2 top-1/2 font-mono text-[4px] leading-none select-none ${meta.titleColor}`}
+                        style={`transform: translate(-50%, -50%) scale(${meta.scale}); transform-origin: center center;`}
+                      >
+                        <pre>{meta.ascii}</pre>
+                      </div>
+                    </div>
+                    <div class="flex flex-col gap-2 flex-1">
+                      <h3 class={`font-sans text-2xl uppercase ${meta.titleColor}`}>
+                        {card.title}
+                      </h3>
+                      <p class="font-mono text-tx">{card.time}</p>
+                      <p class="text-tx-2">
+                        {card.desc}
+                        <a
+                          href={card.link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="underline text-tx hover:text-tx-2"
+                        >
+                          {card.link.text}
+                        </a>
+                        {card.afterLink}
+                        {"link2" in card && card.link2 ? (
+                          <a
+                            href={card.link2.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="underline text-tx hover:text-tx-2"
+                          >
+                            {card.link2.text}
+                          </a>
+                        ) : null}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })
+            }
+          </div>
+
+          <div id="sponsors" class="max-w-7xl mx-auto scroll-mt-8 lowercase">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div class="flex flex-col gap-8">
+                <div class="space-y-6">
+                  <p class="text-tx">{faq.title}</p>
+                  <div class="space-y-6 text-tx-2">
+                    {
+                      faq.items.map((item) => (
+                        <div class="space-y-2">
+                          <p class="text-tx">{item.q}</p>
+                          <p>
+                            {item.a}
+                            {"link" in item && item.link ? (
+                              <>
+                                <a
+                                  href={item.link.href}
+                                  class="underline text-tx hover:text-tx-2"
+                                >{item.link.text}</a
+                                >
+                                {item.after}
+                              </>
+                            ) : null}
+                          </p>
+                        </div>
+                      ))
+                    }
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <p class="text-tx">{landing.communities.title}</p>
+                  <p class="text-tx-2">{landing.communities.desc}</p>
+                  <CommunitiesMarquee communities={communities.communities} client:load />
+                </div>
+              </div>
+              <div class="space-y-8">
+                <p class="text-tx">{es.sponsors.title}</p>
+                <Sponsors showTitle={false} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <Sponsors />
-      <Communities communities={communities} />
-      <LanguageSwitcher currentLang="es" />
-    </div>
+    </main>
+    <LanguageSwitcher currentLang="es" />
   </body>
 </html>

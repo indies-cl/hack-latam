@@ -17,6 +17,7 @@
         "react": "^19.2.4",
         "react-dom": "^19.2.4",
         "tailwindcss": "^4.1.18",
+        "tailwindcss-radix-colors": "^2.1.0",
         "zod": "^4.3.6",
       },
       "devDependencies": {
@@ -883,6 +884,8 @@
     "tabbable": ["tabbable@6.4.0", "", {}, "sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg=="],
 
     "tailwindcss": ["tailwindcss@4.1.18", "", {}, "sha512-4+Z+0yiYyEtUVCScyfHCxOYP06L5Ne+JiHhY2IjR2KWMIWhJOYZKLSGZaP5HkZ8+bY0cxfzwDE5uOmzFXyIwxw=="],
+
+    "tailwindcss-radix-colors": ["tailwindcss-radix-colors@2.1.0", "", { "peerDependencies": { "tailwindcss": ">=4.0.0" } }, "sha512-xh2bDBvYacUbMFfg6TINGN30K+GfeP33sEd1+27xHeBskODc2cNiSPOOfaHjB78LN7l4l8BNPZfXcGmhsRsUJQ=="],
 
     "tapable": ["tapable@2.3.0", "", {}, "sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg=="],
 

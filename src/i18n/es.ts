@@ -229,7 +229,6 @@ export const es = {
         logo: "/communities/the-hackathon-company.png",
         name: "the hackathon company",
         desc: "orquesta hackathons de clase mundial",
-        logoSmall: true,
       },
       {
         logo: "/communities/crafterstation.svg",
@@ -299,6 +298,205 @@ export const es = {
         },
       ],
     },
+  },
+  landing: {
+    marquee: "postula",
+    hero: {
+      tagline: "tech for good",
+      title: "hack@latam",
+      date: "15, 16 y 17 de Mayo 2026",
+      button: "postula con tu equipo",
+    },
+    tldr: {
+      title: "tl;dr",
+      discordLink: { text: "discord", href: "https://indies.la" },
+      items: [
+        "hackathon de impacto social, abierto para todos.",
+        "del 15 al 17 de mayo américa latina se une para atacar los problemas que más afectan a la región.",
+        "kick off el 15 de mayo a las 6pm (utc-4). 150 participantes, equipos de 1-4 personas.",
+        "remoto, cualquiera puede participar, coordinado por ",
+        " en español.",
+        "¿quieres pizza gratis y ... otros perks ;)? asiste al kick off en perú, chile o guatemala.",
+      ],
+    },
+    countdown: {
+      label: "las postulaciones cierran en",
+      link: "postula aquí →",
+    },
+    tracks: {
+      title: "tracks",
+      desc: "ayuda a tu comunidad, latam o el mundo. terminado significa deployado.",
+      readMore: "más detalles",
+      items: [
+        {
+          name: "transparency & corruption",
+          short: "usa datos para exponer, rastrear y reducir la corrupción",
+          long: "scrapea gasto público, cruza contratos, construye dashboards que los ciudadanos puedan usar",
+        },
+        {
+          name: "environment & climate risk",
+          short: "rastrea, predice y mitiga el daño ambiental",
+          long: "datos satelitales, sensores de calidad del aire, predicción de incendios, monitorea lo que los gobiernos no",
+        },
+        {
+          name: "def/acc",
+          short: "construye y acelera tecnologías que fortalezcan las defensas de la sociedad",
+          long: "de cyber ataques a desinformación a riesgo de infraestructura crítica, crea herramientas que prevengan daños, detecten amenazas temprano y hagan los sistemas más resilientes, seguros y difíciles de romper",
+        },
+      ],
+    },
+    where: {
+      title: "dónde",
+      desc: "remoto, desde cualquier lugar. opcionalmente únete al kick off en perú, chile o guatemala. asiste en persona por perks exclusivos y comida gratis :)",
+      cards: [
+        {
+          title: "mundial",
+          time: "15 mayo, 6pm (utc-4)",
+          desc: "todo el evento corre online vía ",
+          link: { text: "discord", href: "https://indies.la" },
+          afterLink: ", abierto para todos.",
+        },
+        {
+          title: "lima, perú",
+          time: "5pm 🇵🇪",
+          desc: "en universidad de ingeniería y tecnología, organizado por ",
+          link: { text: "ai playground", href: "https://www.instagram.com/aiplaygroundstech/" },
+          afterLink: "",
+        },
+        {
+          title: "santiago de chile",
+          time: "6pm 🇨🇱",
+          desc: "en pontificia universidad católica, organizado por ",
+          link: { text: "unite", href: "https://www.instagram.com/unite_uc/" },
+          afterLink: "",
+        },
+        {
+          title: "ciudad de guatemala",
+          time: "4pm 🇬🇹",
+          desc: "ubicación por definir, organizado por ",
+          link: { text: "the502project", href: "https://www.the502project.com/" },
+          afterLink: " y ",
+          link2: { text: "we solve", href: "https://www.instagram.com/wesolve.io/" },
+        },
+      ],
+    },
+    perks: {
+      title: "perks",
+      subtitle: "cada miembro del equipo recibe",
+      items: [
+        { text: "1 mes de ", link: "minimax", href: "https://www.minimax.io/", after: " coding plan plus" },
+        { text: "$10 de crédito para ", link: "zavu", href: "https://www.zavu.dev/en", after: "" },
+        { text: "3 meses de ", link: "monologue", href: "https://www.monologue.to/", after: " pro" },
+        { text: "más perks por revelar", link: null, href: "", after: "" },
+      ],
+    },
+    faq: {
+      title: "faq",
+      items: [
+        {
+          q: "quiero armar equipo pero no conozco a nadie. ¿puedo unirme igual?",
+          a: "sí. únete a nuestro ",
+          link: { text: "discord", href: "https://indies.la" },
+          after: " y ve al canal #hackathon. encontrarás gente buscando compañeros. sé proactivo: crea un thread en su mensaje, preséntate y di qué tipo de equipo quieres formar.",
+        },
+        {
+          q: "¿puedo formar equipo con alguien de otro país? ej. estoy en méxico, mi compañero en paraguay.",
+          a: "sí. cualquiera de cualquier lugar puede participar. totalmente remoto.",
+        },
+        {
+          q: "parte de mi equipo participa online, otros quieren asistir al kick off en persona. ¿está bien?",
+          a: "sí. llena el formulario para reservar tu lugar en el kick off.",
+        },
+        {
+          q: "tengo menos de 18. ¿puedo participar?",
+          a: "sí. si ganas, podemos tener problemas para entregar premios en algunos países. transferiremos a un familiar o alguien cercano.",
+        },
+        {
+          q: "¿soy muy viejo? ¿puedo participar?",
+          a: "sí. no discriminamos por edad, género o religión. cualquiera puede unirse.",
+        },
+        {
+          q: "i speak english. can i still join?",
+          a: "yes. coordination is in spanish, but ~90% of staff speak english. dm someone if you're lost.",
+        },
+        {
+          q: "¿puedo sponsorear el evento?",
+          a: "sí. efectivo y/o créditos. mira el ",
+          link: { text: "deck", href: "/deck" },
+          after: " para detalles.",
+        },
+      ],
+    },
+    communities: {
+      title: "comunidades",
+      desc: "un hackathon de comunidades en la región que quieren verla florecer.",
+    },
+  },
+  tracksPage: {
+    title: "tracks",
+    whatIsIt: "qué es",
+    whatFits: "qué encaja",
+    whatDoesntFit: "qué no encaja",
+    backToHome: "inicio",
+    limitedSpots:
+      "cada track tiene cupos limitados. los cupos se liberan el día del hackathon. puedes saber de los tracks pero no reservar un cupo.",
+    items: [
+      {
+        name: "transparency & corruption",
+        tagline: "usa datos para exponer, rastrear y reducir la corrupción",
+        whatIsIt:
+          "este track trata de hacer legible el poder. construye herramientas que revelen cómo se mueve el dinero público, quién se beneficia, dónde ocurren abusos y cómo las instituciones pueden rendir cuentas",
+        whatFits: [
+          "proyectos que faciliten inspeccionar gasto público, compras, lobby, declaraciones patrimoniales o financiamiento político",
+          "herramientas que crucen contratos, proveedores, presupuestos y registros públicos para detectar señales de alerta",
+          "dashboards, alertas o herramientas de investigación para ciudadanos, periodistas, auditores o watchdogs",
+          "sistemas que hagan procesos públicos opacos buscables, trazables y comprensibles",
+        ],
+        whatDoesntFit: [
+          "herramientas govtech genéricas sin ángulo anticorrupción",
+          "dashboards sin recolección, verificación o valor investigativo real",
+          "campañas de concientización sin producto o mecanismo concreto",
+          "proyectos que visualicen datos pero no ayuden a detectar, explicar o reducir abusos",
+        ],
+      },
+      {
+        name: "environment & climate risk",
+        tagline: "rastrea, predice y mitiga el daño ambiental",
+        whatIsIt:
+          "este track trata de ver el daño ambiental antes y responder más rápido. construye herramientas que monitoreen riesgo, pronostiquen daño y ayuden a comunidades, respondedores o instituciones a actuar antes de que empeore",
+        whatFits: [
+          "proyectos que monitoreen daño ambiental con datos satelitales, sensores, drones o datasets públicos",
+          "herramientas para detección de incendios, predicción de inundaciones, calidad del aire, riesgo hídrico o extracción ilegal",
+          "sistemas que ayuden a comunidades, respondedores o reguladores a actuar antes ante amenazas climáticas y ambientales",
+          "productos que expongan daño ambiental que gobiernos o empresas no monitorean bien",
+        ],
+        whatDoesntFit: [
+          "apps climáticas genéricas sin caso de uso claro de monitoreo, predicción o mitigación",
+          "calculadoras de huella de carbono sin datos novedosos, intervención o valor operacional",
+          "herramientas de branding de sustentabilidad sin reducción de riesgo real",
+          "proyectos que describan problemas ambientales sin ayudar a detectar, pronosticar o responder",
+        ],
+      },
+      {
+        name: "def/acc",
+        tagline: "construye y acelera tecnologías que fortalezcan las defensas de la sociedad",
+        whatIsIt:
+          "def/acc trata de acelerar tecnologías que ayuden a la sociedad a defenderse, especialmente contra amenazas a gran escala como ciberataques, riesgo biológico, desinformación y fallas en sistemas críticos. construye cosas que prevengan daño, detecten amenazas temprano y hagan personas, instituciones e infraestructura más resilientes bajo presión",
+        whatFits: [
+          "ciberseguridad, seguridad de IA, protección de infraestructura crítica, detección de vulnerabilidades y parcheo a escala",
+          "bioseguridad, detección de brotes, seguridad de laboratorios y sistemas de alerta temprana",
+          "anti-desinformación, proveniencia, detección de bots y herramientas que reduzcan riesgo de persuasión masiva",
+          "productos que amplifiquen la agencia humana bajo IA, ayudando a supervisar sistemas, mantenerse en el loop y evitar desplazamiento",
+          "en general, proyectos que mejoren la capacidad defensiva de la sociedad en vez de solo hacer sistemas más poderosos",
+        ],
+        whatDoesntFit: [
+          "apps de IA genéricas sin caso de uso defensivo",
+          "capacidades puramente ofensivas",
+          'proyectos de "seguridad" sin modelo de amenaza o mecanismo de protección concreto',
+          "ideas vagas de bien social que no hagan personas, instituciones o infraestructura más resilientes",
+        ],
+      },
+    ],
   },
   sponsors: {
     title: "Patrocinadores",

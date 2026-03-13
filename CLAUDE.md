@@ -31,14 +31,26 @@ CONSIDER: these fonts have no weights other than 400. therefore `font-bold` is u
 
 ### COLORS
 
-USE ONLY the following colors:
+**Custom tokens** (semantic, prefer these for layout):
 
 - `bg`: main background
 - `bg-2`: secondary background
 - `ui`: borders
 - `ui-2`: hovered borders
 - `ui-3`: active borders
-- `tx-2`: faint text
+- `tx-3`: faint text
 - `tx-2`: muted text
 - `tx`: primary text
-- `og`: primary color, signals brand, is bright and attention grabbing
+
+**Radix Colors** (all scales available via `tailwindcss-radix-colors`):
+
+- atomic: `bg-red-9`, `text-slate-12`, `border-blue-7` (scale 1–12)
+- alpha: `bg-reda-5`, `text-bluea-11`
+- semantic (auto dark mode + hover/active):
+  - `bg-{color}-app` (step 1), `bg-{color}-subtle` (step 2)
+  - `bg-{color}-ui` (step 3 + hover/active), `bg-{color}-ghost` (transparent + hover/active)
+  - `bg-{color}-solid` (step 9 + hover)
+  - `border-{color}-dim` (step 6), `border-{color}-normal` (step 7 + hover)
+  - `text-{color}-dim` (step 11), `text-{color}-normal` (step 12)
+
+Available colors: gray, mauve, slate, sage, olive, sand, tomato, red, ruby, crimson, pink, plum, purple, violet, iris, indigo, blue, cyan, teal, jade, green, grass, bronze, gold, brown, orange, amber, yellow, lime, mint, sky
