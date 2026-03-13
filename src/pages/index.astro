@@ -230,7 +230,7 @@ const trackSlugs = [
 
           <FAQAccordion title={faq.title} items={faq.items} client:load />
 
-          <div class="space-y-4 lowercase">
+          <div class="mt-8 space-y-4 lowercase">
             <div class="max-w-3xl mx-auto space-y-2">
               <p class="text-tx">{landing.communities.title}</p>
               <p class="text-tx-2">{landing.communities.desc}</p>
@@ -238,10 +238,10 @@ const trackSlugs = [
             <div
               class="w-screen relative left-1/2 -translate-x-1/2 overflow-hidden"
             >
-              <!-- <CommunitiesMarquee
+              <CommunitiesMarquee
                 communities={communities.communities}
                 client:load
-              /> -->
+              />
             </div>
           </div>
 
