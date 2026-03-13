@@ -330,7 +330,7 @@ export const es = {
     },
     tracks: {
       title: "tracks",
-      desc: "ayuda a tu comunidad, latam o el mundo. terminado significa deployado.",
+      desc: "ayuda a tu comunidad, latam o el mundo. terminado significa deployado. todos los proyectos deben ser open source.",
       readMore: "más detalles",
       items: [
         {
@@ -445,6 +445,7 @@ export const es = {
     backToHome: "inicio",
     limitedSpots:
       "cada track tiene cupos limitados. los cupos se liberan el día del hackathon. puedes saber de los tracks pero no reservar un cupo.",
+    openSource: "todos los proyectos deben ser open source.",
     items: [
       {
         name: "transparency & corruption",

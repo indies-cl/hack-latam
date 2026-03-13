@@ -312,7 +312,7 @@ export const en = {
     },
     tracks: {
       title: "tracks",
-      desc: "help your community, latin america or the world. done means deployed.",
+      desc: "help your community, latin america or the world. done means deployed. all projects must be open source.",
       readMore: "read more",
       items: [
         {
@@ -427,6 +427,7 @@ export const en = {
     backToHome: "home",
     limitedSpots:
       "each track has limited spots. spots are released the day of the hackathon. you can learn about the tracks but not reserve a spot.",
+    openSource: "all projects must be open source.",
     items: [
       {
         name: "transparency & corruption",
