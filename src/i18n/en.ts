@@ -7,7 +7,7 @@ export const en = {
   },
   header: {
     tagline: "54 hours. three problems latam can't keep ignoring.",
-    subtitle: "May 15–17, 2026 | 54 hours | 150 builders",
+    subtitle: "May 15–17, 2026. 54 hours. 150 builders. remote",
   },
   nav: {
     who: "who we are",
@@ -21,6 +21,7 @@ export const en = {
     ask: "the ask",
     whatYouGet: "what you get",
     contact: "contact us",
+    sponsors: "sponsors",
     communities: "communities",
   },
   who: {
@@ -48,8 +49,10 @@ export const en = {
   event: {
     title: "the event",
     items: [
-      "150 hand-picked participants, ages 20–35",
-      "software engineers, cs students, founders, high-agency techies",
+      "150 participants, teams of 1–4 people",
+      "fully remote, coordinated via discord in spanish",
+      "optional in-person kick offs in chile, peru, and guatemala",
+      "target demographic: ages 20–35. software engineers, cs students, founders, high-agency techies",
       "application-based selection to filter for people who actually ship",
     ],
     goal: "the pipeline: raw talent → shipped product → founder.",
@@ -75,12 +78,12 @@ export const en = {
         desc: "scrape public spending, cross-reference contracts, build dashboards citizens can actually use.",
       },
       {
-        name: "2. community welfare & public safety",
-        desc: "the open track. mutual aid, emergency coordination, civic tools, anything that helps a community you care about.",
+        name: "2. environment & climate risk",
+        desc: "satellite data, air quality sensors, wildfire prediction, monitor what governments won't.",
       },
       {
-        name: "3. environment & climate risk",
-        desc: "satellite data, air quality sensors, wildfire prediction, monitor what governments won't.",
+        name: "3. def/acc",
+        desc: "from cyberattacks to disinformation to critical infrastructure risk. build tools that strengthen society's defenses.",
       },
     ],
   },
@@ -148,6 +151,10 @@ export const en = {
       {
         label: '"powered by" mentions:',
         desc: 'optional track sponsorship (e.g. "best AI use powered by [you]")',
+      },
+      {
+        label: "track sponsorship:",
+        desc: "sponsor a specific track or category with your technology",
       },
       {
         label: "stage time:",
@@ -494,6 +501,5 @@ export const en = {
     zavu: "One API. Every messaging channel. SMS, WhatsApp, Telegram, Email, Voice.",
   },
 } as const;
-
 
 export type Content = Omit<typeof en, "lang"> & { readonly lang: "en" | "es" };

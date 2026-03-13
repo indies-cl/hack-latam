@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import "../styles/global.css";
 import type { Content } from "../i18n";
+import { sponsorsConfig } from "../data/sponsors";
 import NavHighlight from "./NavHighlight.astro";
 import PhotoStack from "./PhotoStack";
 import SEO from "./SEO.astro";
@@ -77,6 +78,11 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
         href="#contact"
         class="nav-link block hover:text-tx"
         data-target="contact">{t.nav.contact}</a
+      >
+      <a
+        href="#sponsors"
+        class="nav-link block hover:text-tx"
+        data-target="sponsors">{t.nav.sponsors}</a
       >
       <a
         href="#communities"
@@ -222,23 +228,46 @@ const LINKEDIN = "https://www.linkedin.com/in/pup/";
         </p>
       </section>
 
+      <section id="sponsors" class="space-y-4 font-sans">
+        <div class="space-y-4">
+          <h3 class="text-xl text-tx-2">{t.sponsors.title}</h3>
+          <div class="grid grid-cols-3 gap-4">
+            {
+              sponsorsConfig.map((s) => (
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border border-ui p-4 h-[200px] flex flex-col justify-center items-center hover:border-ui-2 hover:bg-bg-2 transition-colors"
+                >
+                  <Image
+                    src={s.img}
+                    alt={s.alt}
+                    width={200}
+                    height={200}
+                    class="max-w-[70%] max-h-[70%] w-auto object-contain"
+                  />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
       <section id="communities" class="space-y-4 font-sans">
         <div class="space-y-4">
           <h3 class="text-xl text-tx-2">{t.communities.communitiesTitle}</h3>
-          <div class="grid grid-cols-2 gap-4">
+          <div class="grid grid-cols-3 gap-4">
             {
               t.communities.communities.map((c) => (
-                <div class="border border-ui p-4 h-[200px] flex flex-col justify-center items-center text-center gap-4">
-                  <div class="h-[200px] w-full flex items-center justify-center shrink-0">
-                    <Image
-                      src={c.logo}
-                      alt={c.name}
-                      width={200}
-                      height={200}
-                      class="h-[200px] w-auto max-w-full object-contain"
-                    />
-                  </div>
-                  <p class="text-tx-2 text-base text-balance">{c.desc}</p>
+                <div class="border border-ui p-4 h-[200px] flex flex-col justify-center items-center">
+                  <Image
+                    src={c.logo}
+                    alt={c.name}
+                    width={200}
+                    height={200}
+                    class="max-w-[70%] max-h-[70%] w-auto object-contain"
+                  />
                 </div>
               ))
             }

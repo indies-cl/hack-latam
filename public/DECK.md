@@ -1,6 +1,6 @@
 # hack@latam
 
-let’s code for a better world.
+let's code for a better world.
 
 # who we are
 
@@ -24,9 +24,10 @@ indies.la is where ambitious latam builders already hang out.
 
 hack@latam. May 15–17, 2026, 54 hours, fully focused on social impact.
 
-- 150 hand-picked participants
-- ages 20–35
-- software engineers, cs students, founders, high-agency techies
+- 150 participants, teams of 1–4 people
+- fully remote, coordinated via discord in spanish
+- optional in-person kick offs in chile, peru, and guatemala
+- target demographic: ages 20–35 — software engineers, cs students, founders, high-agency techies
 - application-based selection to filter for people who actually ship
 
 goal: turn latent talent into founders building for latin america.
@@ -42,7 +43,7 @@ most hackathons optimize for photos, not outcomes. we seek real change.
 
 # themes & tracks
 
-we focus on four fault lines in latam.  
+we focus on three fault lines in latam.  
 each track is about data, coordination, and real-time action.
 
 1. transparency & corruption
@@ -50,20 +51,15 @@ each track is about data, coordination, and real-time action.
 problem: opacity kills trust and progress.  
 angle: use data to expose, track, and reduce corruption.
 
-2. community welfare
-
-problem: coordination failures at local level.  
-angle: software for organizing, helping, and acting together.
-
-3. public safety & emergency response
-
-problem: emergencies move faster than institutions.  
-angle: real-time information and coordination for crises.
-
-4. environment & climate risk
+2. environment & climate risk
 
 problem: water, contamination, fires, and climate risk.  
 angle: track, predict, and mitigate environmental damage.
+
+3. def/acc
+
+problem: large-scale threats like cyberattacks, disinformation, and critical infrastructure failures.  
+angle: build and accelerate technologies that strengthen society's defenses.
 
 # format & judging
 
@@ -89,15 +85,31 @@ latin america is full of unsolved problems:
 - weak infrastructure, fragile institutions, and opacity
 - communities solving things locally with almost no tools
 
-we are not importing silicon valley’s problems.  
-we are building for latam’s reality.
+we are not importing silicon valley's problems.  
+we are building for latam's reality.
 
 hack@latam is a forcing function: put top local talent together, ship code on real problems.
+
+# communities
+
+hack@latam is backed by communities across the region:
+
+- indies.la — obsessive builders shipping products for the internet
+- UNITE — UC Entrepreneurship Club (chile)
+- c3 — competitive programming club (el salvador)
+- Dev Remoto Simple — remote work community
+- 502 — making guatemala a tech hub
+- ai playgrounds — AI for everyone
+- nucleo — AI systems for founders
+- the hackathon company — world-class hackathon organizers
+- crafterstation — open-source first builders
+- Sundai Latam Hacker Club — hacker community in latam
+- We Solve — community
 
 # why sponsor
 
 you want access to the people who actually build the future of latam.  
-hack@indies concentrates them in one weekend.
+hack@latam concentrates them in one weekend.
 
 as a sponsor, you get:
 
@@ -141,7 +153,8 @@ tool credits:
 for sponsors, we commit to:
 
 - clear branding in all event materials and online assets
-- explicit “powered by” mentions on relevant tracks and tooling
+- explicit "powered by" mentions on relevant tracks and tooling
+- track sponsorship: sponsor a specific track or category (e.g. "best use of AI powered by [you]")
 - intro sessions or workshops if you want to showcase your product
 - opt-in talent directory: profiles and links for participants who want to be visible to sponsors
 - post-event report: projects, traction, and how your tools were used

@@ -1,5 +1,3 @@
-import type { Content } from "./en";
-
 export const es = {
   lang: "es",
   meta: {
@@ -9,7 +7,7 @@ export const es = {
   },
   header: {
     tagline: "54 horas. tres problemas que latam no puede seguir ignorando.",
-    subtitle: "15, 16 y 17 de Mayo 2026 | 54 horas | 150 builders",
+    subtitle: "15, 16 y 17 de Mayo 2026. 54 horas. 150 builders. remoto",
   },
   nav: {
     who: "quiénes somos",
@@ -23,6 +21,7 @@ export const es = {
     ask: "lo que pedimos",
     whatYouGet: "lo que recibes",
     contact: "contacto",
+    sponsors: "sponsors",
     communities: "comunidades",
   },
   who: {
@@ -64,8 +63,10 @@ export const es = {
   event: {
     title: "el evento",
     items: [
-      "150 participantes seleccionados a mano, entre 20 y 35 años",
-      "ingenieros de software, estudiantes de cs, founders, techies de alta agencia",
+      "150 participantes, equipos de 1–4 personas",
+      "totalmente remoto, coordinado por discord en español",
+      "kick offs presenciales opcionales en chile, perú y guatemala",
+      "demografía objetivo: 20–35 años. ingenieros de software, estudiantes de cs, founders, techies de alta agencia",
       "selección por postulación para filtrar gente que realmente shipea",
     ],
     goal: "el pipeline: talento en bruto → producto deployeado → founder.",
@@ -92,12 +93,12 @@ export const es = {
         desc: "scraping de gasto público, cruce de contratos, dashboards que los ciudadanos puedan usar.",
       },
       {
-        name: "2. bienestar comunitario y seguridad pública",
-        desc: "el track abierto. ayuda mutua, coordinación de emergencias, herramientas cívicas, lo que sea que ayude a una comunidad que te importa.",
+        name: "2. medio ambiente y riesgo climático",
+        desc: "datos satelitales, sensores de calidad de aire, predicción de incendios, monitorear lo que los gobiernos no.",
       },
       {
-        name: "3. medio ambiente y riesgo climático",
-        desc: "datos satelitales, sensores de calidad de aire, predicción de incendios, monitorear lo que los gobiernos no.",
+        name: "3. def/acc",
+        desc: "de ciberataques a desinformación a riesgo de infraestructura crítica. construye herramientas que fortalezcan las defensas de la sociedad.",
       },
     ],
   },
@@ -168,6 +169,10 @@ export const es = {
       {
         label: 'menciones "powered by":',
         desc: 'sponsorship opcional de track (ej: "mejor uso de AI powered by [tú]")',
+      },
+      {
+        label: "sponsorship de track:",
+        desc: "sponsorea un track o categoría específica con tu tecnología",
       },
       {
         label: "tiempo en escenario:",
@@ -513,4 +518,4 @@ export const es = {
     v0: "Prompt a app full-stack desplegada.",
     zavu: "Una API. Todos los canales de mensajería. SMS, WhatsApp, Telegram, Email, Voz.",
   },
-} as const satisfies Content;
+} as const;

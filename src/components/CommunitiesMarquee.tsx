@@ -40,7 +40,7 @@ export default function CommunitiesMarquee({ communities }: Props) {
                   <img
                     src={c.logo}
                     alt={c.name}
-                    className="h-[100px] w-auto object-contain"
+                    className="max-w-[70px] max-h-[70px] w-auto object-contain"
                   />
                 </div>
               ))}

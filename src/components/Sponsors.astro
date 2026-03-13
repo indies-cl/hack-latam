@@ -108,7 +108,6 @@ const bronzeConfig = [
 const cardClass =
   "border border-ui p-4 flex items-center justify-center text-center flex-col gap-4 hover:border-ui-2 hover:bg-bg-2 transition-colors";
 const imgBase = "object-contain";
-const imgSmall = "max-w-[70%] max-h-[70%]";
 ---
 
   {showTitle && <p class={titleClass}>{content.title}</p>}
@@ -130,7 +129,7 @@ const imgSmall = "max-w-[70%] max-h-[70%]";
                 alt={s.alt}
                 width={160}
                 height={160}
-                class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
+                class={`${imgBase} max-w-[70%] max-h-[70%]`}
               />
             </div>
             <div class="flex flex-col gap-1">
@@ -158,7 +157,7 @@ const imgSmall = "max-w-[70%] max-h-[70%]";
                 alt={s.alt}
                 width={128}
                 height={128}
-                class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
+                class={`${imgBase} max-w-[70%] max-h-[70%]`}
               />
             </div>
             <div class="flex flex-col gap-1">
@@ -186,7 +185,7 @@ const imgSmall = "max-w-[70%] max-h-[70%]";
                 alt={s.alt}
                 width={96}
                 height={96}
-                class={`${imgBase} ${s.small ? imgSmall : "max-w-full max-h-full"}`}
+                class={`${imgBase} max-w-[70%] max-h-[70%]`}
               />
             </div>
             <div class="flex flex-col gap-1">
