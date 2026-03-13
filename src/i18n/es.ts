@@ -504,7 +504,8 @@ export const es = {
     ],
   },
   sponsors: {
-    title: "Patrocinadores",
+    title: "patrocinadores",
+    desc: "no habría sido posible ayudar a la región sin nuestros generosos patrocinadores.",
     faces: "Crea presentaciones interactivas usando inteligencia artificial: pitch decks, portafolios, guías o propuestas.",
     minimax: "Modelos de inteligencia artificial multimodales. Texto, audio, imagen, video, música. Optimizados para código y flujos agenticos.",
     threeByTen: "$ 3.000 dólares para fundadores técnicos",

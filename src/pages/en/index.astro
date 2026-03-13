@@ -3,6 +3,7 @@ import "../../styles/global.css";
 import ApplyMarquee from "../../components/ApplyMarquee";
 import Sponsors from "../../components/Sponsors.astro";
 import CommunitiesMarquee from "../../components/CommunitiesMarquee";
+import FAQAccordion from "../../components/FAQAccordion";
 import Countdown from "../../components/Countdown";
 import SEO from "../../components/SEO.astro";
 import LanguageSwitcher from "../../components/LanguageSwitcher.astro";
@@ -13,14 +14,42 @@ const { landing, communities } = en;
 const { marquee, hero, tldr, countdown, tracks, where, perks, faq } = landing;
 
 const whereCardMeta = [
-  { border: "border-tx", titleColor: "text-tx", ascii: onlineAscii, scale: 0.5 },
-  { border: "border-orange-dim", titleColor: "text-orange-dim", ascii: lanAsciiArt[1], scale: lanAsciiScale[1] },
-  { border: "border-red-dim", titleColor: "text-red-dim", ascii: lanAsciiArt[0], scale: lanAsciiScale[0] },
-  { border: "border-sky-dim", titleColor: "text-sky-dim", ascii: lanAsciiArt[2], scale: lanAsciiScale[2] },
+  {
+    border: "border-tx",
+    titleColor: "text-tx",
+    ascii: onlineAscii,
+    scale: 0.5,
+  },
+  {
+    border: "border-orange-dim",
+    titleColor: "text-orange-dim",
+    ascii: lanAsciiArt[1],
+    scale: lanAsciiScale[1],
+  },
+  {
+    border: "border-red-dim",
+    titleColor: "text-red-dim",
+    ascii: lanAsciiArt[0],
+    scale: lanAsciiScale[0],
+  },
+  {
+    border: "border-sky-dim",
+    titleColor: "text-sky-dim",
+    ascii: lanAsciiArt[2],
+    scale: lanAsciiScale[2],
+  },
 ] as const;
 
-const trackColors = ["text-pink-dim", "text-jade-dim", "text-indigo-dim"] as const;
-const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"] as const;
+const trackCardMeta = [
+  { border: "border-pink-dim", titleColor: "text-pink-dim", bodyColor: "text-pink-dim" },
+  { border: "border-jade-dim", titleColor: "text-jade-dim", bodyColor: "text-jade-dim" },
+  { border: "border-indigo-dim", titleColor: "text-indigo-dim", bodyColor: "text-indigo-dim" },
+] as const;
+const trackSlugs = [
+  "transparency-corruption",
+  "environment-climate",
+  "def-acc",
+] as const;
 ---
 
 <html lang="en">
@@ -33,23 +62,23 @@ const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"]
   </head>
   <body class="bg-bg text-tx text-xl font-serif text-pretty scroll-smooth">
     <ApplyMarquee word={marquee} client:load />
-    <main class="px-4 py-4 sm:p-8">
+    <main class="px-4 py-4 sm:p-8 overflow-x-clip">
       <div class="max-w-7xl mx-auto space-y-8">
         <div class="max-w-3xl mx-auto text-center">
           <h1 class="text-tx-2">{hero.tagline}</h1>
-          <h2 class="font-sans text-6xl">{hero.title}</h2>
-          <p>{hero.date}</p>
+          <h2 class="font-sans text-6xl text-tx">{hero.title}</h2>
+          <p class="text-tx-2">{hero.date}</p>
           <a
             href="https://tally.so/r/dWYX7o"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-block mt-4 shrink-0 bg-tx text-bg py-3 px-6 border border-ui font-serif hover:border-ui-2 transition-colors"
-          >{hero.button}</a
+            >{hero.button}</a
           >
         </div>
         <div class="space-y-8">
           <div class="max-w-3xl mx-auto space-y-2">
-            <p>{tldr.title}</p>
+            <p class="text-tx">{tldr.title}</p>
             <p class="text-tx-2 flex flex-col gap-2">
               <span>{tldr.items[0]}</span>
               <span>{tldr.items[1]}</span>
@@ -61,7 +90,7 @@ const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"]
                   target="_blank"
                   rel="noopener noreferrer"
                   class="underline text-tx hover:text-tx-2"
-                >{tldr.discordLink.text}</a
+                  >{tldr.discordLink.text}</a
                 >
                 {tldr.items[4]}
               </span>
@@ -79,7 +108,7 @@ const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"]
               target="_blank"
               rel="noopener noreferrer"
               class="text-tx text-sm font-mono hover:underline"
-            >{countdown.link}</a
+              >{countdown.link}</a
             >
           </section>
 
@@ -99,8 +128,9 @@ const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"]
                         target="_blank"
                         rel="noopener noreferrer"
                         class="underline text-tx hover:text-tx-2"
-                      >{item.link}</a
                       >
+                        {item.link}
+                      </a>
                     ) : null}
                     {item.after}
                   </li>
@@ -110,33 +140,36 @@ const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"]
           </div>
 
           <div class="max-w-3xl mx-auto space-y-2">
-            <p>{tracks.title}</p>
+            <p class="text-tx">{tracks.title}</p>
             <p class="text-tx-2">{tracks.desc}</p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-7xl mx-auto">
             {
-              tracks.items.map((track, i) => (
-                <div
-                  class={`border-2 ${trackColors[i].replace("text-", "border-")} p-4 text-base lowercase space-y-4 flex flex-col`}
-                >
-                  <h3 class={`font-sans text-2xl uppercase ${trackColors[i]}`}>
-                    {track.name}
-                  </h3>
-                  <p>{track.short}</p>
-                  <p>{track.long}</p>
-                  <a
-                    href={`/en/tracks#${trackSlugs[i]}`}
-                    class={`underline font-serif mt-auto self-end ${trackColors[i]}`}
+              tracks.items.map((track, i) => {
+                const meta = trackCardMeta[i];
+                return (
+                  <div
+                    class={`border-2 ${meta.border} p-4 text-base lowercase space-y-4 flex flex-col`}
                   >
-                    {tracks.readMore}
-                  </a>
-                </div>
-              ))
+                    <h3 class={`font-sans text-2xl uppercase ${meta.titleColor}`}>
+                      {track.name}
+                    </h3>
+                    <p class={`${meta.bodyColor} opacity-70`}>{track.short}</p>
+                    <p class={`${meta.bodyColor} opacity-70`}>{track.long}</p>
+                    <a
+                      href={`/en/tracks#${trackSlugs[i]}`}
+                      class={`underline font-serif mt-auto self-end ${meta.titleColor} hover:opacity-80`}
+                    >
+                      {tracks.readMore}
+                    </a>
+                  </div>
+                );
+              })
             }
           </div>
 
           <div class="max-w-3xl mx-auto space-y-2">
-            <p>{where.title}</p>
+            <p class="text-tx">{where.title}</p>
             <p class="text-tx-2">{where.desc}</p>
           </div>
           <div
@@ -158,30 +191,34 @@ const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"]
                       </div>
                     </div>
                     <div class="flex flex-col gap-2 flex-1">
-                      <h3 class={`font-sans text-2xl uppercase ${meta.titleColor}`}>
+                      <h3
+                        class={`font-sans text-2xl uppercase ${meta.titleColor}`}
+                      >
                         {card.title}
                       </h3>
-                      <p class="font-mono text-tx">{card.time}</p>
-                      <p class="text-tx-2">
-                        {card.desc}
+                      <p class={`font-mono ${meta.titleColor} opacity-70`}>{card.time}</p>
+                      <p class={meta.titleColor}>
+                        <span class="opacity-70">{card.desc}</span>
                         <a
                           href={card.link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          class="underline text-tx hover:text-tx-2"
+                          class={`underline ${meta.titleColor} hover:opacity-80`}
                         >
                           {card.link.text}
                         </a>
-                        {card.afterLink}
+                        <span class="opacity-70">{card.afterLink}</span>
                         {"link2" in card && card.link2 ? (
-                          <a
-                            href={card.link2.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="underline text-tx hover:text-tx-2"
-                          >
-                            {card.link2.text}
-                          </a>
+                          <>
+                            <a
+                              href={card.link2.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class={`underline ${meta.titleColor} hover:opacity-80`}
+                            >
+                              {card.link2.text}
+                            </a>
+                          </>
                         ) : null}
                       </p>
                     </div>
@@ -191,45 +228,27 @@ const trackSlugs = ["transparency-corruption", "environment-climate", "def-acc"]
             }
           </div>
 
-          <div id="sponsors" class="max-w-7xl mx-auto scroll-mt-8 lowercase">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div class="flex flex-col gap-8">
-                <div class="space-y-6">
-                  <p class="text-tx">{faq.title}</p>
-                  <div class="space-y-6 text-tx-2">
-                    {
-                      faq.items.map((item) => (
-                        <div class="space-y-2">
-                          <p class="text-tx">{item.q}</p>
-                          <p>
-                            {item.a}
-                            {"link" in item && item.link ? (
-                              <>
-                                <a
-                                  href={item.link.href}
-                                  class="underline text-tx hover:text-tx-2"
-                                >{item.link.text}</a
-                                >
-                                {item.after}
-                              </>
-                            ) : null}
-                          </p>
-                        </div>
-                      ))
-                    }
-                  </div>
-                </div>
-                <div class="space-y-4">
-                  <p class="text-tx">{landing.communities.title}</p>
-                  <p class="text-tx-2">{landing.communities.desc}</p>
-                  <CommunitiesMarquee communities={communities.communities} client:load />
-                </div>
-              </div>
-              <div class="space-y-8">
-                <p class="text-tx">{en.sponsors.title}</p>
-                <Sponsors lang="en" showTitle={false} />
-              </div>
+          <FAQAccordion title={faq.title} items={faq.items} client:load />
+          <div class="space-y-4 lowercase">
+            <div class="max-w-3xl mx-auto space-y-2">
+              <p class="text-tx">{landing.communities.title}</p>
+              <p class="text-tx-2">{landing.communities.desc}</p>
             </div>
+            <div
+              class="w-screen relative left-1/2 -translate-x-1/2 overflow-hidden"
+            >
+              <CommunitiesMarquee
+                communities={communities.communities}
+                client:load
+              />
+            </div>
+          </div>
+          <div id="sponsors" class="space-y-4 scroll-mt-8">
+            <div class="max-w-3xl mx-auto space-y-2">
+              <p class="text-tx">{en.sponsors.title}</p>
+              <p class="text-tx-2">{en.sponsors.desc}</p>
+            </div>
+            <Sponsors lang="en" showTitle={false} />
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export default function CommunitiesMarquee({ communities }: Props) {
   const items = [...communities, ...communities];
   return (
     <div
-      className="relative h-[200px] w-full overflow-hidden marquee-fade-edges"
+      className="relative h-[100px] w-full overflow-hidden marquee-fade-edges"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -40,7 +40,7 @@ export default function CommunitiesMarquee({ communities }: Props) {
                   <img
                     src={c.logo}
                     alt={c.name}
-                    className="max-w-[70px] max-h-[70px] w-auto object-contain"
+                    className="max-h-[100px] h-full object-contain opacity-65"
                   />
                 </div>
               ))}

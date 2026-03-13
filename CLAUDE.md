@@ -1,5 +1,9 @@
 **In all interaction and commit messages, be extremely concise and sacrifice grammar for the sake of concision.**
 
+## IMPORTANT!!!!
+
+use Bun
+
 ## CODE STANDARDS
 
 - Make minimal, surgical changes

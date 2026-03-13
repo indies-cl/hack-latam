@@ -486,7 +486,8 @@ export const en = {
     ],
   },
   sponsors: {
-    title: "Sponsors",
+    title: "sponsors",
+    desc: "helping the region wouldn't have been possible without our kind sponsors.",
     faces: "Create interactive presentations using AI: pitch decks, portfolios, guides, or proposals.",
     minimax: "Multimodal foundation models. Text, audio, image, video, music. Optimized for coding and agentic workflows.",
     threeByTen: "$3,000 for technical founders",
