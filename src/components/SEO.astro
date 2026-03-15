@@ -7,15 +7,18 @@ interface Props {
   twitterCard?: string;
 }
 
+const base = Astro.url.origin;
+const defaultOgImage = new URL("/assets/og.png", base).toString();
+
 const {
   title = "hack@latam",
   description = "54-hour hackathon for latin american builders. social impact only.",
-  ogImage = "https://i.imgur.com/NgbOKYm.png",
+  ogImage = defaultOgImage,
   ogType = "website",
   twitterCard = "summary_large_image",
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://hacklatam.com");
+const canonicalURL = new URL(Astro.url.pathname, base);
 ---
 
 <!-- Primary Meta Tags -->
