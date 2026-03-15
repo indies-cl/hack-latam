@@ -56,7 +56,7 @@ angle: use data to expose, track, and reduce corruption.
 problem: water, contamination, fires, and climate risk.  
 angle: track, predict, and mitigate environmental damage.
 
-3. def/acc
+3. defensive acceleration
 
 problem: large-scale threats like cyberattacks, disinformation, and critical infrastructure failures.  
 angle: build and accelerate technologies that strengthen society's defenses.

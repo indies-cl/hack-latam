@@ -32,9 +32,23 @@ export const en = {
   prevEvents: {
     title: "some events we've hosted:",
     photos: [
-      { src: "/prev/dam1.webp", subtitle: "founders, inc and YC-backed founders back in their hometowns", rotate: -3 },
-      { src: "/prev/dam3.webp", subtitle: "indie game goes viral worldwide & social entrepreneurship project gets funded by large corporation", rotate: 1 },
-      { src: "/prev/dam2.webp", subtitle: "40 builders, 24 hours, unlimited energy drinks.", rotate: 2 },
+      {
+        src: "/prev/dam1.webp",
+        subtitle:
+          "founders, inc and YC-backed founders back in their hometowns",
+        rotate: -3,
+      },
+      {
+        src: "/prev/dam3.webp",
+        subtitle:
+          "indie game goes viral worldwide & social entrepreneurship project gets funded by large corporation",
+        rotate: 1,
+      },
+      {
+        src: "/prev/dam2.webp",
+        subtitle: "40 builders, 24 hours, unlimited energy drinks.",
+        rotate: 2,
+      },
     ],
   },
   trackRecord: {
@@ -82,7 +96,7 @@ export const en = {
         desc: "satellite data, air quality sensors, wildfire prediction, monitor what governments won't.",
       },
       {
-        name: "3. def/acc",
+        name: "3. defensive acceleration",
         desc: "from cyberattacks to disinformation to critical infrastructure risk. build tools that strengthen society's defenses.",
       },
     ],
@@ -99,8 +113,7 @@ export const en = {
   },
   whySponsor: {
     title: "why sponsor",
-    intro:
-      "150 engineers building on your stack for 54 hours straight.",
+    intro: "150 engineers building on your stack for 54 hours straight.",
     items: [
       { label: "talent access:", desc: "direct line to 150 vetted builders" },
       {
@@ -131,7 +144,8 @@ export const en = {
   },
   ask: {
     title: "the ask",
-    subtitle: "any of these, or all of them. minimax and faces are already doing both.",
+    subtitle:
+      "any of these, or all of them. minimax and faces are already doing both.",
     items: [
       {
         text: "cash to grow the prize pool. $5k usd already raised.",
@@ -211,7 +225,8 @@ export const en = {
         logo: "/communities/crafterstation.svg",
         name: "crafterstation",
         desc: "open-source first, builders community",
-      },       {
+      },
+      {
         logo: "https://lh3.googleusercontent.com/d/1XHdULvTa68OVJqPtCIDOBWWP9I55GvQv=w1000?authuser=0",
         name: "UNITE",
         desc: "UC Entrepreneurship Club",
@@ -253,8 +268,10 @@ export const en = {
     tagline: "Hackathon for social good",
     title: "hack@latam",
     date: "May 15, 16, and 17",
-    description: "Latin America unites to tackle the problems that affect the region most.",
-    subtitle: "From corruption to public safety. <br /> 54 hours of deployed code.",
+    description:
+      "Latin America unites to tackle the problems that affect the region most.",
+    subtitle:
+      "From corruption to public safety. <br /> 54 hours of deployed code.",
   },
   bento: {
     hours: "Hours",
@@ -326,8 +343,9 @@ export const en = {
           long: "satellite data, air quality sensors, wildfire prediction, monitor what governments won't",
         },
         {
-          name: "def/acc",
-          short: "build and accelerate technologies that strengthen society's defenses",
+          name: "defensive acceleration",
+          short:
+            "build and accelerate technologies that strengthen society's defenses",
           long: "from cyber threats to misinformation to critical infrastructure risk, create tools that prevent harm, detect threats early, and make systems more resilient, safer, and harder to break",
         },
       ],
@@ -347,7 +365,10 @@ export const en = {
           title: "lima, peru",
           time: "5pm 🇵🇪",
           desc: "at universidad de ingeniería y tecnología, organized by ",
-          link: { text: "ai playground", href: "https://www.instagram.com/aiplaygroundstech/" },
+          link: {
+            text: "ai playground",
+            href: "https://www.instagram.com/aiplaygroundstech/",
+          },
           afterLink: "",
         },
         {
@@ -361,9 +382,15 @@ export const en = {
           title: "ciudad de guatemala",
           time: "4pm 🇬🇹",
           desc: "location tbd, organized by ",
-          link: { text: "the502project", href: "https://www.the502project.com/" },
+          link: {
+            text: "the502project",
+            href: "https://www.the502project.com/",
+          },
           afterLink: " and ",
-          link2: { text: "we solve", href: "https://www.instagram.com/wesolve.io/" },
+          link2: {
+            text: "we solve",
+            href: "https://www.instagram.com/wesolve.io/",
+          },
         },
       ],
     },
@@ -371,9 +398,24 @@ export const en = {
       title: "perks",
       subtitle: "every team member gets",
       items: [
-        { text: "1 month of ", link: "minimax", href: "https://www.minimax.io/", after: " coding plan plus" },
-        { text: "$10 credit for ", link: "zavu", href: "https://www.zavu.dev/en", after: "" },
-        { text: "3 months of ", link: "monologue", href: "https://www.monologue.to/", after: " pro" },
+        {
+          text: "1 month of ",
+          link: "minimax",
+          href: "https://www.minimax.io/",
+          after: " coding plan plus",
+        },
+        {
+          text: "$10 credit for ",
+          link: "zavu",
+          href: "https://www.zavu.dev/en",
+          after: "",
+        },
+        {
+          text: "3 months of ",
+          link: "monologue",
+          href: "https://www.monologue.to/",
+          after: " pro",
+        },
         { text: "more perks to be revealed", link: null, href: "", after: "" },
       ],
     },
@@ -384,7 +426,8 @@ export const en = {
           q: "i want to form a team but i don't know anyone. can i still join?",
           a: "yes. join our ",
           link: { text: "discord", href: "https://indies.la" },
-          after: " and head to #hackathon. you'll find people looking for teammates. be proactive: create a thread on their message, introduce yourself, and say what kind of team you want to form.",
+          after:
+            " and head to #hackathon. you'll find people looking for teammates. be proactive: create a thread on their message, introduce yourself, and say what kind of team you want to form.",
         },
         {
           q: "can i form a team with someone in another country? e.g. i'm in mexico, my teammate is in paraguay.",
@@ -466,10 +509,11 @@ export const en = {
         ],
       },
       {
-        name: "def/acc",
-        tagline: "build and accelerate technologies that strengthen society's defenses",
+        name: "defensive acceleration",
+        tagline:
+          "build and accelerate technologies that strengthen society's defenses",
         whatIsIt:
-          "def/acc is about accelerating technologies that help society defend itself, especially against large-scale threats like cyberattacks, bio risk, disinformation, and failures in critical systems. build things that prevent harm, detect threats early, and make people, institutions, and infrastructure more resilient under pressure",
+          "defensive acceleration is about accelerating technologies that help society defend itself, especially against large-scale threats like cyberattacks, bio risk, disinformation, and failures in critical systems. build things that prevent harm, detect threats early, and make people, institutions, and infrastructure more resilient under pressure",
         whatFits: [
           "cybersecurity, AI security, critical infrastructure protection, vulnerability detection, and patching at scale",
           "biosecurity, outbreak detection, lab safety, and early-warning systems",
@@ -489,16 +533,20 @@ export const en = {
   sponsors: {
     title: "sponsors",
     desc: "helping the region wouldn't have been possible without our kind sponsors.",
-    faces: "Create interactive presentations using AI: pitch decks, portfolios, guides, or proposals.",
-    minimax: "Multimodal foundation models. Text, audio, image, video, music. Optimized for coding and agentic workflows.",
+    faces:
+      "Create interactive presentations using AI: pitch decks, portfolios, guides, or proposals.",
+    minimax:
+      "Multimodal foundation models. Text, audio, image, video, music. Optimized for coding and agentic workflows.",
     threeByTen: "$3,000 for technical founders",
     animo: "Create animated videos from text",
     boquila: "AI for biodiversity conservation and sustainable development.",
     woz: "The fastest way to build, launch, and monetize mobile apps.",
     logos: "Monitor, predict and optimize critical industrial processes.",
     utecVentures: "Empowering early-stage startups in Latin America",
-    monologue: "Smart voice-to-text app for macOS and iOS where you can write 3x faster.",
-    bugster: "AI Agents test your app on real browsers. Empower your QA with AI testing.",
+    monologue:
+      "Smart voice-to-text app for macOS and iOS where you can write 3x faster.",
+    bugster:
+      "AI Agents test your app on real browsers. Empower your QA with AI testing.",
     v0: "Prompt to deployed full-stack app.",
     zavu: "One API. Every messaging channel. SMS, WhatsApp, Telegram, Email, Voice.",
   },

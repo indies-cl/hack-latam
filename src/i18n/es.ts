@@ -97,7 +97,7 @@ export const es = {
         desc: "datos satelitales, sensores de calidad de aire, predicción de incendios, monitorear lo que los gobiernos no.",
       },
       {
-        name: "3. def/acc",
+        name: "3. tecnología defensiva",
         desc: "de ciberataques a desinformación a riesgo de infraestructura crítica. construye herramientas que fortalezcan las defensas de la sociedad.",
       },
     ],
@@ -344,8 +344,9 @@ export const es = {
           long: "datos satelitales, sensores de calidad del aire, predicción de incendios, monitorea lo que los gobiernos no",
         },
         {
-          name: "def/acc",
-          short: "construye y acelera tecnologías que fortalezcan las defensas de la sociedad",
+          name: "tecnología defensiva",
+          short:
+            "construye y acelera tecnologías que fortalezcan las defensas de la sociedad",
           long: "de cyber ataques a desinformación a riesgo de infraestructura crítica, crea herramientas que prevengan daños, detecten amenazas temprano y hagan los sistemas más resilientes, seguros y difíciles de romper",
         },
       ],
@@ -484,10 +485,11 @@ export const es = {
         ],
       },
       {
-        name: "def/acc",
-        tagline: "construye y acelera tecnologías que fortalezcan las defensas de la sociedad",
+        name: "tecnología defensiva",
+        tagline:
+          "construye y acelera tecnologías que fortalezcan las defensas de la sociedad",
         whatIsIt:
-          "def/acc trata de acelerar tecnologías que ayuden a la sociedad a defenderse, especialmente contra amenazas a gran escala como ciberataques, riesgo biológico, desinformación y fallas en sistemas críticos. construye cosas que prevengan daño, detecten amenazas temprano y hagan personas, instituciones e infraestructura más resilientes bajo presión",
+          "tecnología defensiva trata de acelerar tecnologías que ayuden a la sociedad a defenderse, especialmente contra amenazas a gran escala como ciberataques, riesgo biológico, desinformación y fallas en sistemas críticos. construye cosas que prevengan daño, detecten amenazas temprano y hagan personas, instituciones e infraestructura más resilientes bajo presión",
         whatFits: [
           "ciberseguridad, seguridad de IA, protección de infraestructura crítica, detección de vulnerabilidades y parcheo a escala",
           "bioseguridad, detección de brotes, seguridad de laboratorios y sistemas de alerta temprana",
